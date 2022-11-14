@@ -30,7 +30,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "typescript123",
+  "name": "technotic",
   "author": "joshuajevon",
   "module": "dist/typescript.esm.js",
   "size-limit": [
