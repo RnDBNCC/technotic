@@ -1,4 +1,4 @@
-<!-- ada penjelasan technotic dibuat oleh anak bncc bla bla bla + cara pakai -->
+<!-- ada penjelasan technotic dibuat oleh anak bncc + cara pakai -->
 # TSDX User Guide
 
 Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
