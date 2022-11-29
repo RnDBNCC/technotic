@@ -17,7 +17,10 @@ const Navbar: NavbarTechnotic = ({ link2 }) => {
       <a href={link2}>Testing1</a>
       <a href="">Testing2</a>
       <a href="">Testing3</a>
+
+      {/* <h1 className={cx(BL500)}>Halo</h1> */}
     </div>
+
   );
 };
 
