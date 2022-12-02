@@ -1,0 +1,44 @@
+yarn add v1.22.19
+[1/5] Validating package.json...
+[2/5] Resolving packages...
+[3/5] Fetching packages...
+[4/5] Linking dependencies...
+[5/5] Building fresh packages...
+success Saved lockfile.
+success Saved 25 new dependencies.
+info Direct dependencies
+├─ @emotion/css@11.10.5
+└─ lint-staged@13.0.4
+info All dependencies
+├─ @babel/helper-module-imports@7.18.6
+├─ @babel/plugin-syntax-jsx@7.18.6
+├─ @emotion/babel-plugin@11.10.5
+├─ @emotion/cache@11.10.5
+├─ @emotion/css@11.10.5
+├─ @emotion/unitless@0.8.0
+├─ @emotion/weak-memoize@0.3.0
+├─ aggregate-error@3.1.0
+├─ clean-stack@2.2.0
+├─ cli-truncate@3.1.0
+├─ commander@9.4.1
+├─ convert-source-map@1.9.0
+├─ eastasianwidth@0.2.0
+├─ find-root@1.1.0
+├─ indent-string@4.0.0
+├─ lint-staged@13.0.4
+├─ listr2@5.0.6
+├─ p-map@4.0.0
+├─ pidtree@0.6.0
+├─ resolve@1.22.1
+├─ rfdc@1.3.0
+├─ rxjs@7.5.7
+├─ slice-ansi@5.0.0
+├─ string-argv@0.3.1
+└─ yaml@1.10.2
+$ tsdx build && husky install
+⠙ Creating entry file  99%                 816ms, estimated 744ms
+[2K[1A[2K[G✓ Creating entry file 820 ms
+⠙ Building modules
+[2K[1A[2K[G⠹ Building modules
+[2K[1A[2K[G⠸ Building modules
+[2K[1A[2K[Ginfo Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command.
