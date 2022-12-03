@@ -21,17 +21,17 @@ const Navbar: NavbarTechnotic = ({ link2 }) => {
     );
 };
 
-const Testing = () => {
-    return (
-        <Navbar
-            person={[
-                { name: 'Rifian', age: 18 },
-                { name: 'Joce', age: 50 },
-            ]}
-            link2="https://www.youtube.com"
-            link={1234}
-        />
-    );
-};
+// const Testing = () => {
+//     return (
+//         <Navbar
+//             person={[
+//                 { name: 'Rifian', age: 18 },
+//                 { name: 'Joce', age: 50 },
+//             ]}
+//             link2="https://www.youtube.com"
+//             link={1234}
+//         />
+//     );
+// };
 
 export default Navbar;

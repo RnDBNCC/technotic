@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 
-const name = "Randi";
+// const name = "Randi";
 
 export const navbarContainerStyle = css`
   margin: 10px;
