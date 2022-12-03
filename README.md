@@ -1,5 +1,5 @@
 <!-- ada penjelasan technotic dibuat oleh anak bncc + cara pakai -->
-# TSDX User Guide
+  # TSDX User Guide
 
 Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
 
@@ -11,10 +11,10 @@ Congrats! You just saved yourself hours of work by bootstrapping this project wi
 
 TSDX scaffolds your new library inside `/src`.
 
-To run TSDX, use:
+To run this npm package, use:
 
 ```bash
-npm start # or yarn start
+npm i technotic 
 ```
 
 This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
