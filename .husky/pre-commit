@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# npx pretty-quick --staged
 npx --no-install lint-staged
-# npx eslint .\src\ --fix
