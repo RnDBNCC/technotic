@@ -1,9 +1,7 @@
 import React from 'react';
 
-const NewComponent = () => {
-  return (
-    <>NewComponent</>
-  );
+const NewComponent = (): JSX.Element => {
+    return <>NewComponent</>;
 };
 
 export default NewComponent;

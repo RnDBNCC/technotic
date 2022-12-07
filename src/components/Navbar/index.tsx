@@ -9,9 +9,7 @@ interface NavbarProps {
     person: Person[];
 }
 
-type NavbarTechnotic = (props: NavbarProps) => JSX.Element;
-
-const Navbar: NavbarTechnotic = ({ link2 }) => {
+const Navbar = ({ link2 }: NavbarProps): JSX.Element => {
     return (
         <div className={cx(navbarContainerStyle)}>
             <a href={link2}>Testing1</a>
