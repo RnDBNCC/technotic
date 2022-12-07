@@ -1,5 +1,6 @@
 <!-- ada penjelasan technotic dibuat oleh anak bncc + cara pakai -->
-  # TSDX User Guide
+
+# TSDX User Guide
 
 Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
 
@@ -11,10 +12,10 @@ Congrats! You just saved yourself hours of work by bootstrapping this project wi
 
 TSDX scaffolds your new library inside `/src`.
 
-To run this npm package, use:
+To run TSDX, use:
 
 ```bash
-npm i technotic 
+npm start # or yarn start
 ```
 
 This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
@@ -64,8 +65,8 @@ TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rol
 
 Two actions are added by default:
 
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
+-   `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
+-   `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
 
 ## Optimizations
 
@@ -77,7 +78,7 @@ declare var __DEV__: boolean;
 
 // inside your code...
 if (__DEV__) {
-  console.log('foo');
+    console.log('foo');
 }
 ```
 
