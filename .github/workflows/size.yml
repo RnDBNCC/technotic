@@ -1,5 +1,8 @@
-name: size
-on: [pull_request]
+name: size-limit
+on:
+    pull_request:
+        types: [opened, synchronize]
+
 jobs:
     size:
         runs-on: ubuntu-latest
@@ -10,3 +13,6 @@ jobs:
             - uses: andresz1/size-limit-action@v1
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
+                  pattern: "./dist/technotic.cjs.production.min.js"
+                  build-script: "dist:esbuild-no-dup-check"
+                  clean-script: "clean-lockfiles"
