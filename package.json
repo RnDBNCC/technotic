@@ -14,7 +14,8 @@
         "start": "tsdx watch",
         "build": "tsdx build",
         "test": "tsdx test",
-        "lint": "lint-staged",
+        "lint": "tsdx lint",
+        "watch": "npm-watch",
         "prepare": "tsdx build && husky install",
         "size": "size-limit",
         "analyze": "size-limit --why",
@@ -49,6 +50,7 @@
         "husky": "^8.0.0",
         "jest": "^25.5.4",
         "lint-staged": "^13.0.4",
+        "npm-watch": "^0.11.0",
         "prettier": "^2.8.0",
         "pretty-quick": "^3.1.3",
         "size-limit": "^8.1.0",
@@ -65,7 +67,11 @@
     "peerDependencies": {
         "rc-input": "^0.1.4",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "watch": "^1.0.2"
+    },
+    "watch": {
+        "build": "src/"
     },
     "husky": {
         "hooks": {
