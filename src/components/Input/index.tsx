@@ -2,7 +2,6 @@ import InternalInput, { InputProps } from './Input';
 
 import TextField from './TextField/TextField';
 
-export { InputProps } from './Input';
 export { TextFieldProps } from './TextField/TextField';
 
 interface CompoundedComponent
