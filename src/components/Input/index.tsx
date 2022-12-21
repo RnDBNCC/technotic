@@ -2,7 +2,7 @@ import InternalInput, { InputProps } from './Input';
 
 import TextField from './TextField/TextField';
 
-export { TextFieldProps } from './TextField/TextField';
+export { TextFieldProps } from './TextField/TextFieldProps';
 
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<InputProps> {

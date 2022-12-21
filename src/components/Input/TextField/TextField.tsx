@@ -1,20 +1,7 @@
-import React, { ChangeEvent, FormEvent } from 'react';
+import React from 'react';
 import { textFieldContainerStyle } from './styles';
 import { cx } from '@emotion/css';
-
-export interface TextFieldProps {
-    textLabel?: string;
-    padding?: string;
-    fontSize?: string;
-    borderRadius?: string;
-    icon?: string;
-    display?: string;
-    placeholder?: string;
-    width?: string;
-
-    onInputChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-    onSubmit?: (e: FormEvent) => void;
-}
+import { TextFieldProps } from './TextFieldProps';
 
 const TextField = ({
     textLabel,
