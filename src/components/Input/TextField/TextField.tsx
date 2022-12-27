@@ -1,39 +1,43 @@
 import React from 'react';
-import { textFieldContainerStyle } from './styles';
-import { cx } from '@emotion/css';
+import * as style from './styles';
 import { TextFieldProps } from './TextFieldProps';
 
-const TextField = ({
-    textLabel,
-    padding,
-    fontSize,
-    borderRadius,
-    icon,
-    placeholder,
-    width,
-    onInputChange,
-    onSubmit,
-}: TextFieldProps): JSX.Element => {
+const TextField = (
+    props: React.PropsWithChildren<TextFieldProps>,
+    { ...rest }
+): JSX.Element => {
+    const layout = `${String(style.Layout)}`;
+    const layout1 = `${String(props.inputSize)} ${String(style.LayoutSize)}`;
+    const styles = `${String(style.TextFieldStyle)}`;
     return (
-        <form onSubmit={onSubmit}>
-            <div className={cx(textFieldContainerStyle)}>
-                <label style={{ fontSize }} htmlFor="name">
-                    {textLabel}
+        <form action="" onSubmit={props.onSubmit}>
+            <div className={layout}>
+                <label style={{ fontSize: props.fontSize }} htmlFor="name">
+                    {props.textLabel}
                 </label>
-                <img style={{ width }} src={icon} alt="" />
-                <input
-                    onChange={onInputChange}
-                    id="name"
-                    name="name"
-                    type="text"
-                    style={{
-                        padding,
-                        fontSize,
-                        borderRadius,
-                    }}
-                    placeholder={placeholder}
-                ></input>
-                <button type="submit">Submit</button>
+                <div
+                    className={layout1}
+                    style={{ borderRadius: props.borderRadius }}
+                >
+                    <i>
+                        <img
+                            style={{ width: props.width }}
+                            src={props.icon}
+                            alt="icon"
+                        />
+                    </i>
+                    <input
+                        className={styles}
+                        style={{ fontSize: props.fontSize }}
+                        {...rest}
+                        onChange={props.onInputChange}
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder={props.textPlaceholder}
+                    />
+                </div>
+                <button type="submit">submit</button>
             </div>
         </form>
     );
