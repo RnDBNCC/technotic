@@ -7,7 +7,9 @@ const TextField = (
     { ...rest }
 ): JSX.Element => {
     const layout = `${String(style.Layout)}`;
-    const layout1 = `${String(props.inputSize)} ${String(style.LayoutSize)}`;
+    const inputLayout = `${String(props.inputSize)} ${String(
+        props.status
+    )} ${String(style.LayoutSize)}`;
     const styles = `${String(style.TextFieldStyle)}`;
     return (
         <form action="" onSubmit={props.onSubmit}>
@@ -16,19 +18,19 @@ const TextField = (
                     {props.textLabel}
                 </label>
                 <div
-                    className={layout1}
+                    className={inputLayout}
                     style={{ borderRadius: props.borderRadius }}
                 >
                     <i>
                         <img
-                            style={{ width: props.width }}
+                            style={{ height: props.height }}
                             src={props.icon}
                             alt="icon"
                         />
                     </i>
                     <input
                         className={styles}
-                        style={{ fontSize: props.fontSize }}
+                        style={{ fontSize: props.fontSize, width: props.width }}
                         {...rest}
                         onChange={props.onInputChange}
                         id="name"
