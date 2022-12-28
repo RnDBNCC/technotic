@@ -73,6 +73,7 @@
         "rc-input": "^0.1.4",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-router-dom": "^6.6.1",
         "watch": "^1.0.2"
     },
     "watch": {
