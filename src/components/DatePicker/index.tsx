@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { DatePickerProps } from './DatePickerProps';
 import { cx } from '@emotion/css';
-import * as style from './style';
+import { styDatePicker, styUndefinedDate } from './style';
 
-const DatePicker = (
-    props: React.PropsWithChildren<DatePickerProps>
-): JSX.Element => {
-    let className: string;
-    className =
-        props.dateSize === undefined
-            ? (className = cx(style.DatePickerStyle, style.undefined))
-            : (className = `${String(props.dateSize)} ${String(
-                  style.DatePickerStyle
-              )}`);
+const DatePicker = (props: PropsWithChildren<DatePickerProps>): JSX.Element => {
+    const { placeholder, dateSize } = props;
+    const className =
+        dateSize !== undefined
+            ? `${dateSize} ${styDatePicker}`
+            : cx(styDatePicker, styUndefinedDate);
 
     return (
         <div>
-            <input className={className} type="date" name="" id="" />
+            <input
+                className={className}
+                placeholder={placeholder}
+                type="date"
+                name=""
+                id=""
+            />
         </div>
     );
 };

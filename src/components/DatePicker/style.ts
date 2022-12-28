@@ -4,7 +4,7 @@ const small = '0.25rem 0.5rem';
 const medium = '0.5rem 1rem';
 const large = '1.5rem 2rem';
 
-export const DatePickerStyle = css({
+export const styDatePicker = css({
     '&.small': {
         padding: small,
     },
@@ -16,6 +16,6 @@ export const DatePickerStyle = css({
     },
 });
 
-// export const undefined = css({
-//     padding: medium
-// })
+export const styUndefinedDate = css({
+    padding: medium,
+});
