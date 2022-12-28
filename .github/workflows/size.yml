@@ -1,5 +1,8 @@
-name: size
-on: [pull_request]
+name: size-limit
+on:
+    pull_request:
+        types: [opened, synchronize]
+
 jobs:
     size:
         runs-on: ubuntu-latest
@@ -10,3 +13,5 @@ jobs:
             - uses: andresz1/size-limit-action@v1
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
+                  build-script: "npm ci && npm run build"
+                  clean-script: "clean-lockfiles"

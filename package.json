@@ -25,12 +25,12 @@
     "module": "dist/typescript.esm.js",
     "size-limit": [
         {
-            "path": "dist/typescript.cjs.production.min.js",
-            "limit": "10 KB"
+            "path": "dist/technotic.cjs.production.min.js",
+            "limit": "4500 ms"
         },
         {
-            "path": "dist/typescript.esm.js",
-            "limit": "10 KB"
+            "path": "dist/technotic.esm.js",
+            "limit": "4500 ms"
         }
     ],
     "devDependencies": {
