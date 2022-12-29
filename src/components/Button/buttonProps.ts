@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
-type SizeType = 'small' | 'medium' | 'large' | undefined;
+type SizeType = 'small' | 'medium' | 'large';
 type ButtonType = 'primary' | 'secondary';
 
 export interface ButtonProps
