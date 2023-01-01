@@ -42,10 +42,20 @@ export const styInput = css({
 });
 
 export const styInputDefault = css({
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '10px',
     padding: medium,
 });
 
 export const styStatusDefault = css({
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '10px',
     border: '3px solid black',
 });
 
