@@ -1,11 +1,11 @@
+import { ForwardRefExoticComponent } from 'react';
 import InternalInput, { InputProps } from './Input';
 
 import TextField from './TextField/TextField';
 
 export { TextFieldProps } from './TextField/TextFieldProps';
 
-interface CompoundedComponent
-    extends React.ForwardRefExoticComponent<InputProps> {
+interface CompoundedComponent extends ForwardRefExoticComponent<InputProps> {
     TextField: typeof TextField;
 }
 

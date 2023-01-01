@@ -1,42 +1,54 @@
-import React from 'react';
-import * as style from './styles';
+import { cx } from '@emotion/css';
+import React, { PropsWithChildren } from 'react';
+import {
+    styInputSize,
+    styLayout,
+    styTextField,
+    styInputDefault,
+} from './styles';
 import { TextFieldProps } from './TextFieldProps';
 
-const TextField = (
-    props: React.PropsWithChildren<TextFieldProps>,
-    { ...rest }
-): JSX.Element => {
-    const layout = `${String(style.Layout)}`;
-    const inputLayout = `${String(props.inputSize)} ${String(
-        props.status
-    )} ${String(style.LayoutSize)}`;
-    const styles = `${String(style.TextFieldStyle)}`;
+const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
+    const {
+        inputSize,
+        textLabel,
+        fontSize,
+        borderRadius,
+        icon,
+        textPlaceholder,
+        status,
+        height,
+        onSubmit,
+        onInputChange,
+        ...rest
+    } = props;
+    const layout = `${styLayout}`;
+
+    const inputLayout =
+        inputSize !== undefined
+            ? `${inputSize} ${styInputSize}`
+            : cx(styInputDefault);
+    const styles = `${styTextField}`;
+
     return (
-        <form action="" onSubmit={props.onSubmit}>
+        <form action="" onSubmit={onSubmit}>
             <div className={layout}>
-                <label style={{ fontSize: props.fontSize }} htmlFor="name">
-                    {props.textLabel}
+                <label style={{ fontSize }} htmlFor="name">
+                    {textLabel}
                 </label>
-                <div
-                    className={inputLayout}
-                    style={{ borderRadius: props.borderRadius }}
-                >
+                <div className={inputLayout} style={{ borderRadius }}>
                     <i>
-                        <img
-                            style={{ height: props.height }}
-                            src={props.icon}
-                            alt="icon"
-                        />
+                        <img style={{ height }} src={props.icon} alt="icon" />
                     </i>
                     <input
                         className={styles}
-                        style={{ fontSize: props.fontSize, width: props.width }}
+                        style={{ fontSize }}
                         {...rest}
-                        onChange={props.onInputChange}
+                        onChange={onInputChange}
                         id="name"
                         name="name"
                         type="text"
-                        placeholder={props.textPlaceholder}
+                        placeholder={textPlaceholder}
                     />
                 </div>
                 <button type="submit">submit</button>

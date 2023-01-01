@@ -1,11 +1,11 @@
 import React from 'react';
 
 export interface InputProps {
-    rifian: string;
+    name: string;
 }
 
-const Input = ({ rifian }: InputProps): JSX.Element => {
-    return <button>{rifian}</button>;
+const Input = ({ name }: InputProps): JSX.Element => {
+    return <button>{name}</button>;
 };
 
 export default Input;

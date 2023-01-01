@@ -7,7 +7,7 @@ const large = '1.5rem 2rem';
 const success = '3px solid green';
 const error = '3px solid red';
 
-export const Layout = css({
+export const styLayout = css({
     margin: '10px',
     display: 'flex',
     flexDirection: 'column',
@@ -16,14 +16,13 @@ export const Layout = css({
     gap: '10px',
 });
 
-export const LayoutSize = css({
+export const styInputSize = css({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     gap: '10px',
     border: '3px solid black',
-    padding: '1rem 1.5rem',
 
     '&.small': {
         padding: small,
@@ -43,7 +42,11 @@ export const LayoutSize = css({
     },
 });
 
-export const TextFieldStyle = css({
+export const styInputDefault = css({
+    padding: medium,
+});
+
+export const styTextField = css({
     border: 'none',
     outline: 'none',
 });
