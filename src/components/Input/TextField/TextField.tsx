@@ -1,10 +1,11 @@
 import { cx } from '@emotion/css';
 import React, { PropsWithChildren } from 'react';
 import {
-    styInputSize,
+    styInput,
     styLayout,
     styTextField,
     styInputDefault,
+    styStatusDefault,
 } from './styles';
 import { TextFieldProps } from './TextFieldProps';
 
@@ -24,10 +25,14 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
     } = props;
     const layout = `${styLayout}`;
 
-    const inputLayout =
+    const inputLayoutSize =
         inputSize !== undefined
-            ? `${inputSize} ${styInputSize}`
+            ? `${inputSize} ${styInput}`
             : cx(styInputDefault);
+
+    const inputStatus =
+        status !== undefined ? `${status} ${styInput}` : cx(styStatusDefault);
+
     const styles = `${styTextField}`;
 
     return (
@@ -36,7 +41,10 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                 <label style={{ fontSize }} htmlFor="name">
                     {textLabel}
                 </label>
-                <div className={inputLayout} style={{ borderRadius }}>
+                <div
+                    className={`${inputLayoutSize} ${inputStatus}`}
+                    style={{ borderRadius }}
+                >
                     <i>
                         <img style={{ height }} src={props.icon} alt="icon" />
                     </i>

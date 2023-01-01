@@ -6,7 +6,7 @@ import {
 } from 'react';
 
 type SizeType = 'small' | 'medium' | 'large';
-// type StatusType = 'success' | 'error';
+type StatusType = 'success' | 'error';
 
 export interface TextFieldProps
     extends DetailedHTMLProps<
@@ -19,7 +19,7 @@ export interface TextFieldProps
     borderRadius?: string;
     icon?: string;
     textPlaceholder?: string;
-    status?: string;
+    status?: StatusType;
     height?: string;
 
     onInputChange?: (e: ChangeEvent<HTMLInputElement>) => void;
