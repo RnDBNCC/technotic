@@ -16,13 +16,12 @@ export const styLayout = css({
     gap: '10px',
 });
 
-export const styInputSize = css({
+export const styInput = css({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     gap: '10px',
-    border: '3px solid black',
 
     '&.small': {
         padding: small,
@@ -44,6 +43,10 @@ export const styInputSize = css({
 
 export const styInputDefault = css({
     padding: medium,
+});
+
+export const styStatusDefault = css({
+    border: '3px solid black',
 });
 
 export const styTextField = css({
