@@ -46,7 +46,7 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                     style={{ borderRadius }}
                 >
                     <i>
-                        <img style={{ height }} src={props.icon} alt="icon" />
+                        <img style={{ height }} src={icon} alt="icon" />
                     </i>
                     <input
                         className={styles}
