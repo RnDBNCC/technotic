@@ -11,5 +11,6 @@ export interface ButtonProps
     btnSize?: SizeType;
     btntype?: ButtonType;
     btnColor?: string;
-    to?: string;
+    link?: string;
+    element?: any;
 }
