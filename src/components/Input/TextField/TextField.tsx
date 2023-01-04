@@ -2,7 +2,6 @@ import { cx } from '@emotion/css';
 import React, { PropsWithChildren } from 'react';
 import {
     styInput,
-    styLayout,
     styTextField,
     styInputDefault,
     styStatusDefault,
@@ -19,11 +18,12 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
         textPlaceholder,
         status,
         height,
+        inputId,
+        inputName,
         onSubmit,
-        onInputChange,
+        onChange,
         ...rest
     } = props;
-    const layout = `${styLayout}`;
 
     const inputLayoutSize =
         inputSize !== undefined
@@ -37,29 +37,26 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
 
     return (
         <form action="" onSubmit={onSubmit}>
-            <div className={layout}>
-                <label style={{ fontSize }} htmlFor="name">
-                    {textLabel}
-                </label>
-                <div
-                    className={`${inputLayoutSize} ${inputStatus}`}
-                    style={{ borderRadius }}
-                >
-                    <i>
-                        <img style={{ height }} src={icon} alt="icon" />
-                    </i>
-                    <input
-                        className={styles}
-                        style={{ fontSize }}
-                        {...rest}
-                        onChange={onInputChange}
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder={textPlaceholder}
-                    />
-                </div>
-                <button type="submit">submit</button>
+            <label style={{ fontSize }} htmlFor="name">
+                {textLabel}
+            </label>
+            <div
+                className={`${inputLayoutSize} ${inputStatus}`}
+                style={{ borderRadius }}
+            >
+                <i>
+                    <img style={{ height }} src={icon} alt="icon" />
+                </i>
+                <input
+                    className={styles}
+                    style={{ fontSize }}
+                    {...rest}
+                    onChange={onChange}
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder={textPlaceholder}
+                />
             </div>
         </form>
     );

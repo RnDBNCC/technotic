@@ -7,21 +7,11 @@ const large = '1.5rem 2rem';
 const success = '3px solid green';
 const error = '3px solid red';
 
-export const styLayout = css({
-    margin: '10px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '10px',
-});
-
 export const styInput = css({
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '10px',
+    gap: '15px',
+    width: 'fit-content',
 
     '&.small': {
         padding: small,
@@ -44,18 +34,12 @@ export const styInput = css({
 export const styInputDefault = css({
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '10px',
+    gap: '15px',
+    width: 'fit-content',
     padding: medium,
 });
 
 export const styStatusDefault = css({
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '10px',
     border: '3px solid black',
 });
 

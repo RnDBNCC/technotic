@@ -22,6 +22,9 @@ export interface TextFieldProps
     status?: StatusType;
     height?: string;
 
-    onInputChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    inputId?: string;
+    inputName?: string;
+
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
     onSubmit?: (e: FormEvent) => void;
 }
