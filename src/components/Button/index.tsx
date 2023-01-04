@@ -1,7 +1,7 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, MouseEvent } from 'react';
 import { styButtonPrimary, styUndefinedBtn } from './styles';
 import { ButtonProps } from './buttonProps';
-import { isValidHttpUrl, isPath } from './Route';
+import { isValidHttpUrl, Route } from './Route';
 import { cx } from '@emotion/css';
 
 const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
@@ -13,10 +13,17 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
             : cx(styButtonPrimary, styUndefinedBtn);
     const color = { backgroundColor: btnColor };
 
-    function handleClick(): void {
-        if (link !== undefined) isValidHttpUrl(link);
-        if (link !== undefined && element !== undefined) isPath(link, element);
-    }
+    const handleClick = (e: MouseEvent): void => {
+        if (link !== undefined) {
+            if (element !== undefined) {
+                if (e.metaKey || e.ctrlKey) {
+                    return;
+                }
+                e.preventDefault(); // cegah loading
+                Route(link, element);
+            } else isValidHttpUrl(link);
+        }
+    };
 
     return (
         <div>
