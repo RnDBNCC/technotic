@@ -40,10 +40,6 @@ export const styInputDefault = css({
 });
 
 export const styStatusDefault = css({
-    display: 'flex',
-    flexDirection: 'row',
-    gap: '15px',
-    width: 'fit-content',
     border: '3px solid black',
 });
 
