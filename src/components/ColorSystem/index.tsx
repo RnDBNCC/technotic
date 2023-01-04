@@ -7,8 +7,8 @@ const ColorSystem = {
     BL600: '#000000',
 };
 
-// buat darkmode disini juga
-// semisal di lightmode warna apa, darkmode gimana
-// bisa pakai css variable
+// TODO :
+// - buat darkmode (semisal di lightmode warna apa, darkmode gimana)
+// - bisa pakai css variable
 
 export default ColorSystem;

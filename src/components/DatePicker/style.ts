@@ -1,21 +1,44 @@
 import { css } from '@emotion/css';
 
-const small = '0.25rem 0.5rem';
-const medium = '0.5rem 1rem';
-const large = '1.5rem 2rem';
+// size
+const smallSize = '0.25rem 0.5rem';
+const mediumSize = '0.5rem 1rem';
+const largeSize = '1.5rem 2rem';
+
+// status
+const successState = '2px solid #2D9D4D';
+const errorState = '2px solid #CD1212';
+
+export const styLayout = css`
+    padding: 10px;
+`;
 
 export const styDatePicker = css({
+    outline: 'none',
+    borderRadius: '12px',
+
+    // size
     '&.small': {
-        padding: small,
+        padding: smallSize,
     },
     '&.medium': {
-        padding: medium,
+        padding: mediumSize,
     },
     '&.large': {
-        padding: large,
+        padding: largeSize,
+    },
+
+    // status
+    '&.success': {
+        border: successState,
+    },
+    '&.error': {
+        border: errorState,
     },
 });
 
 export const styUndefinedDate = css({
-    padding: medium,
+    outline: 'none',
+    borderRadius: '12px',
+    padding: mediumSize,
 });
