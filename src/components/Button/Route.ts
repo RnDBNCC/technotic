@@ -1,28 +1,22 @@
-// import React from "react"
+// import { useEffect, useState } from "react"
 
 // const Route = ( path:string, children:React.ReactNode ) => {
 //     return window.location.pathname === path ? children : null
 // }
+// import { useState, useEffect  } from 'react';
 
-export function isValidHttpUrl(link: any): boolean {
-    let url: any;
-    try {
-        url = new URL(link);
-    } catch (_) {
-        return link;
-    }
-    window.location.href = url;
+export function Route(path: string, children: any): void {
+    window.history.pushState({}, '', path); // update pathname
 
-    return true;
+    // kasih tau routenya udh keubah
+    const navEvent = new PopStateEvent('popstate');
+    window.dispatchEvent(navEvent);
+
+    console.log(children);
 }
 
-export function isPath(link: string, element: any): boolean {
-    let url: any;
-    try {
-        url = new URL(link);
-    } catch (_) {
-        return element;
-    }
+export function isValidHttpUrl(link: string): boolean {
+    const url: any = new URL(link);
     window.location.href = url;
 
     return true;
