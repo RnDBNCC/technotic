@@ -12,6 +12,7 @@ export const styInput = css({
     flexDirection: 'row',
     gap: '15px',
     width: 'fit-content',
+    border: '3px solid black',
 
     '&.small': {
         padding: small,

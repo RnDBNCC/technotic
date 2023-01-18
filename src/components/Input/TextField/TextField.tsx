@@ -18,10 +18,7 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
         textPlaceholder,
         status,
         height,
-        inputId,
-        inputName,
-        onSubmit,
-        onChange,
+        width,
         ...rest
     } = props;
 
@@ -36,7 +33,7 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
     const styles = `${styTextField}`;
 
     return (
-        <form action="" onSubmit={onSubmit}>
+        <>
             <label style={{ fontSize }} htmlFor="name">
                 {textLabel}
             </label>
@@ -49,16 +46,13 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                 </i>
                 <input
                     className={styles}
-                    style={{ fontSize }}
+                    style={{ fontSize, width }}
                     {...rest}
-                    onChange={onChange}
-                    id="name"
-                    name="name"
                     type="text"
                     placeholder={textPlaceholder}
                 />
             </div>
-        </form>
+        </>
     );
 };
 
