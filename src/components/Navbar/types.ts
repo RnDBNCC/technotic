@@ -1,4 +1,4 @@
-export interface Person {
-    name: string;
-    age: number;
+export interface NavbarProps {
+    title: string;
+    links: string[];
 }
