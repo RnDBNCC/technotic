@@ -115,6 +115,7 @@ export const mobileNavlinksOpen = css`
 export const mobileNavlinksClose = css`
     position: absolute;
     z-index: -100;
+    top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
