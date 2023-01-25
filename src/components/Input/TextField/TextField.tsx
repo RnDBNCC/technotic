@@ -10,12 +10,12 @@ import { TextFieldProps } from './TextFieldProps';
 
 const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
     const {
-        inputSize,
+        inputSize = 'medium',
         textLabel,
-        fontSize,
-        borderRadius,
+        fontSize = '20px',
+        borderRadius = '10px',
         icon,
-        textPlaceholder,
+        textPlaceholder = 'Placeholder',
         status,
         height,
         width,

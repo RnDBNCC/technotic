@@ -1,11 +1,11 @@
 import { css } from '@emotion/css';
 
-const medium = '1rem 1.5rem';
-const small = '0.5rem 1rem';
-const large = '1.5rem 2rem';
+const MEDIUM_SIZE = '1rem 1.5rem';
+const SMALL_SIZE = '0.5rem 1rem';
+const LARGE_SIZE = '1.5rem 2rem';
 
-const success = '3px solid green';
-const error = '3px solid red';
+const SUCCESS_STATUS = '3px solid green';
+const ERROR_STATUS = '3px solid red';
 
 export const styInput = css({
     display: 'flex',
@@ -15,20 +15,20 @@ export const styInput = css({
     border: '3px solid black',
 
     '&.small': {
-        padding: small,
+        padding: SMALL_SIZE,
     },
     '&.medium': {
-        padding: medium,
+        padding: MEDIUM_SIZE,
     },
     '&.large': {
-        padding: large,
+        padding: LARGE_SIZE,
     },
 
     '&.success': {
-        border: success,
+        border: SUCCESS_STATUS,
     },
     '&.error': {
-        border: error,
+        border: ERROR_STATUS,
     },
 });
 
@@ -37,7 +37,6 @@ export const styInputDefault = css({
     flexDirection: 'row',
     gap: '15px',
     width: 'fit-content',
-    padding: medium,
 });
 
 export const styStatusDefault = css({
