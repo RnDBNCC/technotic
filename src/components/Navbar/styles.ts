@@ -1,27 +1,43 @@
-import { css } from '@emotion/css';
+import { css, injectGlobal } from '@emotion/css';
 
-export const navbarContainerStyle = css`
+injectGlobal`
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #fbfbfb;
+}`;
+
+export const navbarContainer = css`
+    position: fixed;
+    width: 100%;
+`;
+
+export const navbar = (color: string, padding: string): string => css`
+    z-index: 10;
     display: flex;
     justify-content: space-between;
-    padding: 32px 96px;
-    background-color: DarkSlateBlue;
+    align-items: center;
+    padding: ${padding};
+    background-color: ${color};
     color: #fbfbfb;
     font-size: 1rem;
-    & a {
-        text-decoration: none;
-        color: #fbfbfb;
-        cursor: pointer;
-    }
+    height: 100px;
+    max-height: 100px;
 `;
 
 export const navlinks = css`
     display: flex;
     justify-content: center;
     gap: 2rem;
+    font-size: 1rem;
     & a {
         display: inline-block;
         position: relative;
-        color: #fbfbfb;
     }
     & a::after {
         content: '';
@@ -29,7 +45,7 @@ export const navlinks = css`
         width: 100%;
         transform: scaleX(0);
         height: 2px;
-        bottom: -6px;
+        bottom: -8px;
         left: 0;
         background-color: #fbfbfb;
         transform-origin: bottom right;
@@ -43,6 +59,8 @@ export const navlinks = css`
 
 export const navbarHamburgerMenuButton = css`
     position: relative;
+    height: 100%;
+    width: 16px;
     & span {
         position: absolute;
         background-color: #fbfbfb;
@@ -67,6 +85,8 @@ export const navbarHamburgerMenuButton = css`
 
 export const navbarCrossMenuButton = css`
     position: relative;
+    height: 100%;
+    width: 16px;
     & span {
         position: absolute;
         background-color: #fbfbfb;
@@ -95,16 +115,16 @@ export const navbarCrossMenuButton = css`
 
 export const mobileNavlinksOpen = css`
     position: absolute;
-    z-index: -100;
+    z-index: -10;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     background-color: #252525;
     width: 100%;
-    transform: translateY(82px);
+    transform: translateY(100px);
     transition: transform 0.3s ease;
-    max-height: 75vh;
+    max-height: 50vh;
     overflow: auto;
     & a {
         padding: 2rem;
@@ -114,19 +134,31 @@ export const mobileNavlinksOpen = css`
 
 export const mobileNavlinksClose = css`
     position: absolute;
-    z-index: -100;
+    z-index: -10;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     background-color: #252525;
     width: 100%;
-    transform: translateY(-300px);
+    transform: translateY(-350px);
     transition: transform 0.3s ease;
-    max-height: 75vh;
+    max-height: 50vh;
     overflow: auto;
     & a {
         padding: 2rem;
         text-align: center;
+    }
+`;
+
+export const navbarTitle = css`
+    font-weight: 800;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    & img {
+        height: 36px;
+        object-fit: contain;
     }
 `;

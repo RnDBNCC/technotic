@@ -1,4 +1,7 @@
+import { ReactNode } from 'react';
+
 export interface NavbarProps {
-    title: string;
+    title: ReactNode;
     links: string[];
+    color: string;
 }

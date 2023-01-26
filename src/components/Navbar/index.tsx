@@ -4,15 +4,21 @@ import { cx } from '@emotion/css';
 import { NavbarProps } from './types';
 
 import {
-    navbarContainerStyle,
+    navbarContainer,
+    navbar,
     navlinks,
     navbarHamburgerMenuButton,
     navbarCrossMenuButton,
     mobileNavlinksOpen,
     mobileNavlinksClose,
+    navbarTitle,
 } from './styles';
 
-const Navbar: React.FC<NavbarProps> = ({ title, links }) => {
+const Navbar: React.FC<NavbarProps> = ({
+    title = 'technotic',
+    links = ['Link1', 'Link2', 'Link3', 'Link4'],
+    color = '#22539F',
+}) => {
     const [showMenu, setShowMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -32,30 +38,42 @@ const Navbar: React.FC<NavbarProps> = ({ title, links }) => {
     };
 
     return (
-        <nav className={cx(navbarContainerStyle)}>
-            <a href="/">{title}</a>
+        <div className={cx(navbarContainer)}>
+            {' '}
+            <nav
+                className={`cx(
+            ${
+                isMobile
+                    ? navbar(color, '24px 64px')
+                    : navbar(color, '24px 128px')
+            }
+          )`}
+            >
+                <a href="/" className={cx(navbarTitle)}>
+                    {title}
+                </a>
 
-            {isMobile ? (
-                <div
-                    className={`cx(
+                {isMobile ? (
+                    <div
+                        className={`cx(
             ${showMenu ? navbarCrossMenuButton : navbarHamburgerMenuButton}
           )`}
-                    onClick={toggleMenu}
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            ) : (
-                <div className={cx(navlinks)}>
-                    {links.map((link, index) => (
-                        <a href={`/${link}`} key={index}>
-                            {link}
-                        </a>
-                    ))}
-                </div>
-            )}
-
+                        onClick={toggleMenu}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                ) : (
+                    <div className={cx(navlinks)}>
+                        {links.map((link, index) => (
+                            <a href={`/${link}`} key={index}>
+                                {link}
+                            </a>
+                        ))}
+                    </div>
+                )}
+            </nav>
             {isMobile ? (
                 <div
                     className={`cx(
@@ -69,7 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ title, links }) => {
                     ))}
                 </div>
             ) : null}
-        </nav>
+        </div>
     );
 };
 
