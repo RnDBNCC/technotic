@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from 'react'
-import { cx } from '@emotion/css'
+import React, { useState, useEffect } from 'react';
+import { cx } from '@emotion/css';
 
-import { NavbarProps } from './types'
+import { NavbarProps } from './types';
 
-import * as styles from './styles'
+import * as styles from './styles';
 
 const Navbar: React.FC<NavbarProps> = ({
-  title = 'technotic',
-  links = ['Link1', 'Link2', 'Link3', 'Link4'],
-  color = '#22539F'
+    title = 'technotic',
+    links = ['Link1', 'Link2', 'Link3', 'Link4'],
+    color = '#22539F',
 }) => {
-  const [showMenu, setShowMenu] = useState(false)
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const [showMenu, setShowMenu] = useState(false);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const handleResize: () => void = () =>
-      setScreenWidth(window.innerWidth)
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+    useEffect(() => {
+        const handleResize: () => void = () =>
+            setScreenWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-  const isMobile = screenWidth <= 1024
+    const isMobile = screenWidth <= 1024;
 
-  const toggleMenu: () => void = () => {
-    setShowMenu(!showMenu)
-  }
+    const toggleMenu: () => void = () => {
+        setShowMenu(!showMenu);
+    };
 
-  return (
-        <div className={cx(styles.styNavbarContainer)}>
+    return (
+        <nav className={cx(styles.styNavbarContainer)}>
             {' '}
-            <nav
+            <div
                 className={`cx(
             ${
                 isMobile
@@ -44,8 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     {title}
                 </a>
 
-                {isMobile
-                  ? (
+                {isMobile ? (
                     <div
                         className={`cx(
             ${
@@ -60,8 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({
                         <span></span>
                         <span></span>
                     </div>
-                    )
-                  : (
+                ) : (
                     <div className={cx(styles.styNavlinks)}>
                         {links.map((link, index) => (
                             <a href={`/${link}`} key={index}>
@@ -69,10 +67,9 @@ const Navbar: React.FC<NavbarProps> = ({
                             </a>
                         ))}
                     </div>
-                    )}
-            </nav>
-            {isMobile
-              ? (
+                )}
+            </div>
+            {isMobile ? (
                 <div
                     className={`cx(
           ${
@@ -88,10 +85,9 @@ const Navbar: React.FC<NavbarProps> = ({
                         </a>
                     ))}
                 </div>
-                )
-              : null}
-        </div>
-  )
-}
+            ) : null}
+        </nav>
+    );
+};
 
-export default Navbar
+export default Navbar;
