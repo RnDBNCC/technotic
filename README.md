@@ -30,17 +30,15 @@ To setup Technotic, use:
 npm install # or npm i
 ```
 
-Link Technotic and React App in React's package.json:
-
-##### Example
-```
-"technotic": "file:///C:\\Users\\Joshua Jevon Irawan\\Documents\\BNCCDesignSystem\\technotic",
-```
-
-Connect React App with Technotic, use:
+Copy your Technotic's Folder Path and paste in React's terminal to connect Technotic and React App:
 
 ```
-npm install # or npm i
+npm install "[path]" # or npm i "[path]"
+
+// Example
+
+npm i "file:///C:\\Users\\Joshua Jevon Irawan\\Documents\\BNCCDesignSystem\\technotic"
+
 ```
 
 Run React App, use:
