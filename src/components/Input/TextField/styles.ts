@@ -1,8 +1,13 @@
 import { css } from '@emotion/css';
 
-const MEDIUM_SIZE = '1rem 1.5rem';
-const SMALL_SIZE = '0.5rem 1rem';
-const LARGE_SIZE = '1.5rem 2rem';
+const SMALL_SIZE = '16px 4px';
+const SMALL_WIDTH = '320px';
+
+const MEDIUM_SIZE = '24px';
+const MEDIUM_WIDTH = '380px';
+
+const LARGE_SIZE = '28px';
+const LARGE_WIDTH = '560px';
 
 const SUCCESS_STATUS = '3px solid green';
 const ERROR_STATUS = '3px solid red';
@@ -16,12 +21,15 @@ export const styInput = css({
 
     '&.small': {
         padding: SMALL_SIZE,
+        width: SMALL_WIDTH,
     },
     '&.medium': {
         padding: MEDIUM_SIZE,
+        width: MEDIUM_WIDTH,
     },
     '&.large': {
         padding: LARGE_SIZE,
+        width: LARGE_WIDTH,
     },
 
     '&.success': {

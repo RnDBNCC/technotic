@@ -12,7 +12,8 @@ export interface TextFieldProps
     textLabel?: string;
     fontSize?: string;
     borderRadius?: string;
-    icon?: string;
+    iconLeft?: string;
+    iconRight?: string;
     textPlaceholder?: string;
     status?: StatusType;
 }

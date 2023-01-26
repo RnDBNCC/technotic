@@ -14,7 +14,8 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
         textLabel,
         fontSize = '20px',
         borderRadius = '10px',
-        icon,
+        iconLeft,
+        iconRight,
         textPlaceholder = 'Placeholder',
         status,
         height,
@@ -42,7 +43,7 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                 style={{ borderRadius }}
             >
                 <i>
-                    <img style={{ height }} src={icon} alt="icon" />
+                    <img style={{ height }} src={iconLeft} alt="" />
                 </i>
                 <input
                     className={styles}
@@ -51,6 +52,9 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                     type="text"
                     placeholder={textPlaceholder}
                 />
+                <button>
+                    <img style={{ height }} src={iconRight} alt="" />
+                </button>
             </div>
         </>
     );
