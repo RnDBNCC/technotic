@@ -1,6 +1,6 @@
 # What's Technotic?
 
-![Technotic](https://user-images.githubusercontent.com/90307879/214736164-94bcc53e-ec4f-4576-bf6e-f0108a8c2700.png)
+<img src="https://user-images.githubusercontent.com/90307879/214736164-94bcc53e-ec4f-4576-bf6e-f0108a8c2700.png" width="400" height="400">
 
 Taken from several BNCC event names such as BNCC Techno Talk and BNCC Technoscape.
 
