@@ -4,8 +4,8 @@ Taken from several BNCC event names such as BNCC Techno Talk and BNCC Technoscap
 
 ## Commands
 
-# Before using Technotic, make sure your node version is around 14.0.0
-# Otherwise, you can't setup Technotic
+### Before using Technotic, make sure your node version is around 14.0.0
+### Otherwise, you can't setup Technotic
 
 Clone this repository, use:
 
