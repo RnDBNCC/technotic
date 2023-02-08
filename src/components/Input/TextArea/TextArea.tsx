@@ -1,20 +1,15 @@
-import React from 'react';
+import { cx } from '@emotion/css';
+import React, { PropsWithChildren } from 'react';
 import { TextAreaProps } from './TextAreaProps';
-// import * as style from './style';
+import { textAreaStyle } from './styles';
 
-const TextArea = (
-    props: React.PropsWithChildren<TextAreaProps>
-): JSX.Element => {
-    // const className = `${String(style.TextAreaStyle)}`;
+const TextArea = (props: PropsWithChildren<TextAreaProps>): JSX.Element => {
+    const { placeholder, text } = props;
 
     return (
-        <div>
-            <label style={{ fontSize: props.fontSize }}>
-                {props.textLabel}
-            </label>
-
-            <textarea placeholder={props.placeholder}>{props.text}</textarea>
-        </div>
+        <textarea className={cx(textAreaStyle)} placeholder={placeholder}>
+            {text}
+        </textarea>
     );
 };
 

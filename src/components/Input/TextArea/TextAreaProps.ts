@@ -1,8 +1,10 @@
-export interface TextAreaProps {
+import { InputHTMLAttributes, DetailedHTMLProps } from 'react';
+
+export interface TextAreaProps
+    extends DetailedHTMLProps<
+        InputHTMLAttributes<HTMLInputElement>,
+        HTMLInputElement
+    > {
     placeholder?: string;
     text?: string;
-    textLabel?: string;
-    fontSize?: string;
-    // status?:string;
-    // size?:string;
 }
