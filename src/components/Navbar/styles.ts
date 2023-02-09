@@ -1,4 +1,4 @@
-import { css, injectGlobal } from '@emotion/css'
+import { css, injectGlobal } from '@emotion/css';
 
 injectGlobal`
 *{
@@ -10,27 +10,26 @@ a{
     text-decoration: none;
     cursor: pointer;
     color: #fbfbfb;
-}`
+}`;
 
 export const styNavbarContainer = css`
     position: fixed;
     width: 100%;
-`
+`;
 
-export const styNavbar = (color: string, padding: string): string => css`
+export const styNavbar = (bgColor: string, padding: string): string => css`
     z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: ${padding};
-    background-color: ${color};
-    color: #fbfbfb;
+    background-color: ${bgColor};
     font-size: 1rem;
     height: 100px;
     max-height: 100px;
-`
+`;
 
-export const styNavlinks = css`
+export const styNavlinks = (fontColor: string): string => css`
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -38,6 +37,7 @@ export const styNavlinks = css`
     & a {
         display: inline-block;
         position: relative;
+        color: ${fontColor};
     }
     & a::after {
         content: '';
@@ -55,7 +55,7 @@ export const styNavlinks = css`
         transform: scaleX(1);
         transform-origin: bottom left;
     }
-`
+`;
 
 export const styNavbarHamburgerMenuButton = css`
     position: relative;
@@ -81,7 +81,7 @@ export const styNavbarHamburgerMenuButton = css`
         transform: translateY(6px);
         transition: transform 0.2s ease;
     }
-`
+`;
 
 export const styNavbarCrossMenuButton = css`
     position: relative;
@@ -111,7 +111,7 @@ export const styNavbarCrossMenuButton = css`
         transform: rotate(-45deg);
         transition: transform 0.2s ease;
     }
-`
+`;
 
 export const styMobileNavlinksOpen = css`
     position: absolute;
@@ -130,7 +130,7 @@ export const styMobileNavlinksOpen = css`
         padding: 2rem;
         text-align: center;
     }
-`
+`;
 
 export const styMobileNavlinksClose = css`
     position: absolute;
@@ -149,9 +149,10 @@ export const styMobileNavlinksClose = css`
         padding: 2rem;
         text-align: center;
     }
-`
+`;
 
-export const styNavbarTitle = css`
+export const styNavbarTitle = (fontColor: string): string => css`
+    color: ${fontColor};
     font-weight: 800;
     font-size: 1.5rem;
     display: flex;
@@ -161,4 +162,4 @@ export const styNavbarTitle = css`
         height: 36px;
         object-fit: contain;
     }
-`
+`;

@@ -8,7 +8,8 @@ import * as styles from './styles';
 const Navbar: React.FC<NavbarProps> = ({
     title = 'technotic',
     links = ['Link1', 'Link2', 'Link3', 'Link4'],
-    color = '#22539F',
+    bgColor = '#22539F',
+    fontColor = '#FBFBFB',
 }) => {
     const [showMenu, setShowMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -35,12 +36,12 @@ const Navbar: React.FC<NavbarProps> = ({
                 className={`cx(
             ${
                 isMobile
-                    ? styles.styNavbar(color, '24px 64px')
-                    : styles.styNavbar(color, '24px 128px')
+                    ? styles.styNavbar(bgColor, '24px 64px')
+                    : styles.styNavbar(bgColor, '24px 128px')
             }
           )`}
             >
-                <a href="/" className={cx(styles.styNavbarTitle)}>
+                <a href="/" className={cx(styles.styNavbarTitle(fontColor))}>
                     {title}
                 </a>
 
@@ -60,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({
                         <span></span>
                     </div>
                 ) : (
-                    <div className={cx(styles.styNavlinks)}>
+                    <div className={cx(styles.styNavlinks(fontColor))}>
                         {links.map((link, index) => (
                             <a href={`/${link}`} key={index}>
                                 {link}
