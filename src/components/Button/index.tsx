@@ -1,16 +1,23 @@
 import React, { PropsWithChildren, MouseEvent } from 'react';
-import { styButtonPrimary, styUndefinedBtn } from './styles';
+import { styButtonPrimary, styButtonSecondary } from './styles';
 import { ButtonProps } from './buttonProps';
-import { isValidHttpUrl, Route } from './Route';
-import { cx } from '@emotion/css';
+import { isValidHttpUrl, Route } from '../../Utils/httpValidation';
 
 const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
-    const { btnSize, btntype, btnColor, link, element, children, ...rest } =
-        props;
+    const {
+        btnSize = 'medium',
+        btnType = 'primary',
+        btnColor,
+        link,
+        element,
+        children,
+        ...rest
+    } = props;
     const className =
-        btnSize !== undefined
+        btnType === 'primary'
             ? `${btnSize} ${styButtonPrimary}`
-            : cx(styButtonPrimary, styUndefinedBtn);
+            : `${btnSize} ${styButtonSecondary}`;
+
     const color = { backgroundColor: btnColor };
 
     const handleClick = (e: MouseEvent): void => {
@@ -28,8 +35,8 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
     return (
         <div>
             <button
-                onClick={handleClick}
                 {...rest}
+                onClick={handleClick}
                 style={color}
                 className={className}
             >

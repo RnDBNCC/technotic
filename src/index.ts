@@ -7,3 +7,4 @@ export { default as DatePicker } from './components/DatePicker';
 
 export { TypographyProps } from './components/Typography/TypographyProps';
 export { DatePickerProps } from './components/DatePicker/DatePickerProps';
+export { default as Button } from './components/Button';
