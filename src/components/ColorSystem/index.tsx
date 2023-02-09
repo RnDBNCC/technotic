@@ -1,5 +1,5 @@
-// const isDarkMode = () => window. matchMedia && window. matchMedia('(prefers-color-scheme: dark)');
-// FONT: isDarkMode() ? '#676767' : '#FFFFFF',
+// cek ke cookies darkmode bukan
+// const isDarkMode = {}
 
 const ColorSystem = {
   BNCC100: '#D2E8FA',
