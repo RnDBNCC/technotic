@@ -9,7 +9,7 @@ export interface ButtonProps
         HTMLButtonElement
     > {
     btnSize?: SizeType;
-    btntype?: ButtonType;
+    btnType?: ButtonType;
     btnColor?: string;
     link?: string;
     element?: any;
