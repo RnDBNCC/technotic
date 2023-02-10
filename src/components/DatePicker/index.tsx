@@ -11,8 +11,6 @@ const DatePicker = (props: PropsWithChildren<DatePickerProps>): JSX.Element => {
     const datePickerStatus =
         status !== undefined ? `${status} ${styDatePicker}` : cx(styDatePicker);
 
-    console.log(rest);
-
     return (
         <div className={cx(styLayout)}>
             <input

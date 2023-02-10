@@ -1,4 +1,6 @@
 import { css } from '@emotion/css';
+// import montserrat from '../../assets/fonts/Montserrat-Regular.ttf';
+// import poppins from '../../assets/fonts/Poppins-Regular.ttf';
 
 // Font
 const HEADING = 'montserrat';
