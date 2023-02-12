@@ -13,7 +13,10 @@ export interface TextFieldProps
     fontSize?: string;
     borderRadius?: string;
     iconLeft?: string;
-    iconRight?: string;
+    iconButton?: string;
+    iconHeight?: string;
     textPlaceholder?: string;
     status?: StatusType;
+    textButton?: string;
+    backgroundButtonColor?: string;
 }

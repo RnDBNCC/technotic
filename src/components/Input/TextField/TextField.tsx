@@ -5,6 +5,10 @@ import {
     styTextField,
     styInputDefault,
     styStatusDefault,
+    styButtonIcon,
+    styButtonText,
+    styButtonDefault,
+    styInputBorder,
 } from './styles';
 import { TextFieldProps } from './TextFieldProps';
 
@@ -13,19 +17,21 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
         inputSize = 'medium',
         textLabel,
         fontSize = '20px',
-        borderRadius = '10px',
+        borderRadius = '15px',
         iconLeft,
-        iconRight,
+        iconButton,
         textPlaceholder = 'Placeholder',
         status,
-        height,
+        iconHeight,
         width,
+        textButton,
+        backgroundButtonColor,
         ...rest
     } = props;
 
     const inputLayoutSize =
         inputSize !== undefined
-            ? `${inputSize} ${styInput}`
+            ? `${inputSize} ${styInput} `
             : cx(styInputDefault);
 
     const inputStatus =
@@ -33,27 +39,52 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
 
     const styles = `${styTextField}`;
 
+    const buttonIcon =
+        iconButton !== undefined ? `${styButtonIcon}` : cx(styButtonDefault);
+
+    const buttonText =
+        textButton !== undefined ? `${styButtonText}` : cx(styButtonDefault);
+
+    const border = `${styInputBorder}`;
+
     return (
         <>
-            <label style={{ fontSize }} htmlFor="name">
-                {textLabel}
-            </label>
+            <label style={{ fontSize }}>{textLabel}</label>
             <div
-                className={`${inputLayoutSize} ${inputStatus}`}
+                className={`${border} ${inputStatus}`}
                 style={{ borderRadius }}
             >
-                <i>
-                    <img style={{ height }} src={iconLeft} alt="" />
-                </i>
-                <input
-                    className={styles}
-                    style={{ fontSize, width }}
-                    {...rest}
-                    type="text"
-                    placeholder={textPlaceholder}
-                />
-                <button>
-                    <img style={{ height }} src={iconRight} alt="" />
+                <div className={`${inputLayoutSize}`}>
+                    <i>
+                        <img
+                            style={{ height: iconHeight }}
+                            src={iconLeft}
+                            alt=""
+                        />
+                    </i>
+                    <input
+                        className={`${styles}`}
+                        style={{ fontSize }}
+                        {...rest}
+                        type="text"
+                        placeholder={textPlaceholder}
+                    />
+                </div>
+                <button
+                    className={`${buttonIcon}`}
+                    style={{ backgroundColor: backgroundButtonColor }}
+                >
+                    <img
+                        style={{ height: iconHeight }}
+                        src={iconButton}
+                        alt=""
+                    />
+                </button>
+                <button
+                    className={`${buttonText}`}
+                    style={{ fontSize, backgroundColor: backgroundButtonColor }}
+                >
+                    {textButton}
                 </button>
             </div>
         </>

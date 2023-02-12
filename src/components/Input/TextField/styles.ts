@@ -1,23 +1,32 @@
 import { css } from '@emotion/css';
 
-const SMALL_SIZE = '16px 4px';
+const SMALL_SIZE = '8px';
 const SMALL_WIDTH = '320px';
 
-const MEDIUM_SIZE = '24px';
+const MEDIUM_SIZE = '12px';
 const MEDIUM_WIDTH = '380px';
 
-const LARGE_SIZE = '28px';
+const LARGE_SIZE = '14px';
 const LARGE_WIDTH = '560px';
 
 const SUCCESS_STATUS = '3px solid green';
 const ERROR_STATUS = '3px solid red';
 
+export const styInputBorder = css({
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: '15px',
+    width: 'fit-content',
+    border: '3px solid #DCDCDC',
+});
+
 export const styInput = css({
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
     gap: '15px',
     width: 'fit-content',
-    border: '3px solid black',
 
     '&.small': {
         padding: SMALL_SIZE,
@@ -45,13 +54,43 @@ export const styInputDefault = css({
     flexDirection: 'row',
     gap: '15px',
     width: 'fit-content',
+    alignItems: 'center',
 });
 
 export const styStatusDefault = css({
-    border: '3px solid black',
+    border: '3px solid #DCDCDC',
 });
 
 export const styTextField = css({
     border: 'none',
     outline: 'none',
+});
+
+export const styButtonIcon = css({
+    overflowX: 'hidden',
+    overflowY: 'hidden',
+    width: '10%',
+    paddingTop: '3.5%',
+    paddingBottom: '3.5%',
+    margin: '0',
+    border: 'none',
+    borderRadius: '0px 12px 12px 0px',
+    cursor: 'pointer',
+});
+
+export const styButtonText = css({
+    overflowX: 'hidden',
+    overflowY: 'hidden',
+    width: 'max-content',
+    paddingTop: '3%',
+    paddingBottom: '3%',
+    margin: '0',
+    border: 'none',
+    borderRadius: '0px 12px 12px 0px',
+    cursor: 'pointer',
+    color: 'white',
+});
+
+export const styButtonDefault = css({
+    display: 'none',
 });
