@@ -6,6 +6,6 @@ Explain the task
 
 ### Screenshots
 
-- *Before*
+-   **Before**
 
-- *After*
+-   **After**
