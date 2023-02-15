@@ -20,7 +20,7 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
         borderRadius = '15px',
         iconLeft,
         iconButton,
-        textPlaceholder = 'Placeholder',
+        textPlaceholder = 'Insert Here',
         status,
         iconHeight,
         width,
@@ -64,7 +64,7 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                     </i>
                     <input
                         className={`${styles}`}
-                        style={{ fontSize, width }}
+                        style={{ fontSize }}
                         {...rest}
                         type="text"
                         placeholder={textPlaceholder}

@@ -64,7 +64,7 @@ export const styStatusDefault = css({
 export const styTextField = css({
     border: 'none',
     outline: 'none',
-    width: '28vw',
+    width: '100%',
 });
 
 export const styButtonIcon = css({
