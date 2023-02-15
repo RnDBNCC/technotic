@@ -23,7 +23,6 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
         textPlaceholder = 'Insert Here',
         status,
         iconHeight,
-        width,
         textButton,
         backgroundButtonColor,
         ...rest
