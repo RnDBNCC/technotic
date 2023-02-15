@@ -9,6 +9,7 @@ on:
 
 jobs:
   main:
+    name: PR Title Check
     runs-on: ubuntu-latest
     steps:
       # Please look up the latest version from
