@@ -64,7 +64,7 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                     </i>
                     <input
                         className={`${styles}`}
-                        style={{ fontSize }}
+                        style={{ fontSize, width }}
                         {...rest}
                         type="text"
                         placeholder={textPlaceholder}
