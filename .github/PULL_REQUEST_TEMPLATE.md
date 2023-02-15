@@ -1,11 +1,11 @@
 Developer: <Name>
 
-### What this task is about
+### Task Summary
 
-Short and simple explanation about what this task is about
+Explain the task
 
 ### Screenshots
 
-- **Before**
+- *Before*
 
-- **After**
+- *After*
