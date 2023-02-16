@@ -21,7 +21,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
               with:
-                  ref: "{{ github.event.inputs.branch }}"
+                  ref: ${{ github.event.inputs.branch }}
             - uses: actions/setup-node@v3
               with:
                   node-version: 14
@@ -29,7 +29,7 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                  version-type:  "{{ github.event.inputs.version-type }}"
+                  version-type:  ${{ github.event.inputs.version-type }}
             - run: npm ci
 
     publish-npm:
@@ -38,7 +38,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
               with:
-                  ref: "{{ github.event.inputs.branch }}"
+                  ref: ${{ github.event.inputs.branch }}
             - uses: actions/setup-node@v3
               with:
                   node-version: 14
