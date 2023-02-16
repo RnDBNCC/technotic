@@ -1,21 +1,35 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: publish
+name: Technotic Publish Action
 
-on:
-    push:
-        branches:
-            - publish
+on: 
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Define branch name'     
+        required: true
+        default: 'production'
+      version-type:
+        description: 'Define version type!, [major | minor | patch]'
+        required: true
+        default: 'minor'
 
 jobs:
     release:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+              with:
+                  ref: "{{ github.event.inputs.branch }}"
             - uses: actions/setup-node@v3
               with:
                   node-version: 14
+            - uses: 'phips28/gh-action-bump-version@master'
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  version-type:  "{{ github.event.inputs.version-type }}"
             - run: npm ci
 
     publish-npm:
@@ -23,6 +37,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+              with:
+                  ref: "{{ github.event.inputs.branch }}"
             - uses: actions/setup-node@v3
               with:
                   node-version: 14
