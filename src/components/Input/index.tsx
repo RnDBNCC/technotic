@@ -1,6 +1,6 @@
 import { ForwardRefExoticComponent } from 'react';
 import InternalInput, { InputProps } from './Input';
-import Radio from './Radio/Radio';
+import Radio from './Radio/RadioList/RadioList';
 
 export { radioProps } from './Radio/radioProps';
 

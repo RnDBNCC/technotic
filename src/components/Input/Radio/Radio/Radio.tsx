@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { radioProps } from './radioProps';
-import { RadioStyle } from './styles';
+import { RadioStyle } from '../styles';
 // import { cx } from '@emotion/css';
 
 const Radio = (props: PropsWithChildren<radioProps>): JSX.Element => {
