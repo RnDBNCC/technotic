@@ -47,3 +47,22 @@ jobs:
             - run: npm publish --access public
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    create-pr:
+        needs: publish-npm
+        runs-on: ubuntu-latest
+        steps:
+            - name: Set current date as env variable
+              run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+            - uses: peter-evans/create-pull-request@v4
+              with: 
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  committer: Satpam RnD <noreply@bncc.net>
+                  author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+                  title: "chore: production sync on ${{ env.NOW }}"
+                  body: |
+                    Auto Version Sync After Publish
+                    - Updated with *today's* date
+                    - This PR is Auto-generated.
+                  labels: |
+                    automated pr
+                  
