@@ -54,15 +54,18 @@ jobs:
             - name: Set current date as env variable
               run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
             - uses: peter-evans/create-pull-request@v4
-              with: 
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  committer: Satpam RnD <noreply@bncc.net>
-                  author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-                  title: "chore: production sync on ${{ env.NOW }}"
-                  body: |
-                    Auto Version Sync After Publish
-                    - Updated with *today's* date
-                    - This PR is Auto-generated.
-                  labels: |
-                    automated pr
-                  
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                commit-message: "chore: auto sync after publish"
+                committer: Satpam RnD <noreply@bncc.net>
+                author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+                signoff: false
+                branch: ${{ github.event.inputs.branch }}
+                title: 'chore: auto sync after publish ${{ env.NOW }}'
+                body: |
+                  Auto Sync After Publish
+                  - Updated with *today's* date
+                  - this is an auto-generated PR
+                labels: |
+                  automated pr
+                draft: false
