@@ -27,6 +27,8 @@ export const styInput = css({
     alignItems: 'center',
     gap: '15px',
     width: 'fit-content',
+    backgroundColor: 'white',
+    borderRadius: '12px',
 
     '&.small': {
         padding: SMALL_SIZE,
