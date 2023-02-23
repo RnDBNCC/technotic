@@ -1,8 +1,11 @@
 import { css } from '@emotion/css';
+// import Fonts from './Fonts';
+
+// const { Montserrat, Poppins } = Fonts
 
 // Font
-const HEADING = 'montserrat';
-const BODY = 'poppins';
+const HEADING = 'Montserrat';
+const BODY = 'Poppins';
 
 // import global font with emotioncss
 
