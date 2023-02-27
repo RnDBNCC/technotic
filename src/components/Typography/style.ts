@@ -1,13 +1,5 @@
 import { css } from '@emotion/css';
-// import Fonts from './Fonts';
-
-// const { Montserrat, Poppins } = Fonts
-
-// Font
-const HEADING = 'Montserrat';
-const BODY = 'Poppins';
-
-// import global font with emotioncss
+// import styles from 'my.module.css';
 
 // Size
 // Heading
@@ -36,78 +28,77 @@ const MEDIUM = '500';
 const SEMI_BOLD = '600';
 const BOLD = '700';
 
-export const styLayout = css({
-    padding: '10px',
-});
+export const styLayout = css`
+    padding: 10px;
+`;
 
 export const styTypography = css({
-    // Size
     // Heading
     '&.heading-1': {
         fontSize: HEADING_1,
-        fontFamily: HEADING,
+        fontFamily: "'Montserrat' , sans-serif",
     },
     '&.heading-2': {
         fontSize: HEADING_2,
-        fontFamily: HEADING,
+        fontFamily: "'Montserrat' , sans-serif",
     },
     '&.heading-3': {
         fontSize: HEADING_3,
-        fontFamily: HEADING,
+        fontFamily: "'Montserrat' , sans-serif",
     },
     '&.heading-4': {
         fontSize: HEADING_4,
-        fontFamily: HEADING,
+        fontFamily: "'Montserrat' , sans-serif",
     },
     '&.heading-5': {
         fontSize: HEADING_5,
-        fontFamily: HEADING,
+        fontFamily: "'Montserrat' , sans-serif",
     },
     '&.heading-6': {
         fontSize: HEADING_6,
-        fontFamily: HEADING,
+        fontFamily: "'Montserrat' , sans-serif",
     },
     '&.heading-7': {
         fontSize: HEADING_7,
-        fontFamily: HEADING,
+        fontFamily: "'Montserrat' , sans-serif",
     },
     '&.heading-8': {
         fontSize: HEADING_8,
-        fontFamily: HEADING,
+        fontFamily: "'Montserrat' , sans-serif",
     },
 
     // Body
     '&.body-1': {
         fontSize: BODY_1,
-        fontFamily: BODY,
+        fontFamily: "'Poppins' , sans-serif",
     },
     '&.body-2': {
         fontSize: BODY_2,
-        fontFamily: BODY,
+        fontFamily: "'Poppins' , sans-serif",
     },
     '&.body-3': {
         fontSize: BODY_3,
-        fontFamily: BODY,
+        fontFamily: "'Poppins' , sans-serif",
     },
     '&.body-4': {
         fontSize: BODY_4,
-        fontFamily: BODY,
+        fontFamily: "'Poppins' , sans-serif",
     },
     '&.body-5': {
         fontSize: BODY_5,
-        fontFamily: BODY,
+        fontFamily: "'Poppins' , sans-serif",
     },
     '&.body-6': {
         fontSize: BODY_6,
-        fontFamily: BODY,
+        fontFamily: "'Poppins' , sans-serif",
     },
     '&.body-7': {
         fontSize: BODY_7,
-        fontFamily: BODY,
+        fontFamily: "'Poppins' , sans-serif",
     },
     '&.body-8': {
         fontSize: BODY_8,
-        fontFamily: BODY,
+        fontFamily: "'Poppins' , sans-serif",
     },
 
     // Weight
@@ -127,6 +118,6 @@ export const styTypography = css({
 
 export const styUndefinedTypography = css({
     fontSize: BODY_5,
-    fontFamily: BODY,
+    fontFamily: 'Poppins',
     fontWeight: REGULAR,
 });

@@ -16,7 +16,7 @@ const Typography = (props: PropsWithChildren<TypographyProps>): JSX.Element => {
             ? `${weight} ${styTypography}`
             : cx(styTypography, styUndefinedTypography);
     return (
-        <div className={cx(styLayout)}>
+        <div className={styLayout}>
             <p
                 style={{ color }}
                 className={`${typographySize} ${typographyWeight}`}
