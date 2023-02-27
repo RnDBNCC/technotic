@@ -7,6 +7,7 @@ Taken from several BNCC event names such as BNCC Techno Talk and BNCC Technoscap
 ## Commands
 
 ### Before using Technotic, make sure your node version is around 14.0.0
+
 ### Otherwise, you can't setup Technotic
 
 Clone this repository, use:
@@ -16,6 +17,7 @@ git clone https://github.com/RnDBNCC/technotic.git
 ```
 
 Don't forget to create react app, use:
+
 ```
 npx create-react-app [name]
 ```
