@@ -1,5 +1,5 @@
-// https://eslint.org/docs/head/use/configure/configuration-files
-// https://github.com/eslint/eslint/issues/13124
+// https://commitlint.js.org/#/reference-rules
+// https://yarnpkg.com/package/@commitlint/config-conventional
 
 module.exports = {
   extends: ['@commitlint/config-conventional'],
