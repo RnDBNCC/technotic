@@ -1,22 +1,23 @@
-import React from 'react';
-import { navbarContainerStyle } from './styles';
-import { Person } from './types';
-import { cx } from '@emotion/css';
+import React from 'react'
+import { navbarContainerStyle } from './styles'
+import { Person } from './types'
+import { cx } from '@emotion/css'
 
 interface NavbarProps {
-    link: number;
-    link2?: string;
-    person: Person[];
+  link: number
+  link2?: string
+  person: Person[]
 }
 
 const Navbar = ({ link2 }: NavbarProps): JSX.Element => {
-    return (
+  return (
         <div className={cx(navbarContainerStyle)}>
             <a href={link2}>Testing1</a>
             <a href="">Testing2</a>
+            <a href="">Testing3</a>
         </div>
-    );
-};
+  )
+}
 
 // const Testing = () => {
 //     return (
@@ -31,4 +32,4 @@ const Navbar = ({ link2 }: NavbarProps): JSX.Element => {
 //     );
 // };
 
-export default Navbar;
+export default Navbar
