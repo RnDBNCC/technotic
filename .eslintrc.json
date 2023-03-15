@@ -3,11 +3,7 @@
         "browser": true,
         "es2022": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "standard-with-typescript",
-        "airbnb"
-    ],
+    "extends": ["plugin:react/recommended", "standard-with-typescript"],
     "overrides": [],
     "parserOptions": {
         "ecmaVersion": "latest",
