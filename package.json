@@ -59,8 +59,18 @@
     },
     "dependencies": {
         "@emotion/css": "^11.10.5",
+<<<<<<< HEAD
         "@types/react": "^18.0.25",
         "eslint-config-airbnb": "^19.0.4"
+=======
+        "@rollup/plugin-image": "^3.0.2",
+        "@types/react": "^18.0.25",
+        "autoprefixer": "^10.4.14",
+        "cssnano": "^5.1.15",
+        "eslint-config-airbnb": "^19.0.4",
+        "postcss": "^8.4.21",
+        "rollup-plugin-postcss": "^4.0.2"
+>>>>>>> ac8ba2e (feat(footer): fixed import svg issue, add icon component, changed footer prop, refactor footer code)
     },
     "peerDependencies": {
         "rc-input": "^0.1.4",

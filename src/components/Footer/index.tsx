@@ -1,30 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { cx } from '@emotion/css'
-
 import { FooterProps } from './types'
-
 import * as styles from './styles'
-
-// import facebookIcon from '../../assets/social-media/facebook.svg';
-// import instagramIcon from '../../assets/social-media/instagram.svg';
-// import linkedinIcon from '../../assets/social-media/linkedin.svg';
-// import twitterIcon from '../../assets/social-media/twitter.svg';
-// import youtubeIcon from '../../assets/social-media/youtube.svg';
+import * as icons from '../Icons'
 
 const Footer: React.FC<FooterProps> = ({
-  name = '{name}',
-  year = '{year}',
-  madeBy = '{madeBy}',
+  name = 'Bina Nusantara Computer Club',
+  year = '2023',
+  createdBy,
   bgColor = '#22539F',
   fontColor = '#FBFBFB',
-  instagramLink = '',
-  facebookLink = '',
-  twitterLink = '',
-  linkedinLink = '',
-  youtubeLink = ''
+  instagramLink,
+  facebookLink,
+  twitterLink,
+  linkedinLink,
+  youtubeLink
 }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-  const [hasSocialMedia, setHasSocialMedia] = useState(false)
 
   useEffect(() => {
     const handleResize: () => void = () =>
@@ -35,31 +27,7 @@ const Footer: React.FC<FooterProps> = ({
     }
   }, [])
 
-  useEffect(() => {
-    if (
-      instagramLink !== '' ||
-            facebookLink !== '' ||
-            twitterLink !== '' ||
-            linkedinLink !== '' ||
-            youtubeLink !== ''
-    ) {
-      setHasSocialMedia(true)
-    }
-  }, [instagramLink, facebookLink, twitterLink, linkedinLink, youtubeLink])
-
   const isMobile = screenWidth <= 1024
-  const socialMediaLinks = [
-    { id: 1, link: facebookLink, alt: 'facebook' },
-    { id: 2, link: instagramLink, alt: 'instagram' },
-    { id: 3, link: twitterLink, alt: 'twitter' },
-    { id: 4, link: linkedinLink, alt: 'linkedin' },
-    { id: 5, link: youtubeLink, alt: 'youtube' }
-    // { link: facebookLink, alt: 'facebook', icon: facebookIcon },
-    // { link: instagramLink, alt: 'instagram', icon: instagramIcon },
-    // { link: twitterLink, alt: 'twitter', icon: twitterIcon },
-    // { link: linkedinLink, alt: 'linkedin', icon: linkedinIcon },
-    // { link: youtubeLink, alt: 'youtube', icon: youtubeIcon },
-  ].filter((link) => link.link !== '')
 
   return (
         <footer
@@ -79,22 +47,61 @@ const Footer: React.FC<FooterProps> = ({
                 >
                     Copyright © {year} {name}, All Right Reserved.
                     <br />
-                    Created with ❤ by {madeBy}
+                    Created with ❤ {createdBy !== '' && `by ${createdBy}`}
                 </p>
             </div>
 
-            {hasSocialMedia && (
+            {(facebookLink !== '' ||
+                instagramLink !== '' ||
+                twitterLink !== '' ||
+                linkedinLink !== '' ||
+                youtubeLink !== '') && (
                 <div className={cx(styles.stySocialMedia)}>
-                    {socialMediaLinks.map((link) => (
+                    {facebookLink !== '' && (
                         <a
-                            key={link.id}
-                            href={link.link}
+                            href={facebookLink}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <img src="" alt={link.alt} />
+                            <icons.FacebookIcon color={fontColor} size={32} />
                         </a>
-                    ))}
+                    )}
+                    {instagramLink !== '' && (
+                        <a
+                            href={instagramLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <icons.InstagramIcon color={fontColor} size={32} />
+                        </a>
+                    )}
+                    {twitterLink !== '' && (
+                        <a
+                            href={twitterLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <icons.TwitterIcon color={fontColor} size={32} />
+                        </a>
+                    )}
+                    {linkedinLink !== '' && (
+                        <a
+                            href={linkedinLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <icons.LinkedInIcon color={fontColor} size={32} />
+                        </a>
+                    )}
+                    {youtubeLink !== '' && (
+                        <a
+                            href={youtubeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <icons.YoutubeIcon color={fontColor} size={32} />
+                        </a>
+                    )}
                 </div>
             )}
         </footer>

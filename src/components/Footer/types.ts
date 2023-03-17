@@ -1,7 +1,7 @@
 export interface FooterProps {
   name: string
   year: string
-  madeBy: string
+  createdBy: string
   bgColor: string
   fontColor: string
   instagramLink: string
