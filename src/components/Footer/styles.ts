@@ -20,7 +20,7 @@ export const styFooterContainer = (
     color: ${fontColor};
     display: flex;
     justify-content: space-between;
-    gap: 4rem;
+    gap: 2rem;
     padding: 48px 128px;
 `
 
