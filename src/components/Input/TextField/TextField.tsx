@@ -1,52 +1,53 @@
-import { cx } from '@emotion/css';
-import React, { PropsWithChildren } from 'react';
+import { cx } from '@emotion/css'
+import React, { PropsWithChildren } from 'react'
 import {
-    styInput,
-    styTextField,
-    styInputDefault,
-    styStatusDefault,
-    styButtonIcon,
-    styButtonText,
-    styButtonDefault,
-    styInputBorder,
-} from './styles';
-import { TextFieldProps } from './TextFieldProps';
+  styInput,
+  styTextField,
+  styInputDefault,
+  styStatusDefault,
+  styButtonIcon,
+  styButtonText,
+  styButtonDefault,
+  styInputBorder
+} from './styles'
+import { TextFieldProps } from './TextFieldProps'
 
 const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
-    const {
-        inputSize = 'medium',
-        textLabel,
-        fontSize = '20px',
-        borderRadius = '15px',
-        iconLeft,
-        iconButton,
-        textPlaceholder = 'Insert Here',
-        status,
-        iconHeight,
-        textButton,
-        backgroundButtonColor,
-        ...rest
-    } = props;
+  const {
+    inputSize = 'medium',
+    textLabel,
+    fontSize = '20px',
+    borderRadius = '15px',
+    iconLeft,
+    iconButton,
+    textPlaceholder = 'Insert Here',
+    status,
+    iconHeight,
+    textButton,
+    backgroundButtonColor,
+    borderRadiusButton,
+    ...rest
+  } = props
 
-    const inputLayoutSize =
+  const inputLayoutSize =
         inputSize !== undefined
-            ? `${inputSize} ${styInput} `
-            : cx(styInputDefault);
+          ? `${inputSize} ${styInput} `
+          : cx(styInputDefault)
 
-    const inputStatus =
-        status !== undefined ? `${status} ${styInput}` : cx(styStatusDefault);
+  const inputStatus =
+        status !== undefined ? `${status} ${styInput}` : cx(styStatusDefault)
 
-    const styles = `${styTextField}`;
+  const styles = `${styTextField}`
 
-    const buttonIcon =
-        iconButton !== undefined ? `${styButtonIcon}` : cx(styButtonDefault);
+  const buttonIcon =
+        iconButton !== undefined ? `${styButtonIcon}` : cx(styButtonDefault)
 
-    const buttonText =
-        textButton !== undefined ? `${styButtonText}` : cx(styButtonDefault);
+  const buttonText =
+        textButton !== undefined ? `${styButtonText}` : cx(styButtonDefault)
 
-    const border = `${styInputBorder}`;
+  const border = `${styInputBorder}`
 
-    return (
+  return (
         <>
             <label style={{ fontSize }}>{textLabel}</label>
             <div
@@ -71,7 +72,10 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                 </div>
                 <button
                     className={`${buttonIcon}`}
-                    style={{ backgroundColor: backgroundButtonColor }}
+                    style={{
+                      backgroundColor: backgroundButtonColor,
+                      borderRadius: borderRadiusButton
+                    }}
                 >
                     <img
                         style={{ height: iconHeight }}
@@ -81,13 +85,17 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                 </button>
                 <button
                     className={`${buttonText}`}
-                    style={{ fontSize, backgroundColor: backgroundButtonColor }}
+                    style={{
+                      fontSize,
+                      backgroundColor: backgroundButtonColor,
+                      borderRadius: borderRadiusButton
+                    }}
                 >
                     {textButton}
                 </button>
             </div>
         </>
-    );
-};
+  )
+}
 
-export default TextField;
+export default TextField
