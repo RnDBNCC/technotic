@@ -13,22 +13,6 @@ function example (btnSize: string, btnType: string): string {
         : 'wrong button type'
 }
 
-// function example(btnType: string, btnSize: string): string {
-//     return btnType === 'primary' ? `${btnSize} ${styButton.Primary}`
-//         : btnType === 'secondary' ? `${btnSize} ${styButton.Secondary}`
-//             : btnType === 'link' ? `${btnSize} ${styButton.Link}`;
-// }
-
-function example(btnSize: string, btnType: string): string {
-    return btnType === 'primary'
-        ? `${btnSize} ${styButton.Primary}`
-        : btnType === 'secondary'
-        ? `${btnSize} ${styButton.Secondary}`
-        : btnType === 'link'
-        ? `${btnSize} ${styButton.Link}`
-        : 'wrong button type';
-}
-
 const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
   const {
     btnSize = 'medium',
