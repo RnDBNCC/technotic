@@ -1,7 +1,23 @@
 import React, { PropsWithChildren, MouseEvent } from 'react';
-import { styButtonPrimary, styButtonSecondary } from './styles';
+import { styButton } from './styles';
 import { ButtonProps } from './buttonProps';
 import { isValidHttpUrl, Route } from '../../Utils/httpValidation';
+
+// function example(btnType: string, btnSize: string): string {
+//     return btnType === 'primary' ? `${btnSize} ${styButton.Primary}`
+//         : btnType === 'secondary' ? `${btnSize} ${styButton.Secondary}`
+//             : btnType === 'link' ? `${btnSize} ${styButton.Link}`;
+// }
+
+function example(btnSize: string, btnType: string): string {
+    return btnType === 'primary'
+        ? `${btnSize} ${styButton.Primary}`
+        : btnType === 'secondary'
+        ? `${btnSize} ${styButton.Secondary}`
+        : btnType === 'link'
+        ? `${btnSize} ${styButton.Link}`
+        : 'wrong button type';
+}
 
 const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
     const {
@@ -13,10 +29,7 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
         children,
         ...rest
     } = props;
-    const className =
-        btnType === 'primary'
-            ? `${btnSize} ${styButtonPrimary}`
-            : `${btnSize} ${styButtonSecondary}`;
+    const className = example(btnSize, btnType);
 
     const color = { backgroundColor: btnColor };
 
