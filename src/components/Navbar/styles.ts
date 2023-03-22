@@ -1,4 +1,4 @@
-import { css, injectGlobal } from '@emotion/css';
+import { css, injectGlobal } from '@emotion/css'
 
 injectGlobal`
 *{
@@ -10,14 +10,14 @@ a{
     text-decoration: none;
     cursor: pointer;
     color: #fbfbfb;
-}`;
+}`
 
-export const navbarContainer = css`
+export const styNavbarContainer = css`
     position: fixed;
     width: 100%;
-`;
+`
 
-export const navbar = (color: string, padding: string): string => css`
+export const styNavbar = (color: string, padding: string): string => css`
     z-index: 10;
     display: flex;
     justify-content: space-between;
@@ -28,9 +28,9 @@ export const navbar = (color: string, padding: string): string => css`
     font-size: 1rem;
     height: 100px;
     max-height: 100px;
-`;
+`
 
-export const navlinks = css`
+export const styNavlinks = css`
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -55,9 +55,9 @@ export const navlinks = css`
         transform: scaleX(1);
         transform-origin: bottom left;
     }
-`;
+`
 
-export const navbarHamburgerMenuButton = css`
+export const styNavbarHamburgerMenuButton = css`
     position: relative;
     height: 100%;
     width: 16px;
@@ -81,9 +81,9 @@ export const navbarHamburgerMenuButton = css`
         transform: translateY(6px);
         transition: transform 0.2s ease;
     }
-`;
+`
 
-export const navbarCrossMenuButton = css`
+export const styNavbarCrossMenuButton = css`
     position: relative;
     height: 100%;
     width: 16px;
@@ -111,9 +111,9 @@ export const navbarCrossMenuButton = css`
         transform: rotate(-45deg);
         transition: transform 0.2s ease;
     }
-`;
+`
 
-export const mobileNavlinksOpen = css`
+export const styMobileNavlinksOpen = css`
     position: absolute;
     z-index: -10;
     top: 0;
@@ -130,9 +130,9 @@ export const mobileNavlinksOpen = css`
         padding: 2rem;
         text-align: center;
     }
-`;
+`
 
-export const mobileNavlinksClose = css`
+export const styMobileNavlinksClose = css`
     position: absolute;
     z-index: -10;
     top: 0;
@@ -149,9 +149,9 @@ export const mobileNavlinksClose = css`
         padding: 2rem;
         text-align: center;
     }
-`;
+`
 
-export const navbarTitle = css`
+export const styNavbarTitle = css`
     font-weight: 800;
     font-size: 1.5rem;
     display: flex;
@@ -161,4 +161,4 @@ export const navbarTitle = css`
         height: 36px;
         object-fit: contain;
     }
-`;
+`
