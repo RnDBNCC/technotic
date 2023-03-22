@@ -3,18 +3,19 @@ import { cx } from '@emotion/css'
 import { FooterProps } from './types'
 import * as styles from './styles'
 import * as icons from '../Icons'
+import isStringEmpty from '../../utils/isStringEmpty'
 
 const Footer: React.FC<FooterProps> = ({
   name = 'Bina Nusantara Computer Club',
   year = '2023',
-  createdBy = '',
+  createdBy,
   bgColor = '#22539F',
   fontColor = '#FBFBFB',
-  instagramLink = '',
-  facebookLink = '',
-  twitterLink = '',
-  linkedinLink = '',
-  youtubeLink = ''
+  instagramLink,
+  facebookLink,
+  twitterLink,
+  linkedinLink,
+  youtubeLink
 }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
@@ -47,17 +48,18 @@ const Footer: React.FC<FooterProps> = ({
                 >
                     Copyright © {year} {name}, All Right Reserved.
                     <br />
-                    Created with ❤ {createdBy !== '' && `by ${createdBy}`}
+                    Created with ❤&nbsp;
+                    {isStringEmpty(createdBy) && `by ${createdBy}`}
                 </p>
             </div>
 
-            {(facebookLink !== '' ||
-                instagramLink !== '' ||
-                twitterLink !== '' ||
-                linkedinLink !== '' ||
-                youtubeLink !== '') && (
+            {(isStringEmpty(facebookLink) ||
+                isStringEmpty(instagramLink) ||
+                isStringEmpty(twitterLink) ||
+                isStringEmpty(linkedinLink) ||
+                isStringEmpty(youtubeLink)) && (
                 <div className={cx(styles.stySocialMedia)}>
-                    {facebookLink !== '' && (
+                    {isStringEmpty(facebookLink) && (
                         <a
                             href={facebookLink}
                             target="_blank"
@@ -66,7 +68,7 @@ const Footer: React.FC<FooterProps> = ({
                             <icons.FacebookIcon color={fontColor} size={32} />
                         </a>
                     )}
-                    {instagramLink !== '' && (
+                    {isStringEmpty(instagramLink) && (
                         <a
                             href={instagramLink}
                             target="_blank"
@@ -75,7 +77,7 @@ const Footer: React.FC<FooterProps> = ({
                             <icons.InstagramIcon color={fontColor} size={32} />
                         </a>
                     )}
-                    {twitterLink !== '' && (
+                    {isStringEmpty(twitterLink) && (
                         <a
                             href={twitterLink}
                             target="_blank"
@@ -84,7 +86,7 @@ const Footer: React.FC<FooterProps> = ({
                             <icons.TwitterIcon color={fontColor} size={32} />
                         </a>
                     )}
-                    {linkedinLink !== '' && (
+                    {isStringEmpty(linkedinLink) && (
                         <a
                             href={linkedinLink}
                             target="_blank"
@@ -93,7 +95,7 @@ const Footer: React.FC<FooterProps> = ({
                             <icons.LinkedInIcon color={fontColor} size={32} />
                         </a>
                     )}
-                    {youtubeLink !== '' && (
+                    {isStringEmpty(youtubeLink) && (
                         <a
                             href={youtubeLink}
                             target="_blank"
