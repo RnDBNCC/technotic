@@ -1,22 +1,20 @@
 import {
-    ChangeEvent,
-    DetailedHTMLProps,
-    FormEvent,
-    InputHTMLAttributes,
-} from 'react';
+  ChangeEvent,
+  DetailedHTMLProps,
+  FormEvent,
+  InputHTMLAttributes
+} from 'react'
 
-type SizeType = 'small' | 'medium' | 'large';
-type State = 'success' | 'error';
-// type DateType = 'date' | 'week' | 'month' | 'quarter' | 'year';
+type SizeType = 'small' | 'medium' | 'large'
+type State = 'success' | 'error'
 export interface DatePickerProps
-    extends DetailedHTMLProps<
-        InputHTMLAttributes<HTMLInputElement>,
-        HTMLInputElement
-    > {
-    dateSize?: SizeType;
-    status?: State;
-    // dateType?: DateType;
+  extends DetailedHTMLProps<
+  InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+  > {
+  dateSize?: SizeType
+  status?: State
 
-    onInputChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-    onSubmit?: (e: FormEvent) => void;
+  onInputChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  onSubmit?: (e: FormEvent) => void
 }
