@@ -34,7 +34,6 @@ export const styDatePicker = css({
     color: 'grey',
     ':hover': {
         border: HOVER_BORDER,
-        boxShadow: '0 8px 8px -4px' + BNCC,
     },
     ':focus': {
         color: 'black',
