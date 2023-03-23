@@ -8,14 +8,14 @@ import isStringEmpty from '../../utils/isStringEmpty'
 const Footer: React.FC<FooterProps> = ({
   name = 'Bina Nusantara Computer Club',
   year = '2023',
-  createdBy = '',
+  createdBy,
   bgColor = '#22539F',
   fontColor = '#FBFBFB',
-  instagramLink = '',
-  facebookLink = '',
-  twitterLink = '',
-  linkedinLink = '',
-  youtubeLink = ''
+  instagramLink,
+  facebookLink,
+  twitterLink,
+  linkedinLink,
+  youtubeLink
 }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
