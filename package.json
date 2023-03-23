@@ -59,8 +59,13 @@
     },
     "dependencies": {
         "@emotion/css": "^11.10.5",
+        "@rollup/plugin-image": "^3.0.2",
         "@types/react": "^18.0.25",
-        "eslint-config-airbnb": "^19.0.4"
+        "autoprefixer": "^10.4.14",
+        "cssnano": "^5.1.15",
+        "eslint-config-airbnb": "^19.0.4",
+        "postcss": "^8.4.21",
+        "rollup-plugin-postcss": "^4.0.2"
     },
     "peerDependencies": {
         "rc-input": "^0.1.4",
