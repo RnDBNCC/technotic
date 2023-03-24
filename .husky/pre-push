@@ -1,0 +1,25 @@
+#!/bin/bash
+
+current_branch=`git rev-parse --abbrev-ref HEAD`
+if [[ $current_branch =~ master|main ]]; then
+    message="Please don't push directly to $current_branch."
+    echo -e "\033[1;31mERROR: $message\033[0m";
+    exit 1
+fi
+
+repo_dir=`git rev-parse --show-toplevel`
+
+message="[Policy] Doing unit tests ..."
+echo -e "\033[1;34mInfo: $message\033[0m"
+
+pytest $repo_dir/test.py
+
+if [ $? -eq 1 ]; then
+    message="[Policy] Unit tests failed, please check and fix your code."
+    echo -e "\033[1;31mERROR: $message\033[0m";
+    exit 1
+else
+    message="[Policy] Passed unit tests."
+    echo -e "\033[1;32mOK: $message\033[0m"
+    exit 0
+fi
