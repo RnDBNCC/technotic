@@ -12,7 +12,7 @@ Technotic means learning about technology and means to understand how computers 
 
 ##### Download node from this <a href="https://drive.google.com/file/d/1VguQtvCIjNksiAqY_obguCRn4HTgwlJ2/view?usp=sharing"> link</a>
 
-<br />
+
 
 Clone technotic's repository, use:
 
