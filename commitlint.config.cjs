@@ -1,6 +1,3 @@
-// https://commitlint.js.org/#/reference-rules
-// https://yarnpkg.com/package/@commitlint/config-conventional
-
 module.exports = {
     extends: ['@commitlint/config-conventional'],
     rules: {
