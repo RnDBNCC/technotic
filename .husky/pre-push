@@ -12,7 +12,7 @@ repo_dir=`git rev-parse --show-toplevel`
 message="[Policy] Doing unit tests ..."
 echo -e "\033[1;34mInfo: $message\033[0m"
 
-pytest $repo_dir/test.py
+npm run test
 
 if [ $? -eq 1 ]; then
     message="[Policy] Unit tests failed, please check and fix your code."

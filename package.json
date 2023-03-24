@@ -34,6 +34,8 @@
         }
     ],
     "devDependencies": {
+        "@commitlint/cli": "^17.4.4",
+        "@commitlint/config-conventional": "^17.4.4",
         "@size-limit/preset-small-lib": "^8.1.0",
         "@types/webfontloader": "^1.6.35",
         "@typescript-eslint/eslint-plugin": "^5.45.1",
