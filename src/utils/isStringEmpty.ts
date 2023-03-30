@@ -1,5 +1,5 @@
 const isStringEmpty = (value: string | undefined): boolean => {
-  return (value ?? '') !== ''
-}
+    return (value ?? '') !== '';
+};
 
-export default isStringEmpty
+export default isStringEmpty;

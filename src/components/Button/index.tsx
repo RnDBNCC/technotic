@@ -1,45 +1,46 @@
-import React, { PropsWithChildren, MouseEvent } from 'react'
-import { styButton } from './styles'
-import { ButtonProps } from './buttonProps'
-import { isValidHttpUrl, Route } from '../../Utils/httpValidation'
+import React, { PropsWithChildren, MouseEvent } from 'react';
+import { styButton } from './styles';
+import { ButtonProps } from './buttonProps';
+import isRoutes from '../../utils/isRoutes';
+// import { isStringEmpty } from '../../utils/isStringEmpty'
 
-function example (btnSize: string, btnType: string): string {
-  return btnType === 'primary'
-    ? `${btnSize} ${styButton.Primary}`
-    : btnType === 'secondary'
-      ? `${btnSize} ${styButton.Secondary}`
-      : btnType === 'link'
+function cssClassName(btnSize: string, btnType: string): string {
+    return btnType === 'primary'
+        ? `${btnSize} ${styButton.Primary}`
+        : btnType === 'secondary'
+        ? `${btnSize} ${styButton.Secondary}`
+        : btnType === 'link'
         ? `${btnSize} ${styButton.Link}`
-        : 'wrong button type'
+        : 'wrong button type';
 }
 
 const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
-  const {
-    btnSize = 'medium',
-    btnType = 'primary',
-    btnColor,
-    link,
-    element,
-    children,
-    ...rest
-  } = props
-  const className = example(btnSize, btnType)
+    const {
+        btnSize = 'medium',
+        btnType = 'primary',
+        btnColor,
+        link,
+        element,
+        children,
+        ...rest
+    } = props;
+    const className = cssClassName(btnSize, btnType);
 
-  const color = { backgroundColor: btnColor }
+    const color = { backgroundColor: btnColor };
 
-  const handleClick = (e: MouseEvent): void => {
-    if (link !== undefined) {
-      if (element !== undefined) {
-        if (e.metaKey || e.ctrlKey) {
-          return
+    const handleClick = (e: MouseEvent): void => {
+        if (link !== undefined) {
+            if (element !== undefined) {
+                if (e.metaKey || e.ctrlKey) {
+                    return;
+                }
+                e.preventDefault(); // cegah loading
+                isRoutes.Route(link, element);
+            } else isRoutes.isValidHttpUrl(link);
         }
-        e.preventDefault() // cegah loading
-        Route(link, element)
-      } else isValidHttpUrl(link)
-    }
-  }
+    };
 
-  return (
+    return (
         <div>
             <button
                 {...rest}
@@ -50,7 +51,7 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
                 {children}
             </button>
         </div>
-  )
-}
+    );
+};
 
-export default Button
+export default Button;
