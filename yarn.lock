@@ -967,6 +967,7 @@
     "@commitlint/format" "^17.4.4"
     "@commitlint/lint" "^17.4.4"
     "@commitlint/load" "^17.5.0"
+<<<<<<< HEAD
   "integrity" "sha512-HwKlD7CPVMVGTAeFZylVNy14Vm5POVY0WxPkZr7EXLC/os0LH/obs6z4HRvJtH/nHCMYBvUBQhGwnufKfTjd5g=="
   "resolved" "https://registry.npmjs.org/@commitlint/cli/-/cli-17.4.4.tgz"
   "version" "17.4.4"
@@ -980,6 +981,8 @@
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
     "@commitlint/read" "^17.4.4"
     "@commitlint/types" "^17.4.4"
     "execa" "^5.0.0"
@@ -1034,6 +1037,7 @@
 
 "@commitlint/load@^17.5.0":
   "version" "17.5.0"
+<<<<<<< HEAD
 "@commitlint/load@^17.4.4":
   "integrity" "sha512-z6uFIQ7wfKX5FGBe1AkOF4l/ShOQsaa1ml/nLMkbW7R/xF8galGS7Zh0yHvzVp/srtfS0brC+0bUfQfmpMPFVQ=="
   "resolved" "https://registry.npmjs.org/@commitlint/load/-/load-17.4.4.tgz"
@@ -1044,6 +1048,8 @@
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   dependencies:
     "@commitlint/config-validator" "^17.4.4"
     "@commitlint/execute-rule" "^17.4.0"
@@ -1059,11 +1065,14 @@
     "resolve-from" "^5.0.0"
     "ts-node" "^10.8.1"
     "typescript" "^4.6.4 || ^5.0.0"
+<<<<<<< HEAD
 =======
     "typescript" "^4.6.4"
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 
 "@commitlint/message@^17.4.2":
   "version" "17.4.2"
@@ -1498,10 +1507,13 @@
 "@trysound/sax@0.2.0":
   "version" "0.2.0"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "@tsconfig/node10@^1.0.7":
   "version" "1.0.9"
 
@@ -2568,10 +2580,13 @@
 "css-what@^6.0.1":
   "version" "6.1.0"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "cssesc@^3.0.0":
   "version" "3.0.0"
 
@@ -2623,10 +2638,13 @@
   dependencies:
     "css-tree" "^1.1.2"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "cssom@^0.4.1":
   "version" "0.4.4"
 
@@ -2788,10 +2806,13 @@
     "domelementtype" "^2.2.0"
     "domhandler" "^4.2.0"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "dot-prop@^5.1.0":
   "version" "5.3.0"
   dependencies:
@@ -2834,10 +2855,13 @@
 "entities@^2.0.0":
   "version" "2.2.0"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "errno@^0.1.1":
   "version" "0.1.8"
   dependencies:
@@ -3500,6 +3524,7 @@
 
 "fs-extra@^11.0.0":
   "version" "11.1.1"
+<<<<<<< HEAD
 =======
   "integrity" "sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw=="
   "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-11.1.0.tgz"
@@ -3507,6 +3532,8 @@
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   dependencies:
     "graceful-fs" "^4.2.0"
     "jsonfile" "^6.0.1"
@@ -3786,10 +3813,13 @@
 "icss-replace-symbols@^1.1.0":
   "version" "1.1.0"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "icss-utils@^5.0.0", "icss-utils@^5.1.0":
   "version" "5.1.0"
 
@@ -3809,6 +3839,7 @@
   "version" "3.0.0"
   dependencies:
     "import-from" "^3.0.0"
+<<<<<<< HEAD
 =======
   "integrity" "sha512-WDxL3Hheb1JkRN3sQkyujNlL/xRjAo3rJtaU5xeufUauG66JdMr32bLj4gF+vWl84DIA3Zxw7tiAjneYzRRw+w=="
   "resolved" "https://registry.npmjs.org/immutable/-/immutable-4.2.4.tgz"
@@ -3816,6 +3847,8 @@
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 
 "import-fresh@^3.0.0", "import-fresh@^3.1.0", "import-fresh@^3.2.1":
   "version" "3.3.0"
@@ -4650,6 +4683,7 @@
     "type-check" "~0.4.0"
 
 "lilconfig@^2.0.3", "lilconfig@^2.0.5", "lilconfig@^2.0.6", "lilconfig@2.0.6":
+<<<<<<< HEAD
 =======
 "lilconfig@^2.0.5", "lilconfig@^2.0.6", "lilconfig@2.0.6":
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
@@ -4657,6 +4691,8 @@
   "resolved" "https://registry.npmjs.org/lilconfig/-/lilconfig-2.0.6.tgz"
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   "version" "2.0.6"
 
 "lines-and-columns@^1.1.6":
@@ -4720,12 +4756,15 @@
   "version" "4.1.1"
 
 "lodash.memoize@^4.1.2", "lodash.memoize@4.x":
+<<<<<<< HEAD
 "lodash.memoize@4.x":
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
   "integrity" "sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag=="
   "resolved" "https://registry.npmjs.org/lodash.memoize/-/lodash.memoize-4.1.2.tgz"
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   "version" "4.1.2"
 
 "lodash.merge@^4.6.2":
@@ -4833,10 +4872,13 @@
 "mdn-data@2.0.14":
   "version" "2.0.14"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "meow@^8.0.0":
   "version" "8.1.2"
   dependencies:
@@ -4907,10 +4949,13 @@
 "mini-svg-data-uri@^1.4.4":
   "version" "1.4.4"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "minimatch@^3.0.4", "minimatch@^3.0.5", "minimatch@^3.1.1", "minimatch@^3.1.2":
   "version" "3.1.2"
   dependencies:
@@ -5316,10 +5361,13 @@
 "pify@^5.0.0":
   "version" "5.0.0"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "pirates@^4.0.1":
   "version" "4.0.5"
 
@@ -5367,6 +5415,7 @@
   "version" "5.1.0"
 
 "postcss-load-config@^3.0.0", "postcss-load-config@^3.1.4":
+<<<<<<< HEAD
 =======
 "postcss-load-config@^3.1.4":
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
@@ -5374,6 +5423,8 @@
   "resolved" "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-3.1.4.tgz"
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   "version" "3.1.4"
   dependencies:
     "lilconfig" "^2.0.5"
@@ -5420,10 +5471,13 @@
 "postcss-modules-extract-imports@^3.0.0":
   "version" "3.0.0"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
 "postcss-modules-local-by-default@^4.0.0":
   "version" "4.0.0"
   dependencies:
@@ -5516,6 +5570,7 @@
     "postcss-value-parser" "^4.2.0"
 
 "postcss-selector-parser@^6.0.2", "postcss-selector-parser@^6.0.4", "postcss-selector-parser@^6.0.5", "postcss-selector-parser@^6.0.9":
+<<<<<<< HEAD
 =======
 "postcss-selector-parser@^6.0.2", "postcss-selector-parser@^6.0.4":
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
@@ -5523,6 +5578,8 @@
   "resolved" "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.11.tgz"
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   "version" "6.0.11"
   dependencies:
     "cssesc" "^3.0.0"
@@ -5540,6 +5597,7 @@
     "postcss-selector-parser" "^6.0.5"
 
 "postcss-value-parser@^4.1.0", "postcss-value-parser@^4.2.0":
+<<<<<<< HEAD
 =======
 "postcss-value-parser@^4.1.0":
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
@@ -5557,6 +5615,11 @@
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.21.tgz"
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+  "version" "4.2.0"
+
+"postcss@^8.0.0", "postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.2.15", "postcss@^8.2.2", "postcss@^8.4.21", "postcss@>=8.0.9", "postcss@8.x":
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   "version" "8.4.21"
   dependencies:
     "nanoid" "^3.3.4"
@@ -5703,6 +5766,7 @@
 
 "readable-stream@^3.0.0", "readable-stream@3":
   "version" "3.6.2"
+<<<<<<< HEAD
 =======
   "integrity" "sha512-+rQmrWMYGA90yenhTYsLWAsLsqVC8osOw6PKE1HDYiO0gdPeKe/xDHNzIAIn4C91YQ6oenEhfYqqc1883qHbjQ=="
   "resolved" "https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.1.tgz"
@@ -5710,6 +5774,8 @@
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   dependencies:
     "inherits" "^2.0.3"
     "string_decoder" "^1.1.1"
@@ -6034,6 +6100,7 @@
 
 "sass@^1.58.3":
   "version" "1.60.0"
+<<<<<<< HEAD
 =======
   "integrity" "sha512-Q7RaEtYf6BflYrQ+buPudKR26/lH+10EmO9bBqbmPh/KeLqv8bjpTNqxe71ocONqXq+jYiCbpPUmQMS+JJPk4A=="
   "resolved" "https://registry.npmjs.org/sass/-/sass-1.58.3.tgz"
@@ -6041,6 +6108,8 @@
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   dependencies:
     "chokidar" ">=3.0.0 <4.0.0"
     "immutable" "^4.0.0"
@@ -6781,6 +6850,7 @@
 
 "typescript-plugin-css-modules@^4.2.2":
   "version" "4.2.3"
+<<<<<<< HEAD
 =======
   "integrity" "sha512-X5OYGkX96ENq2c7xFJO4tgtiMTlBkOMoRmVHQXH2H4CGFcVODKGieDqPU2B0IV0I+AyvKYDFdKh4ZKtKxAcAww=="
   "resolved" "https://registry.npmjs.org/typescript-plugin-css-modules/-/typescript-plugin-css-modules-4.2.2.tgz"
@@ -6788,6 +6858,8 @@
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   dependencies:
     "@types/postcss-modules-local-by-default" "^4.0.0"
     "@types/postcss-modules-scope" "^3.0.1"
@@ -6798,10 +6870,13 @@
     "postcss" "^8.4.21"
     "postcss-load-config" "^3.1.4"
     "postcss-modules-extract-imports" "^3.0.0"
+<<<<<<< HEAD
 =======
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
     "postcss-modules-local-by-default" "^4.0.0"
     "postcss-modules-scope" "^3.0.0"
     "reserved-words" "^0.1.2"
@@ -6811,6 +6886,7 @@
     "tsconfig-paths" "^4.1.2"
 
 "typescript@*", "typescript@^4.6.4 || ^5.0.0", "typescript@^4.9.3", "typescript@>=2.4.0", "typescript@>=2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3", "typescript@>=3.4 <4.0", "typescript@>=3.9.0":
+<<<<<<< HEAD
 =======
 "typescript@*", "typescript@^4.6.4", "typescript@^4.9.3", "typescript@>=2.4.0", "typescript@>=2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3", "typescript@>=3.4 <4.0", "typescript@>=3.9.0":
 >>>>>>> 8b9996e (fix(rebase): fixing rebase master)
@@ -6818,6 +6894,8 @@
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.9.3.tgz"
 =======
 >>>>>>> 8e4817a (fix(isRoutes): fix validation for routing check)
+=======
+>>>>>>> 8e4817afcb81799f957832cb26aad00a29af008b
   "version" "4.9.3"
 
 "typescript@^3.7.3":
