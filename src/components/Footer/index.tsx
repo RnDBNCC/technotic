@@ -1,36 +1,36 @@
-import React, { useState, useEffect } from 'react'
-import { cx } from '@emotion/css'
-import { FooterProps } from './types'
-import * as styles from './styles'
-import * as icons from '../Icons'
-import isStringEmpty from '../../utils/isStringEmpty'
+import React, { useState, useEffect } from 'react';
+import { cx } from '@emotion/css';
+import { FooterProps } from './types';
+import * as styles from './styles';
+import * as icons from '../Icons';
+import isStringEmpty from '../../utils/isStringEmpty';
 
 const Footer: React.FC<FooterProps> = ({
-  name = 'Bina Nusantara Computer Club',
-  year = '2023',
-  createdBy,
-  bgColor = '#22539F',
-  fontColor = '#FBFBFB',
-  instagramLink,
-  facebookLink,
-  twitterLink,
-  linkedinLink,
-  youtubeLink
+    name = 'Bina Nusantara Computer Club',
+    year = '2023',
+    createdBy,
+    bgColor = '#22539F',
+    fontColor = '#FBFBFB',
+    instagramLink,
+    facebookLink,
+    twitterLink,
+    linkedinLink,
+    youtubeLink,
 }) => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const handleResize: () => void = () =>
-      setScreenWidth(window.innerWidth)
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+    useEffect(() => {
+        const handleResize: () => void = () =>
+            setScreenWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-  const isMobile = screenWidth <= 1024
+    const isMobile = screenWidth <= 1024;
 
-  return (
+    return (
         <footer
             className={`cx(
             ${
@@ -107,6 +107,6 @@ const Footer: React.FC<FooterProps> = ({
                 </div>
             )}
         </footer>
-  )
-}
-export default Footer
+    );
+};
+export default Footer;
