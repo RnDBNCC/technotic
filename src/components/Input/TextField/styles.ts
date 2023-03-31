@@ -19,6 +19,7 @@ export const styInputBorder = css({
     gap: '15px',
     width: 'fit-content',
     border: '3px solid #DCDCDC',
+    backgroundColor: 'white',
 });
 
 export const styInput = css({
@@ -67,6 +68,7 @@ export const styTextField = css({
     border: 'none',
     outline: 'none',
     width: '100%',
+    backgroundColor: 'white',
 });
 
 export const styButtonIcon = css({
