@@ -31,12 +31,15 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
     const handleClick = (e: MouseEvent): void => {
         if (link !== undefined) {
             if (element !== undefined) {
+                if (link.includes('http')) {
+                    isRoutes.isValidHttpUrl(link);
+                }
                 if (e.metaKey || e.ctrlKey) {
                     return;
                 }
                 e.preventDefault(); // cegah loading
                 isRoutes.Route(link, element);
-            } else isRoutes.isValidHttpUrl(link);
+            }
         }
     };
 

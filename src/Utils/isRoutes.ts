@@ -11,12 +11,9 @@ const isRoutes = {
     },
 
     isValidHttpUrl(link: string): boolean {
-        if (link.includes('http')) {
-            const url: any = new URL(link)
-            window.location.href = url
-        }
-        // add link to window.location.href
-        window.location.href = window.location.href + link
+        console.log('test');
+        const url: any = new URL(link)
+        window.location.href = url
 
         return true
     }

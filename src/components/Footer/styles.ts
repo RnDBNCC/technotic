@@ -1,4 +1,4 @@
-import { css, injectGlobal } from '@emotion/css'
+import { css, injectGlobal } from '@emotion/css';
 
 injectGlobal`
 *{
@@ -10,11 +10,11 @@ a{
     text-decoration: none;
     cursor: pointer;
     color: #fbfbfb;
-}`
+}`;
 
 export const styFooterContainer = (
-  bgColor: string,
-  fontColor: string
+    bgColor: string,
+    fontColor: string
 ): string => css`
     background-color: ${bgColor};
     color: ${fontColor};
@@ -22,11 +22,11 @@ export const styFooterContainer = (
     justify-content: space-between;
     gap: 2rem;
     padding: 48px 128px;
-`
+`;
 
 export const styFooterContainerMobile = (
-  bgColor: string,
-  fontColor: string
+    bgColor: string,
+    fontColor: string
 ): string => css`
     background-color: ${bgColor};
     color: ${fontColor};
@@ -36,16 +36,16 @@ export const styFooterContainerMobile = (
     align-items: center;
     padding: 48px 64px;
     gap: 2rem;
-`
+`;
 
 export const styFooterText = css`
     line-height: 150%;
-`
+`;
 
 export const styFooterTextMobile = css`
     line-height: 150%;
     text-align: center;
-`
+`;
 
 export const stySocialMedia = css`
     display: flex;
@@ -53,4 +53,4 @@ export const stySocialMedia = css`
     justify-content: center;
     align-items: center;
     gap: 1rem;
-`
+`;

@@ -10,7 +10,7 @@ export const styButton = {
         display: 'flex',
         alignItems: 'center',
         border: 'none',
-        backgroundColor: ColorSystem.BNCC100,
+        backgroundColor: ColorSystem.BNCC400,
         borderRadius: '0.8rem',
         outline: 'none',
         color: '#F0FEFF',
