@@ -1,13 +1,19 @@
 import { css } from '@emotion/css';
 
 const SMALL_SIZE = '8px';
+const SMALL_SIZE_PHONE = '4px';
 const SMALL_WIDTH = '320px';
+const SMALL_WIDTH_PHONE = '260px';
 
 const MEDIUM_SIZE = '12px';
+const MEDIUM_SIZE_PHONE = '8px';
 const MEDIUM_WIDTH = '380px';
+const MEDIUM_WIDTH_PHONE = '280px';
 
 const LARGE_SIZE = '14px';
+const LARGE_SIZE_PHONE = '10px';
 const LARGE_WIDTH = '560px';
+const LARGE_WIDTH_PHONE = '300px';
 
 const SUCCESS_STATUS = '3px solid green';
 const ERROR_STATUS = '3px solid red';
@@ -19,6 +25,7 @@ export const styInputBorder = css({
     gap: '15px',
     width: 'fit-content',
     border: '3px solid #DCDCDC',
+    backgroundColor: 'white',
 });
 
 export const styInput = css({
@@ -41,6 +48,21 @@ export const styInput = css({
     '&.large': {
         padding: LARGE_SIZE,
         width: LARGE_WIDTH,
+    },
+
+    '@media screen and (max-width: 414px)': {
+        '&.small': {
+            padding: SMALL_SIZE_PHONE,
+            width: SMALL_WIDTH_PHONE,
+        },
+        '&.medium': {
+            padding: MEDIUM_SIZE_PHONE,
+            width: MEDIUM_WIDTH_PHONE,
+        },
+        '&.large': {
+            padding: LARGE_SIZE_PHONE,
+            width: LARGE_WIDTH_PHONE,
+        },
     },
 
     '&.success': {
@@ -67,6 +89,7 @@ export const styTextField = css({
     border: 'none',
     outline: 'none',
     width: '100%',
+    backgroundColor: 'white',
 });
 
 export const styButtonIcon = css({
