@@ -15,8 +15,8 @@ const FONT_LARGE = '24px';
 
 // border
 const HOVER_BORDER = '2px solid' + BLUE500;
-const GREEN500_STATE = '2px solid' + GREEN500;
-const RED500_STATE = '2px solid' + RED500;
+const SUCCESS_STATE = '2px solid' + GREEN500;
+const ERROR_STATE = '2px solid' + RED500;
 
 export const styLayout = css({
     padding: '10px',
@@ -54,11 +54,11 @@ export const styDatePicker = css({
     },
 
     // status
-    '&.GREEN500': {
-        border: GREEN500_STATE,
+    '&.success': {
+        border: SUCCESS_STATE,
     },
-    '&.RED500': {
-        border: RED500_STATE,
+    '&.error': {
+        border: ERROR_STATE,
     },
 });
 
