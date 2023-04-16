@@ -10,7 +10,6 @@ const isRoutes = {
     },
 
     isValidHttpUrl(link: string): boolean {
-        console.log('test');
         const url: any = new URL(link);
         window.location.href = url;
 

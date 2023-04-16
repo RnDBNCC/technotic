@@ -39,7 +39,8 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
                 if (e.metaKey || e.ctrlKey) {
                     return;
                 }
-                e.preventDefault(); // cegah loading
+                // prevents it from loading the page
+                e.preventDefault();
                 isRoutes.Route(link, element);
             }
         }
