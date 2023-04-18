@@ -37,7 +37,6 @@ export const styButton = {
             backgroundColor: '#296675',
             cursor: 'pointer',
         },
-        // tunggu design
     }),
 
     Link: css({
@@ -46,6 +45,5 @@ export const styButton = {
         ':hover': {
             cursor: 'pointer',
         },
-        // tunggu design
     }),
 };

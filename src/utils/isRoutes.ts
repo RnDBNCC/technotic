@@ -5,8 +5,6 @@ const isRoutes = {
         // kasih tau routenya udh keubah
         const navEvent = new PopStateEvent('popstate');
         window.dispatchEvent(navEvent);
-
-        console.log(children);
     },
 
     isValidHttpUrl(link: string): boolean {
