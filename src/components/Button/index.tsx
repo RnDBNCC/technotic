@@ -32,16 +32,15 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
 
     const handleClick = (e: MouseEvent): void => {
         if (link !== undefined) {
-            if (element !== undefined) {
-                if (link.includes('http')) {
-                    isRoutes.isValidHttpUrl(link);
-                }
+            if (link.includes('http')) {
+                isRoutes.isValidHttpUrl(link);
+            } else if (element !== undefined) {
                 if (e.metaKey || e.ctrlKey) {
                     return;
                 }
                 // prevents it from loading the page
                 e.preventDefault();
-                isRoutes.Route(link, element);
+                isRoutes.Route(link);
             }
         }
     };
