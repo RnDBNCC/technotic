@@ -7,19 +7,19 @@ type TypographySize =
     | 'heading-6'
     | 'heading-7'
     | 'heading-8'
-    | 'body-1'
-    | 'body-2'
-    | 'body-3'
-    | 'body-4'
-    | 'body-5'
-    | 'body-6'
-    | 'body-7'
-    | 'body-8';
+    | 'paragraph-1'
+    | 'paragraph-2'
+    | 'paragraph-3'
+    | 'paragraph-4'
+    | 'paragraph-5'
+    | 'paragraph-6'
+    | 'paragraph-7'
+    | 'paragraph-8';
 type TypographyWeight = 'regular' | 'medium' | 'semibold' | 'bold';
 
 export interface TypographyProps {
     size?: TypographySize;
     weight?: TypographyWeight;
-    textLabel?: string;
+    label?: string;
     color?: string;
 }

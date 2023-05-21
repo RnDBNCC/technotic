@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-// import styles from 'my.module.css';
 
 // Size
 // Heading
@@ -13,24 +12,20 @@ const HEADING_7 = '12px';
 const HEADING_8 = '10px';
 
 // Body
-const BODY_1 = '40px';
-const BODY_2 = '32px';
-const BODY_3 = '24px';
-const BODY_4 = '20px';
-const BODY_5 = '16px';
-const BODY_6 = '14px';
-const BODY_7 = '12px';
-const BODY_8 = '10px';
+const PARAGRAPH_1 = '40px';
+const PARAGRAPH_2 = '32px';
+const PARAGRAPH_3 = '24px';
+const PARAGRAPH_4 = '20px';
+const PARAGRAPH_5 = '16px';
+const PARAGRAPH_6 = '14px';
+const PARAGRAPH_7 = '12px';
+const PARAGRAPH_8 = '10px';
 
 // Weight
 const REGULAR = '400';
 const MEDIUM = '500';
 const SEMI_BOLD = '600';
 const BOLD = '700';
-
-export const styLayout = css`
-    padding: 10px;
-`;
 
 export const styTypography = css({
     // Heading
@@ -67,37 +62,37 @@ export const styTypography = css({
         fontFamily: "'Montserrat' , sans-serif",
     },
 
-    // Body
-    '&.body-1': {
-        fontSize: BODY_1,
+    // Paragraph
+    '&.paragraph-1': {
+        fontSize: PARAGRAPH_1,
         fontFamily: "'Poppins' , sans-serif",
     },
-    '&.body-2': {
-        fontSize: BODY_2,
+    '&.paragraph-2': {
+        fontSize: PARAGRAPH_2,
         fontFamily: "'Poppins' , sans-serif",
     },
-    '&.body-3': {
-        fontSize: BODY_3,
+    '&.paragraph-3': {
+        fontSize: PARAGRAPH_3,
         fontFamily: "'Poppins' , sans-serif",
     },
-    '&.body-4': {
-        fontSize: BODY_4,
+    '&.paragraph-4': {
+        fontSize: PARAGRAPH_4,
         fontFamily: "'Poppins' , sans-serif",
     },
-    '&.body-5': {
-        fontSize: BODY_5,
+    '&.paragraph-5': {
+        fontSize: PARAGRAPH_5,
         fontFamily: "'Poppins' , sans-serif",
     },
-    '&.body-6': {
-        fontSize: BODY_6,
+    '&.paragraph-6': {
+        fontSize: PARAGRAPH_6,
         fontFamily: "'Poppins' , sans-serif",
     },
-    '&.body-7': {
-        fontSize: BODY_7,
+    '&.paragraph-7': {
+        fontSize: PARAGRAPH_7,
         fontFamily: "'Poppins' , sans-serif",
     },
-    '&.body-8': {
-        fontSize: BODY_8,
+    '&.paragraph-8': {
+        fontSize: PARAGRAPH_8,
         fontFamily: "'Poppins' , sans-serif",
     },
 
@@ -117,7 +112,7 @@ export const styTypography = css({
 });
 
 export const styUndefinedTypography = css({
-    fontSize: BODY_5,
+    fontSize: PARAGRAPH_5,
     fontFamily: 'Poppins',
     fontWeight: REGULAR,
 });

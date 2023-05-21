@@ -1,10 +1,10 @@
 import React, { PropsWithChildren } from 'react';
 import { TypographyProps } from './TypographyProps';
 import { cx } from '@emotion/css';
-import { styTypography, styLayout, styUndefinedTypography } from './style';
+import { styTypography, styUndefinedTypography } from './style';
 
 const Typography = (props: PropsWithChildren<TypographyProps>): JSX.Element => {
-    const { size, weight, textLabel, color } = props;
+    const { size, weight, label, color } = props;
 
     const typographySize =
         size !== undefined
@@ -16,14 +16,12 @@ const Typography = (props: PropsWithChildren<TypographyProps>): JSX.Element => {
             ? `${weight} ${styTypography}`
             : cx(styTypography, styUndefinedTypography);
     return (
-        <div className={styLayout}>
-            <p
-                style={{ color }}
-                className={`${typographySize} ${typographyWeight}`}
-            >
-                {textLabel}
-            </p>
-        </div>
+        <p
+            style={{ color, marginBottom: 0 }}
+            className={`${typographySize} ${typographyWeight}`}
+        >
+            {label}
+        </p>
     );
 };
 
