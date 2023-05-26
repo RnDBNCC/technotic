@@ -54,10 +54,17 @@ jobs:
             - uses: actions/checkout@v3
               with:
                   fetch-depth: 0
-            - uses: peter-evans/create-pull-request@v5
+            - uses: devops-infra/action-pull-request@v0.5.5
               with:
-                  commit-message: "feat: auto sync"
-                  title: "chore: auto sync after production release"
-                  body: Update changelog to reflect release changes and sync after production release
-                  branch: production
-                  base: master
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                source_branch: production
+                target_branch: master
+                title: "chore: auto production sync to master"
+                template: .github/PULL_REQUEST_TEMPLATE.md
+                body: "**Automated pull request**"
+                reviewer: rnd-bot
+                assignee: rnd-bot
+                label: automated-pr
+                get_diff: true
+                ignore_users: "dependabot"
+                allow_no_diff: false
