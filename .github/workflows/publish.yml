@@ -59,12 +59,13 @@ jobs:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
                 source_branch: production
                 target_branch: master
-                title: "chore: auto production sync to master"
-                template: .github/PULL_REQUEST_TEMPLATE.md
+                title: "ci: automated production sync to master"
                 body: "**Automated pull request**"
-                reviewer: rnd-bot
-                assignee: rnd-bot
+                reviewer: RnDBNCC
+                assignee: RnDBNCC
                 label: automated-pr
+                template: .github/PULL_REQUEST_TEMPLATE.md
+                old_string: "Explain the task"
                 get_diff: true
                 ignore_users: "dependabot"
                 allow_no_diff: false
