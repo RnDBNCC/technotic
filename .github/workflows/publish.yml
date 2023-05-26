@@ -16,39 +16,39 @@ on:
                 default: 'minor'
 
 jobs:
-#     release:
-#         runs-on: ubuntu-latest
-#         steps:
-#             - uses: actions/checkout@v3
-#               with:
-#                   ref: ${{ github.event.inputs.branch }}
-#             - uses: actions/setup-node@v3
-#               with:
-#                   node-version: 14
-#             - uses: 'phips28/gh-action-bump-version@master'
-#               env:
-#                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#               with:
-#                   version-type: ${{ github.event.inputs.version-type }}
-#                   target-branch: ${{ github.event.inputs.branch }}
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  ref: ${{ github.event.inputs.branch }}
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 14
+            - uses: 'phips28/gh-action-bump-version@master'
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  version-type: ${{ github.event.inputs.version-type }}
+                  target-branch: ${{ github.event.inputs.branch }}
 
-#     publish-npm:
-#         needs: release
-#         runs-on: ubuntu-latest
-#         steps:
-#             - uses: actions/checkout@v3
-#               with:
-#                   ref: ${{ github.event.inputs.branch }}
-#             - uses: actions/setup-node@v3
-#               with:
-#                   node-version: 14
-#                   registry-url: https://registry.npmjs.org/
-#             - run: npm ci
-#             - run: npm publish --access public
-#               env:
-#                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    publish-npm:
+        needs: release
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  ref: ${{ github.event.inputs.branch }}
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 14
+                  registry-url: https://registry.npmjs.org/
+            - run: npm ci
+            - run: npm publish --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
     create-pr:
-#         needs: publish-npm
+        needs: publish-npm
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
