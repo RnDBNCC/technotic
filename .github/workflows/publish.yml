@@ -31,7 +31,6 @@ jobs:
               with:
                   version-type: ${{ github.event.inputs.version-type }}
                   target-branch: ${{ github.event.inputs.branch }}
-            - run: npm ci
 
     publish-npm:
         needs: release
