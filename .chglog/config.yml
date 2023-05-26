@@ -1,6 +1,5 @@
 bin: git
 style: ""
-template: CHANGELOG.tpl.md
 info:
   title: CHANGELOG
   repository_url: https://github.com/RnDBNCC/technotic
