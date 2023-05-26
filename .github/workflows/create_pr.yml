@@ -1,0 +1,24 @@
+name: Create PR
+on:
+    workflow_dispatch
+jobs:
+  updateChangelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Update Changelog
+        run: |
+          curl -o git-chglog -L https://github.com/git-chglog/git-chglog/releases/download/0.9.1/git-chglog_linux_amd64
+          chmod u+x git-chglog
+          ./git-chglog -o CHANGELOG.md
+          rm git-chglog
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "feat: auto sync"
+          title: "chore: auto sync after production release"
+          body: Update changelog to reflect release changes and sync after production release
+          branch: production
+          base: master
