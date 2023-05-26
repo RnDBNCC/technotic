@@ -30,7 +30,7 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   version-type: ${{ github.event.inputs.version-type }}
-            - run: npm ci
+                  target-branch: ${{ github.event.inputs.branch }}
 
     publish-npm:
         needs: release
@@ -47,3 +47,32 @@ jobs:
             - run: npm publish --access public
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    create-pr:
+        needs: publish-npm
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                fetch-depth: 0
+            - uses: devops-infra/action-pull-request@v0.5.5
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                source_branch: production
+                target_branch: master
+                title: "ci: automated production sync to master"
+                body: "**Automated pull request**"
+                reviewer: RnDBNCC
+                assignee: RnDBNCC
+                label: automated-pr, automerge
+                template: .github/PULL_REQUEST_TEMPLATE.md
+                old_string: "Explain the task"
+                get_diff: true
+                ignore_users: "dependabot"
+                allow_no_diff: false
+            - uses: reitermarkus/automerge@v2
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                merge-method: squash
+                do-not-merge-labels: never-merge
+                required-labels: automerge
+                dry-run: true
