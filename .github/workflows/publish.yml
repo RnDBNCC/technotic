@@ -30,6 +30,7 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   version-type: ${{ github.event.inputs.version-type }}
+                  target-branch: ${{ github.event.inputs.branch }}
             - run: npm ci
 
     publish-npm:
