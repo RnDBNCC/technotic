@@ -1,8 +1,9 @@
-import { cx } from "emotion";
 import React, { PropsWithChildren, MouseEvent, useMemo } from "react";
+import { cx } from "emotion";
+
+import isRoutes from "../../utils/isRoutes";
 import { styButton } from "./styles";
 import { ButtonProps } from "./types";
-import isRoutes from "../../utils/isRoutes";
 
 const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
   const {
