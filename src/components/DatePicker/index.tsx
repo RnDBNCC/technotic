@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { DatePickerProps } from './DatePickerProps';
+import { DatePickerProps } from './types';
 import { cx } from '@emotion/css';
 import { styDatePicker, styLayout } from './style';
 
