@@ -90,6 +90,7 @@ export const styTextField = css({
     outline: 'none',
     width: '100%',
     backgroundColor: 'white',
+    color: 'black',
 });
 
 export const styButtonIcon = css({

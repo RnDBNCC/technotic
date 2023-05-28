@@ -4,6 +4,7 @@
         "es2022": true
     },
     "extends": [
+        "eslint:recommended",
         "plugin:react/recommended",
         "standard-with-typescript",
         "prettier"
@@ -20,5 +21,9 @@
             "version": "detect"
         }
     },
-    "rules": {}
+    "rules": {
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/semi": "off",
+        "@typescript-eslint/space-before-function-paren": "off"
+    }
 }

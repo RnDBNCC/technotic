@@ -1,8 +1,9 @@
 const isRoutes = {
-    Route(path: string, children: unknown): void {
+    Route(path: string): void {
         window.history.pushState({}, '', path); // update pathname
         console.log(window.location.pathname);
-        // kasih tau routenya udh keubah
+        // make changes to the routes using the children parameter
+        // ...
         const navEvent = new PopStateEvent('popstate');
         window.dispatchEvent(navEvent);
     },
