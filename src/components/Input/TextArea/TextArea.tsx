@@ -19,7 +19,7 @@ const TextArea = (props: PropsWithChildren<TextAreaProps>) => {
     return (
         <div>
             <textarea
-                className={`${inputSize} ${inputStatus}`}
+               className={cx(inputSize, inputStatus)}
                 placeholder={placeholder}
             >
                 {text}
