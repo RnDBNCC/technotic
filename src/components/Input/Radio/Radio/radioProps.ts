@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, InputHTMLAttributes, ChangeEvent } from 'react';
-import { RadioColorType, RadioSizeType } from '../config/TypeContext';
+import { RadioType, RadioSizeType } from '../config/TypeContext';
 
 export interface radioProps
     extends DetailedHTMLProps<
@@ -7,8 +7,8 @@ export interface radioProps
         HTMLInputElement
     > {
     radioSize?: RadioSizeType;
-    radioColor?: RadioColorType;
-    label?: string;
+    radioType?: RadioType;
+    radioColor?: string;
     value?: string;
     name?: string;
     defaultChecked?: boolean;

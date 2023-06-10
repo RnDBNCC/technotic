@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { radioListProps } from './radioListProps';
-import { RadioStyle } from '../styles';
+import RadioStyle from '../styles';
 import Radio from '../Radio/Radio';
 
 const RadioList = (props: PropsWithChildren<radioListProps>): JSX.Element => {
