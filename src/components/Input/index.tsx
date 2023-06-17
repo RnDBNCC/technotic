@@ -5,7 +5,7 @@ import TextField from './TextField/TextField';
 import Radio from './Radio/Radio/Radio';
 
 export { TextFieldProps } from './TextField/TextFieldProps';
-export { radioProps } from './Radio/Radio/radioProps';
+export { RadioProps } from './Radio/Radio/RadioProps';
 
 interface CompoundedComponent extends ForwardRefExoticComponent<InputProps> {
     TextField: typeof TextField;

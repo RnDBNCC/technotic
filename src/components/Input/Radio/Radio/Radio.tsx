@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useState } from 'react';
-import { radioProps } from './radioProps';
+import { RadioProps } from './RadioProps';
 import RadioLabelStyle, { styRadio, TextChildStyle } from '../styles';
 
 function getTypeClassName(radioSize: string, radioType: string): string {
@@ -13,7 +13,7 @@ function getTypeClassName(radioSize: string, radioType: string): string {
     }
 }
 
-const Radio = (props: PropsWithChildren<radioProps>): JSX.Element => {
+const Radio = (props: PropsWithChildren<RadioProps>): JSX.Element => {
     const {
         radioSize = 'medium',
         radioType = 'primary',
