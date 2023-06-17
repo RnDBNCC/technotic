@@ -1,13 +1,10 @@
 import { css } from '@emotion/css';
+import ColorSystem from '../../ColorSystem/index';
 
 // Radio Size
 const SMALL_RADIO = '16px';
 const MEDIUM_RADIO = '20px';
 const LARGE_RADIO = '24px';
-
-// Radio Color
-const PRIMARY_COLOR = '#22539F';
-const SECONDARY_COLOR = '#676767';
 
 // CSS styles for the label radio
 export default css({
@@ -41,12 +38,12 @@ const commonStyles = {
 // CSS styles for the type of the radio
 export const styRadio = {
     Primary: css({
-        accentColor: PRIMARY_COLOR,
+        accentColor: ColorSystem.BLUE500,
         ...commonStyles,
     }),
 
     Secondary: css({
-        accentColor: SECONDARY_COLOR,
+        accentColor: ColorSystem.GREY500,
         ...commonStyles,
     }),
 };
