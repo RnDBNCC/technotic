@@ -11,6 +11,7 @@ export interface radioProps
     radioColor?: string;
     value?: string;
     name?: string;
-    defaultChecked?: boolean;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    checked?: boolean;
+    // onClick?: (e: MouseEvent<HTMLInputElement>) => void;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }

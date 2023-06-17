@@ -1,6 +1,5 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 import { radioProps } from './radioProps';
-
 import RadioLabelStyle, { styRadio, TextChildStyle } from '../styles';
 
 function getTypeClassName(radioSize: string, radioType: string): string {
@@ -20,8 +19,19 @@ const Radio = (props: PropsWithChildren<radioProps>): JSX.Element => {
         radioType = 'primary',
         radioColor,
         value,
-        defaultChecked = false,
+        checked = false,
     } = props;
+
+    const [selected, setSelected] = useState(checked);
+
+    const handleRadioChange = (): void => {
+        setSelected(!selected);
+    };
+
+    const handleRadioClick = (): void => {
+        setSelected((prevSelected) => !prevSelected);
+    };
+
     const RadioClassName = getTypeClassName(radioSize, radioType);
 
     const color = { accentColor: radioColor };
@@ -33,7 +43,9 @@ const Radio = (props: PropsWithChildren<radioProps>): JSX.Element => {
                 className={RadioClassName}
                 type="radio"
                 value={value}
-                defaultChecked={defaultChecked}
+                checked={selected}
+                onChange={handleRadioChange}
+                onClick={handleRadioClick}
             />
             <span className={TextChildStyle}>{props.children}</span>
         </label>
