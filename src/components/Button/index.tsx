@@ -20,15 +20,18 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
     const {
         btnSize = 'medium',
         btnType = 'primary',
+        disabled = false,
         btnColor,
         link,
         element,
         children,
         ...rest
     } = props;
-    const className = cssClassName(btnSize, btnType);
+    const className = disabled
+        ? `${cssClassName(btnSize, btnType)} disabled`
+        : cssClassName(btnSize, btnType);
 
-    const color = { backgroundColor: btnColor };
+    const color = { backgroundColor: btnColor, border: btnColor };
 
     const handleClick = (e: MouseEvent): void => {
         if (link !== undefined) {
