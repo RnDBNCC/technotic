@@ -22,7 +22,7 @@ const CheckBox = (props: PropsWithChildren<CheckBoxProps>): JSX.Element => {
     return (
         <div>
             <input
-                className={`${inputSize} ${inputType}`}
+                className={cx(inputSize, inputType)}
                 type="checkbox"
                 {...rest}
             />
