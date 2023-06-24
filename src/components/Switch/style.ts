@@ -10,6 +10,7 @@ export const styleSwitch = css`
     //default
     --width: 70px;
     --height: calc(var(--width) / 2.5);
+    --primary: #22539f;
 
     position: relative;
     display: inline-block;
@@ -45,7 +46,7 @@ export const styleSwitch = css`
     }
 
     input:checked + .slider {
-        background-color: #22539f;
+        background-color: var(--primary);
 
         &::before {
             transform: translateX(calc(var(--width) - var(--height)));
