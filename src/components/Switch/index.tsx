@@ -1,13 +1,13 @@
 import React, { PropsWithChildren } from 'react';
 import { SwitchProps } from './SwitchProps';
-import { styleSwitch } from './style';
+import { stySwitch, stySwitchDefault } from './style';
 import { cx } from '@emotion/css';
 
 const Switch = (props: PropsWithChildren<SwitchProps>): JSX.Element => {
     const { size } = props;
 
     const switchSize =
-        size !== undefined ? `${size} ${styleSwitch}` : cx(styleSwitch);
+        size !== undefined ? `${size} ${stySwitch}` : cx(stySwitchDefault);
 
     return (
         <label className={`${switchSize}`}>
