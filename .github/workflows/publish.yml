@@ -59,15 +59,15 @@ jobs:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   source_branch: production
                   target_branch: master
-                  title: 'ci: automated production sync to master'
-                  body: '**Automated pull request**'
+                  title: "ci: automated production sync to master"
+                  body: "**Automated pull request**"
                   reviewer: RnDBNCC
                   assignee: RnDBNCC
                   label: automated-pr, automerge
                   template: .github/PULL_REQUEST_TEMPLATE.md
-                  old_string: 'Explain the task'
+                  old_string: "Explain the task"
                   get_diff: true
-                  ignore_users: 'dependabot'
+                  ignore_users: "dependabot"
                   allow_no_diff: false
             - uses: reitermarkus/automerge@v2
               with:
