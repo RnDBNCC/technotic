@@ -70,12 +70,6 @@ jobs:
                   get_diff: true
                   ignore_users: "dependabot"
                   allow_no_diff: false
-            - name: Approve Pull Request
-              uses: juliangruber/approve-pull-request-action@v2.0.0
-              with:
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
-                  number: ${{ steps.create_pr.outputs.pr_number }}
-                  repo: juliangruber/approve-pull-request-action
             - uses: reitermarkus/automerge@v2
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
