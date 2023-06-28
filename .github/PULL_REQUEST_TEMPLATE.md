@@ -4,8 +4,10 @@ Developer: <Name>
 
 Explain the task
 
+<!---
 ### Screenshots
 
 -   **Before**
 
 -   **After**
+-->
