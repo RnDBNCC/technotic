@@ -63,7 +63,7 @@ jobs:
                   body: "**Automated pull request**"
                   reviewer: RnDBNCC
                   assignee: RnDBNCC
-                  label: automated-pr, automerge
+                  label: automerge
                   template: .github/PULL_REQUEST_TEMPLATE.md
                   old_string: "Explain the task"
                   get_diff: true
