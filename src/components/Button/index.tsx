@@ -3,14 +3,18 @@ import { styButton } from './styles';
 import { ButtonProps } from './buttonProps';
 import isRoutes from '../../utils/isRoutes';
 
-function cssClassName(btnSize: string, btnType: string): string {
+function cssClassName(
+    btnSize: string,
+    btnType: string,
+    btnColor?: string
+): string {
     switch (btnType) {
         case 'primary':
-            return `${btnSize} ${styButton.Primary}`;
+            return `${btnSize} ${styButton.Primary(btnColor)}`;
         case 'secondary':
-            return `${btnSize} ${styButton.Secondary}`;
+            return `${btnSize} ${styButton.Secondary(btnColor)}`;
         case 'link':
-            return `${btnSize} ${styButton.Link}`;
+            return `${btnSize} ${styButton.Link(btnColor)}`;
         default:
             return 'wrong button type';
     }
@@ -28,10 +32,10 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
         ...rest
     } = props;
     const className = disabled
-        ? `${cssClassName(btnSize, btnType)} disabled`
-        : cssClassName(btnSize, btnType);
+        ? `${cssClassName(btnSize, btnType, btnColor)} disabled`
+        : cssClassName(btnSize, btnType, btnColor);
 
-    const color = { backgroundColor: btnColor, border: btnColor };
+    // const styleProperties = { backgroundColor: btnColor, border: btnColor };
 
     const handleClick = (e: MouseEvent): void => {
         if (link !== undefined) {
@@ -53,8 +57,8 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
             <button
                 {...rest}
                 onClick={handleClick}
-                style={color}
                 className={className}
+                // style={styleProperties}
             >
                 {children}
             </button>
