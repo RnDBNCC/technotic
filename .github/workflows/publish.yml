@@ -55,6 +55,7 @@ jobs:
               with:
                   fetch-depth: 0
             - uses: devops-infra/action-pull-request@v0.5.5
+              id: create_pr
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   source_branch: production
@@ -63,16 +64,21 @@ jobs:
                   body: "**Automated pull request**"
                   reviewer: RnDBNCC
                   assignee: RnDBNCC
-                  label: automerge
+                  label: automated-pr
                   template: .github/PULL_REQUEST_TEMPLATE.md
                   old_string: "Explain the task"
                   get_diff: true
                   ignore_users: "dependabot"
                   allow_no_diff: false
+            - name: Approve Pull Request
+              uses: juliangruber/approve-pull-request-action@v2.0.0
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  number: ${{ steps.create-pr.outputs.pr_number }}
+                  repo: juliangruber/approve-pull-request-action
             - uses: reitermarkus/automerge@v2
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   merge-method: squash
-                  do-not-merge-labels: never-merge
-                  required-labels: automerge
+                  pull-request: ${{ steps.create-pr.outputs.pr_number }}
                   dry-run: true
