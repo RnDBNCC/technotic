@@ -35,8 +35,6 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
         ? `${cssClassName(btnSize, btnType, btnColor)} disabled`
         : cssClassName(btnSize, btnType, btnColor);
 
-    // const styleProperties = { backgroundColor: btnColor, border: btnColor };
-
     const handleClick = (e: MouseEvent): void => {
         if (link !== undefined) {
             if (link.includes('http')) {
@@ -54,12 +52,7 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
 
     return (
         <div>
-            <button
-                {...rest}
-                onClick={handleClick}
-                className={className}
-                // style={styleProperties}
-            >
+            <button {...rest} onClick={handleClick} className={className}>
                 {children}
             </button>
         </div>
