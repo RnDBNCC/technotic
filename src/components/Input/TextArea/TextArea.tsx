@@ -3,8 +3,13 @@ import React, { PropsWithChildren } from 'react';
 import { TextAreaProps } from './TextAreaProps';
 import { textAreaStyle, stySizeDefault, styStatusDefault } from './styles';
 
-const TextArea = (props: PropsWithChildren<TextAreaProps>) => {
-    const { placeholder = "Insert Here", text, txtAreaSize = 'medium', txtAreaStatus } = props;
+const TextArea = (props: PropsWithChildren<TextAreaProps>): JSX.Element => {
+    const {
+        placeholder = 'Insert Here',
+        text,
+        txtAreaSize = 'medium',
+        txtAreaStatus,
+    } = props;
 
     const inputSize =
         txtAreaSize !== undefined
@@ -19,7 +24,7 @@ const TextArea = (props: PropsWithChildren<TextAreaProps>) => {
     return (
         <div>
             <textarea
-               className={cx(inputSize, inputStatus)}
+                className={cx(inputSize, inputStatus)}
                 placeholder={placeholder}
             >
                 {text}
