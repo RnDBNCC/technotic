@@ -53,26 +53,26 @@ jobs:
         steps:
             - uses: actions/checkout@v3
               with:
-                fetch-depth: 0
+                  fetch-depth: 0
             - uses: devops-infra/action-pull-request@v0.5.5
+              id: create_pr
               with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-                source_branch: production
-                target_branch: master
-                title: "ci: automated production sync to master"
-                body: "**Automated pull request**"
-                reviewer: RnDBNCC
-                assignee: RnDBNCC
-                label: automated-pr, automerge
-                template: .github/PULL_REQUEST_TEMPLATE.md
-                old_string: "Explain the task"
-                get_diff: true
-                ignore_users: "dependabot"
-                allow_no_diff: false
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  source_branch: production
+                  target_branch: master
+                  title: "ci: automated production sync to master"
+                  body: "**Automated pull request**"
+                  reviewer: RnDBNCC
+                  assignee: RnDBNCC
+                  label: automated-pr
+                  template: .github/PULL_REQUEST_TEMPLATE.md
+                  old_string: "Explain the task"
+                  get_diff: true
+                  ignore_users: "dependabot"
+                  allow_no_diff: false
             - uses: reitermarkus/automerge@v2
               with:
-                token: ${{ secrets.GITHUB_TOKEN }}
-                merge-method: squash
-                do-not-merge-labels: never-merge
-                required-labels: automerge
-                dry-run: true
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  merge-method: squash
+                  pull-request: ${{ steps.create_pr.outputs.pr_number }}
+                  dry-run: true
