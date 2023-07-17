@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
-import { ButtonType, SizeType } from './config/TypeContext';
+import { ButtonType, SizeType } from './types';
 
 export interface ButtonProps
     extends DetailedHTMLProps<

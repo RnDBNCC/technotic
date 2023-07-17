@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-const generateDefaultPrimarySecondaryButtonStyles = (
+const getDefaultButtonStyles = (
     borderValue: string,
     backgroundColorValue: string,
     colorValue: string
@@ -10,4 +10,4 @@ const generateDefaultPrimarySecondaryButtonStyles = (
     color: colorValue,
 });
 
-export { generateDefaultPrimarySecondaryButtonStyles };
+export { getDefaultButtonStyles };
