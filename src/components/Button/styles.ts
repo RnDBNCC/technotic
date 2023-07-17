@@ -12,6 +12,7 @@ const mainStyles = {
     borderRadius: '0.8rem',
     outline: 'none',
     gap: '0.5rem',
+    transition: 'all 0.3s ease-in-out',
     '&.small': {
         padding: SMALL_BTN,
     },
@@ -35,6 +36,7 @@ export const styButton = {
             backgroundColor: ColorSystem.BLUE400,
             border: `solid 2px ${ColorSystem.BLUE400}`,
             cursor: 'pointer',
+            transition: 'all 0.3s ease-in-out',
         },
         '&.disabled': {
             backgroundColor: ColorSystem.GREY300,
