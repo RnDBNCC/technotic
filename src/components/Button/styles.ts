@@ -12,6 +12,7 @@ const mainStyles = {
     borderRadius: '0.8rem',
     outline: 'none',
     gap: '0.5rem',
+    transition: 'all 0.3s ease-in-out',
     '&.small': {
         padding: SMALL_BTN,
     },
