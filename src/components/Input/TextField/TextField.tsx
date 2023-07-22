@@ -17,6 +17,7 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
         inputSize = 'medium',
         textLabel,
         fontSize = '20px',
+        fontFamily,
         borderRadius = '15px',
         iconLeft,
         iconButton,
@@ -64,7 +65,7 @@ const TextField = (props: PropsWithChildren<TextFieldProps>): JSX.Element => {
                     </i>
                     <input
                         className={`${styles}`}
-                        style={{ fontSize }}
+                        style={{ fontSize, fontFamily }}
                         {...rest}
                         type="text"
                         placeholder={textPlaceholder}
