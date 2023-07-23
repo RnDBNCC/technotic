@@ -26,12 +26,14 @@ const Radio = (props: PropsWithChildren<RadioProps>): JSX.Element => {
     const [selected, setSelected] = useState(checked);
 
     const handleRadioChange = (): void => {
+        console.log('radio');
         setSelected(!selected);
     };
 
-    const handleRadioClick = (): void => {
-        setSelected((prevSelected) => !prevSelected);
-    };
+    // const handleRadioClick = (): void => {
+    //     // if (disabled) return;
+    //     setSelected((prevSelected) => !prevSelected);
+    // };
 
     const RadioClassName = getTypeClassName(radioSize, radioType);
 
@@ -41,13 +43,13 @@ const Radio = (props: PropsWithChildren<RadioProps>): JSX.Element => {
         <label className={RadioLabelStyle}>
             <input
                 style={color}
-                className={RadioClassName}
+                className={`${RadioClassName}`}
                 type="radio"
                 value={value}
                 checked={selected}
                 name={name}
                 onChange={handleRadioChange}
-                onClick={handleRadioClick}
+                // onClick={() => handleRadioClick()}
             />
             <span className={TextChildStyle}>{props.children}</span>
         </label>

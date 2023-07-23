@@ -1,9 +1,5 @@
 import { MouseEvent } from 'react';
-import {
-    RadioType,
-    RadioSizeType,
-    RadioValueType,
-} from '../config/TypeContext';
+import { RadioType, RadioSizeType, RadioValueType } from '../types';
 
 interface RadioChangeEventTarget {
     radioSize?: RadioSizeType;

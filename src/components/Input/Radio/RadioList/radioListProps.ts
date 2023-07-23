@@ -1,19 +1,25 @@
-import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
-import { RadioProps } from '../Radio/RadioProps';
-import { RadioSizeType } from '../config/TypeContext';
+import { MouseEvent } from 'react';
+import { RadioSizeType } from '../types';
 
-export interface radioListProps
-    extends DetailedHTMLProps<
-        InputHTMLAttributes<HTMLInputElement>,
-        HTMLInputElement
-    > {
+interface RadioChangeEventTarget {
     radioSize?: RadioSizeType;
     options: Array<{
         label?: string;
         value?: string;
-        radioProps?: RadioProps[];
     }>;
     name?: string;
-    defaultChecked?: boolean;
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    radioColor?: string;
+    onClick?: (e: MouseEvent<HTMLInputElement>) => void;
+    onChange?: (e: RadioChangeEvent) => void;
+}
+
+export interface RadioListProps extends RadioChangeEventTarget {
+    checked: boolean;
+}
+
+interface RadioChangeEvent {
+    target: RadioListProps;
+    stopPropagation: () => void;
+    preventDefault: () => void;
+    nativeEvent: MouseEvent;
 }
