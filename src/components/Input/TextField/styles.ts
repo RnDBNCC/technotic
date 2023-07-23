@@ -1,14 +1,14 @@
 import { css } from '@emotion/css';
 
-const sizes = {
+const SIZES = {
     small: {
         padding: '8px',
         width: '320px',
-        tablet1: {
+        largeTablet: {
             padding: '6px',
             width: '290px',
         },
-        tablet2: {
+        smallTablet: {
             padding: '5px',
             width: '275px',
         },
@@ -20,11 +20,11 @@ const sizes = {
     medium: {
         padding: '12px',
         width: '380px',
-        tablet1: {
+        largeTablet: {
             padding: '10px',
             width: '330px',
         },
-        tablet2: {
+        smallTablet: {
             padding: '9px',
             width: '305px',
         },
@@ -36,11 +36,11 @@ const sizes = {
     large: {
         padding: '14px',
         width: '560px',
-        tablet1: {
+        largeTablet: {
             padding: '12px',
             width: '430px',
         },
-        tablet2: {
+        smallTablet: {
             padding: '11px',
             width: '365px',
         },
@@ -61,7 +61,7 @@ export const styInputBorder = css({
     backgroundColor: 'white',
 });
 
-const borders = {
+const BORDERS = {
     success: '3px solid green',
     error: '3px solid red',
 };
@@ -75,33 +75,33 @@ export const styInput = css({
     backgroundColor: 'white',
     borderRadius: '100px',
 
-    '&.small': sizes.small,
-    '&.medium': sizes.medium,
-    '&.large': sizes.large,
+    '&.small': SIZES.small,
+    '&.medium': SIZES.medium,
+    '&.large': SIZES.large,
 
     '@media screen and (max-width: 768px)': {
-        '&.small': sizes.small.tablet1,
-        '&.medium': sizes.medium.tablet1,
-        '&.large': sizes.large.tablet1,
+        '&.small': SIZES.small.largeTablet,
+        '&.medium': SIZES.medium.largeTablet,
+        '&.large': SIZES.large.largeTablet,
     },
 
     '@media screen and (max-width: 592px)': {
-        '&.small': sizes.small.tablet2,
-        '&.medium': sizes.medium.tablet2,
-        '&.large': sizes.large.tablet2,
+        '&.small': SIZES.small.smallTablet,
+        '&.medium': SIZES.medium.smallTablet,
+        '&.large': SIZES.large.smallTablet,
     },
 
     '@media screen and (max-width: 414px)': {
-        '&.small': sizes.small.phone,
-        '&.medium': sizes.medium.phone,
-        '&.large': sizes.large.phone,
+        '&.small': SIZES.small.phone,
+        '&.medium': SIZES.medium.phone,
+        '&.large': SIZES.large.phone,
     },
 
     '&.success': {
-        border: borders.success,
+        border: BORDERS.success,
     },
     '&.error': {
-        border: borders.error,
+        border: BORDERS.error,
     },
 });
 
