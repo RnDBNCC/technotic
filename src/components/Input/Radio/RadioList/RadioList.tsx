@@ -18,7 +18,6 @@ const RadioList = (props: PropsWithChildren<RadioListProps>): JSX.Element => {
     const [selected, setSelected] = useState<string | null>(null);
 
     const handleRadioChange = (value: string): void => {
-        console.log(selected);
         setSelected(value);
     };
 
@@ -26,15 +25,12 @@ const RadioList = (props: PropsWithChildren<RadioListProps>): JSX.Element => {
         <div className={`radio-list ${className}`} style={color}>
             {options.map((option: any, index: number) => (
                 <Radio
-                    key={option.number}
+                    key={`radio-${index}`}
                     name={`${name}-${index}`}
                     value={option.value}
                     {...props}
                     onChange={() => handleRadioChange(option.value)}
-                    checked={
-                        selected === option.value
-                        // true
-                    }
+                    checked={selected === option.value}
                 >
                     {option.label}
                 </Radio>

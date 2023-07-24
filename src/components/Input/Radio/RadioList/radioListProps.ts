@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, ChangeEvent } from 'react';
 import { RadioSizeType } from '../types';
 
 interface RadioChangeEventTarget {
@@ -21,5 +21,5 @@ interface RadioChangeEvent {
     target: RadioListProps;
     stopPropagation: () => void;
     preventDefault: () => void;
-    nativeEvent: MouseEvent;
+    nativeEvent: ChangeEvent<HTMLInputElement>;
 }
