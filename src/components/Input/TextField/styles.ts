@@ -1,22 +1,55 @@
 import { css } from '@emotion/css';
 
-const SMALL_SIZE = '8px';
-const SMALL_SIZE_PHONE = '4px';
-const SMALL_WIDTH = '320px';
-const SMALL_WIDTH_PHONE = '260px';
-
-const MEDIUM_SIZE = '12px';
-const MEDIUM_SIZE_PHONE = '8px';
-const MEDIUM_WIDTH = '380px';
-const MEDIUM_WIDTH_PHONE = '280px';
-
-const LARGE_SIZE = '14px';
-const LARGE_SIZE_PHONE = '10px';
-const LARGE_WIDTH = '560px';
-const LARGE_WIDTH_PHONE = '300px';
-
-const SUCCESS_STATUS = '3px solid green';
-const ERROR_STATUS = '3px solid red';
+const SIZES = {
+    small: {
+        padding: '8px',
+        width: '320px',
+        largeTablet: {
+            padding: '6px',
+            width: '290px',
+        },
+        smallTablet: {
+            padding: '5px',
+            width: '275px',
+        },
+        phone: {
+            padding: '4px',
+            width: '260px',
+        },
+    },
+    medium: {
+        padding: '12px',
+        width: '380px',
+        largeTablet: {
+            padding: '10px',
+            width: '330px',
+        },
+        smallTablet: {
+            padding: '9px',
+            width: '305px',
+        },
+        phone: {
+            padding: '8px',
+            width: '280px',
+        },
+    },
+    large: {
+        padding: '14px',
+        width: '560px',
+        largeTablet: {
+            padding: '12px',
+            width: '430px',
+        },
+        smallTablet: {
+            padding: '11px',
+            width: '365px',
+        },
+        phone: {
+            padding: '10px',
+            width: '300px',
+        },
+    },
+};
 
 export const styInputBorder = css({
     display: 'flex',
@@ -28,6 +61,11 @@ export const styInputBorder = css({
     backgroundColor: 'white',
 });
 
+const BORDERS = {
+    success: '3px solid green',
+    error: '3px solid red',
+};
+
 export const styInput = css({
     display: 'flex',
     flexDirection: 'row',
@@ -37,39 +75,33 @@ export const styInput = css({
     backgroundColor: 'white',
     borderRadius: '100px',
 
-    '&.small': {
-        padding: SMALL_SIZE,
-        width: SMALL_WIDTH,
+    '&.small': SIZES.small,
+    '&.medium': SIZES.medium,
+    '&.large': SIZES.large,
+
+    '@media screen and (max-width: 768px)': {
+        '&.small': SIZES.small.largeTablet,
+        '&.medium': SIZES.medium.largeTablet,
+        '&.large': SIZES.large.largeTablet,
     },
-    '&.medium': {
-        padding: MEDIUM_SIZE,
-        width: MEDIUM_WIDTH,
-    },
-    '&.large': {
-        padding: LARGE_SIZE,
-        width: LARGE_WIDTH,
+
+    '@media screen and (max-width: 592px)': {
+        '&.small': SIZES.small.smallTablet,
+        '&.medium': SIZES.medium.smallTablet,
+        '&.large': SIZES.large.smallTablet,
     },
 
     '@media screen and (max-width: 414px)': {
-        '&.small': {
-            padding: SMALL_SIZE_PHONE,
-            width: SMALL_WIDTH_PHONE,
-        },
-        '&.medium': {
-            padding: MEDIUM_SIZE_PHONE,
-            width: MEDIUM_WIDTH_PHONE,
-        },
-        '&.large': {
-            padding: LARGE_SIZE_PHONE,
-            width: LARGE_WIDTH_PHONE,
-        },
+        '&.small': SIZES.small.phone,
+        '&.medium': SIZES.medium.phone,
+        '&.large': SIZES.large.phone,
     },
 
     '&.success': {
-        border: SUCCESS_STATUS,
+        border: BORDERS.success,
     },
     '&.error': {
-        border: ERROR_STATUS,
+        border: BORDERS.error,
     },
 });
 

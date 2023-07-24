@@ -11,6 +11,7 @@ export interface TextFieldProps
     inputSize?: SizeType;
     textLabel?: string;
     fontSize?: string;
+    fontFamily?: string;
     borderRadius?: string;
     iconLeft?: string;
     iconButton?: string;
