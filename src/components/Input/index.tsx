@@ -6,7 +6,7 @@ import Radio from './Radio/Radio/Radio';
 import RadioList from './Radio/RadioList/RadioList';
 
 export { TextFieldProps } from './TextField/TextFieldProps';
-export { RadioProps } from './Radio/Radio/RadioProps';
+export { RadioProps } from './Radio/radioProps';
 export { RadioListProps } from './Radio/RadioList/radioListProps';
 
 interface CompoundedComponent extends ForwardRefExoticComponent<InputProps> {

@@ -1,5 +1,5 @@
 import { MouseEvent, ChangeEvent } from 'react';
-import { RadioType, RadioSizeType, RadioValueType } from '../types';
+import { RadioType, RadioSizeType, RadioValueType } from './types';
 
 interface RadioChangeEventTarget {
     radioSize?: RadioSizeType;
@@ -12,13 +12,26 @@ interface RadioChangeEventTarget {
     onChange: (e: RadioChangeEvent) => void;
 }
 
-export interface RadioProps extends RadioChangeEventTarget {
-    checked: boolean;
+interface RadioListChangeEventTarget extends RadioChangeEventTarget {
+    options: Array<{
+        label?: string;
+        value?: string;
+    }>;
 }
 
 interface RadioChangeEvent {
-    target: RadioProps;
+    target: RadioProps | RadioListProps;
     stopPropagation: () => void;
     preventDefault: () => void;
     nativeEvent: ChangeEvent<HTMLInputElement>;
 }
+
+interface RadioProps extends RadioChangeEventTarget {
+    checked: boolean;
+}
+
+interface RadioListProps extends RadioListChangeEventTarget {
+    checked: boolean;
+}
+
+export { RadioProps, RadioListProps };

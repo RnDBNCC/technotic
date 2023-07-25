@@ -1,19 +1,12 @@
 import React, { PropsWithChildren, useState } from 'react';
-import { RadioListProps } from './radioListProps';
-import RadioStyle from '../styles';
+import { RadioListProps } from '../radioProps';
+import RadioStyle from '../styles/styles';
 import Radio from '../Radio/Radio';
 
 const RadioList = (props: PropsWithChildren<RadioListProps>): JSX.Element => {
-    const {
-        radioSize = 'medium',
-        name = 'radio-list',
-        radioColor,
-        options,
-    } = props;
+    const { options } = props;
 
-    const className = `${radioSize} ${RadioStyle}`;
-
-    const color = { accentColor: radioColor };
+    const className = `${RadioStyle}`;
 
     const [selected, setSelected] = useState<string | null>(null);
 
@@ -22,11 +15,10 @@ const RadioList = (props: PropsWithChildren<RadioListProps>): JSX.Element => {
     };
 
     return (
-        <div className={`radio-list ${className}`} style={color}>
+        <div className={`radio-list ${className}`}>
             {options.map((option: any, index: number) => (
                 <Radio
                     key={`radio-${index}`}
-                    name={`${name}-${index}`}
                     value={option.value}
                     {...props}
                     onChange={() => handleRadioChange(option.value)}

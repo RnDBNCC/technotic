@@ -1,13 +1,17 @@
 import React, { PropsWithChildren } from 'react';
-import { RadioProps } from './RadioProps';
-import RadioLabelStyle, { styRadio, TextChildStyle } from '../styles';
+import { RadioProps } from '../radioProps';
+import RadioLabelStyle, { styRadio, TextChildStyle } from '../styles/styles';
 
-function getTypeClassName(radioSize: string, radioType: string): string {
+function getTypeClassName(
+    radioSize: string,
+    radioType: string,
+    radioColor?: string
+): string {
     switch (radioType) {
         case 'primary':
-            return `${radioSize} ${styRadio.Primary}`;
+            return `${styRadio.Primary(radioSize, radioColor)}`;
         case 'secondary':
-            return `${radioSize} ${styRadio.Secondary}`;
+            return `${styRadio.Secondary(radioSize, radioColor)}`;
         default:
             return 'wrong button type';
     }
@@ -22,13 +26,11 @@ const Radio = (props: PropsWithChildren<RadioProps>): JSX.Element => {
         name,
     } = props;
 
-    const RadioClassName = getTypeClassName(radioSize, radioType);
+    const RadioClassName = getTypeClassName(radioSize, radioType, radioColor);
 
-    const color = { accentColor: radioColor };
     return (
         <label className={RadioLabelStyle}>
             <input
-                style={color}
                 className={`${RadioClassName}`}
                 type="radio"
                 value={value}
