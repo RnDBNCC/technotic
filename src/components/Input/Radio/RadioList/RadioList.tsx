@@ -1,16 +1,12 @@
 import React, { PropsWithChildren, useState } from 'react';
 import { RadioListProps } from '../radioProps';
-import RadioStyle from '../styles/styles';
+import { styRadioList } from '../styles/styles';
 import Radio from '../Radio/Radio';
 
 const RadioList = (props: PropsWithChildren<RadioListProps>): JSX.Element => {
-    const {
-        // direction = 'vertical',
-        options,
-        ...rest
-    } = props;
+    const { direction = 'row', options, ...rest } = props;
 
-    const className = `${RadioStyle}`;
+    const className = `${styRadioList(direction)}`;
 
     const [selected, setSelected] = useState<string | null>(null);
 

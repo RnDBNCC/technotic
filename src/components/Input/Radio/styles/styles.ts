@@ -4,12 +4,39 @@ import sizeGenerator from './styleGenerator';
 
 // CSS default styles for the label radio
 export default css({
+    position: 'relative',
     display: 'inline-flex',
     justifyContent: 'center',
     justifyItems: 'center',
     alignItems: 'center',
     flexDirection: 'row',
 });
+
+// const for the radio list relative and absolute
+export const styRadioList = (direction: string): ReturnType<typeof css> => {
+    if (direction === 'row') {
+        return css({
+            position: 'relative',
+            display: 'inline-flex',
+            gap: '0.75rem',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            justifyItems: 'center',
+            alignItems: 'center',
+        });
+    } else {
+        return css({
+            position: 'relative',
+            display: 'inline-flex',
+            width: 'fit-content',
+            gap: '0.75rem',
+            flexDirection: 'column',
+            justifyContent: 'start',
+            justifyItems: 'start',
+            alignItems: 'start',
+        });
+    }
+};
 
 // main styles for the radio
 const commonStyles = {
