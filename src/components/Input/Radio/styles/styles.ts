@@ -2,7 +2,7 @@ import { css } from '@emotion/css';
 import ColorSystem from '../../../ColorSystem/index';
 import sizeGenerator from './styleGenerator';
 
-// CSS styles for the label radio
+// CSS default styles for the label radio
 export default css({
     display: 'inline-flex',
     justifyContent: 'center',

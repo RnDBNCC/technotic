@@ -4,7 +4,11 @@ import RadioStyle from '../styles/styles';
 import Radio from '../Radio/Radio';
 
 const RadioList = (props: PropsWithChildren<RadioListProps>): JSX.Element => {
-    const { options } = props;
+    const {
+        // direction = 'vertical',
+        options,
+        ...rest
+    } = props;
 
     const className = `${RadioStyle}`;
 
@@ -20,9 +24,9 @@ const RadioList = (props: PropsWithChildren<RadioListProps>): JSX.Element => {
                 <Radio
                     key={`radio-${index}`}
                     value={option.value}
-                    {...props}
-                    onChange={() => handleRadioChange(option.value)}
+                    {...rest}
                     checked={selected === option.value}
+                    onChange={() => handleRadioChange(option.value)}
                 >
                     {option.label}
                 </Radio>

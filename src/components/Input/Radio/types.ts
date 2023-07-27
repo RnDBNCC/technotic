@@ -4,8 +4,7 @@ type RadioSizeType = 'small' | 'medium' | 'large' | undefined;
 type RadioValueType = string | number;
 
 // RadioGroup
-type RadioGroupButtonStyle = 'outline' | 'solid' | undefined;
-type RadioGroupOptionType = 'default' | undefined;
+type RadioGroupDirectionType = 'horizontal' | 'vertical' | undefined;
 
 export {
     // Radio
@@ -13,6 +12,5 @@ export {
     RadioSizeType,
     RadioValueType,
     // RadioGroup
-    RadioGroupButtonStyle,
-    RadioGroupOptionType,
+    RadioGroupDirectionType,
 };
