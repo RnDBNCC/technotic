@@ -1,17 +1,11 @@
 import { MouseEvent, ChangeEvent } from 'react';
-import {
-    RadioType,
-    RadioSizeType,
-    RadioValueType,
-    RadioGroupDirectionType,
-} from './types';
+import { RadioType, RadioSizeType, RadioGroupDirectionType } from './types';
 
 interface RadioChangeEventTarget {
     radioSize?: RadioSizeType;
     radioType?: RadioType;
     radioColor?: string;
-    value?: RadioValueType;
-    defaultValue?: RadioValueType;
+    value?: any;
     name?: string;
     onClick?: (e: MouseEvent<HTMLInputElement>) => void;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;

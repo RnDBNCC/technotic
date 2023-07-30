@@ -23,7 +23,6 @@ const Radio = (props: PropsWithChildren<RadioProps>): JSX.Element => {
         radioType = 'primary',
         radioColor,
         value,
-        name,
         checked,
         children,
         onChange,
@@ -38,7 +37,6 @@ const Radio = (props: PropsWithChildren<RadioProps>): JSX.Element => {
                 className={`${RadioClassName}`}
                 type="radio"
                 value={value}
-                name={name}
                 checked={checked}
                 onChange={onChange}
                 {...rest}
