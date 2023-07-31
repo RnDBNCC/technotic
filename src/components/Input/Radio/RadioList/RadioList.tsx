@@ -4,14 +4,25 @@ import { styRadioList } from '../styles/styles';
 import Radio from '../Radio/Radio';
 
 const RadioList = (props: PropsWithChildren<RadioListProps>): JSX.Element => {
-    const { direction = 'row', options, ...rest } = props;
+    const {
+        direction = 'row',
+        options,
+        checked,
+        onChange,
+        onRadioChange,
+        ...rest
+    } = props;
 
     const className = `${styRadioList(direction)}`;
 
     const [selected, setSelected] = useState<string | null>(null);
 
-    const handleRadioChange = (value: string): void => {
+    const handleRadioChange = (value: any): void => {
         setSelected(value);
+
+        if (onChange != null) {
+            onChange(value);
+        }
     };
 
     return (
@@ -20,9 +31,9 @@ const RadioList = (props: PropsWithChildren<RadioListProps>): JSX.Element => {
                 <Radio
                     key={`radio-${index}`}
                     value={option.value}
-                    {...rest}
                     checked={selected === option.value}
-                    onChange={() => handleRadioChange(option.value)}
+                    onRadioChange={handleRadioChange}
+                    {...rest}
                 >
                     {option.label}
                 </Radio>

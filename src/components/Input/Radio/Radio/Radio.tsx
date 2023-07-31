@@ -23,14 +23,22 @@ const Radio = (props: PropsWithChildren<RadioProps>): JSX.Element => {
         radioType = 'primary',
         radioColor,
         value,
-        name,
         checked,
         children,
         onChange,
+        onRadioChange,
         ...rest
     } = props;
 
     const RadioClassName = getTypeClassName(radioSize, radioType, radioColor);
+
+    const handleChange = (): void => {
+        if (onChange !== undefined) onChange(value);
+        else if (onRadioChange !== undefined) onRadioChange(value);
+        else {
+            return console.error('onChange or onRadioChange must be defined');
+        }
+    };
 
     return (
         <label className={RadioLabelStyle}>
@@ -38,9 +46,8 @@ const Radio = (props: PropsWithChildren<RadioProps>): JSX.Element => {
                 className={`${RadioClassName}`}
                 type="radio"
                 value={value}
-                name={name}
                 checked={checked}
-                onChange={onChange}
+                onChange={handleChange}
                 {...rest}
             />
             <span className={TextChildStyle}>{children}</span>

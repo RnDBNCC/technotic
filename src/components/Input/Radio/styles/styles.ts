@@ -46,6 +46,9 @@ const commonStyles = {
         accentColor: ColorSystem.GREY100,
         transition: 'opacity 0.5s ease-in-out',
     },
+    '&:hover': {
+        cursor: 'pointer',
+    },
 };
 
 // CSS styles for the type of the radio
@@ -57,7 +60,7 @@ export const styRadio = {
             ...commonStyles,
         }),
 
-    Secondary: (customSize: string, customColor = ColorSystem.BLUE500) =>
+    Secondary: (customSize: string, customColor = ColorSystem.GREY500) =>
         css({
             accentColor: customColor,
             ...sizeGenerator[customSize],
