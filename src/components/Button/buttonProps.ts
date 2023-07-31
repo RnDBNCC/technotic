@@ -1,7 +1,5 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
-
-type SizeType = 'small' | 'medium' | 'large';
-type ButtonType = 'primary' | 'secondary' | 'link';
+import { ButtonType, SizeType } from './types';
 
 export interface ButtonProps
     extends DetailedHTMLProps<
@@ -10,6 +8,7 @@ export interface ButtonProps
     > {
     btnSize?: SizeType;
     btnType?: ButtonType;
+    disabled?: boolean;
     btnColor?: string;
     link?: string;
     element?: any;
