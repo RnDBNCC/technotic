@@ -141,7 +141,7 @@ export const styNavbarCrossMenuButton = (
     }
     & span:nth-child(2) {
         opacity: 0;
-        transform: opacity 0.2s ease;
+        transition: opacity 0.2s ease;
     }
     & span:nth-child(3) {
         transform: rotate(-45deg);

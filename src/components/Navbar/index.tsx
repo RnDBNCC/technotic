@@ -24,22 +24,74 @@ const Navbar: React.FC<NavbarProps> = ({
     },
 }) => {
     const [showMenu, setShowMenu] = useState(false);
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
 
     useEffect(() => {
-        const handleResize: () => void = () =>
-            setScreenWidth(window.innerWidth);
+        const handleResize = (): void => setScreenWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     const isMobile = screenWidth <= 1024;
 
-    const toggleMenu: () => void = () => {
+    const toggleMenu = (): void => {
         setShowMenu(!showMenu);
     };
+
+    const renderNavLinks = (): JSX.Element => (
+        <div className={cx(styles.styNavlinks(fontColor))}>
+            {navLinks.map((navlink, index) => (
+                <a key={index} href={navlink.href}>
+                    {navlink.text}
+                </a>
+            ))}
+        </div>
+    );
+
+    const renderButton = (): JSX.Element | false =>
+        displayButton && (
+            <a
+                href={buttonLink.href}
+                className={cx(styles.styNavbarButton(bgColor, fontColor))}
+            >
+                {buttonLink.text}
+            </a>
+        );
+
+    const renderMobileNavLinks = (): JSX.Element => (
+        <div
+            className={cx(
+                showMenu
+                    ? styles.styMobileNavlinksOpen(bgColor)
+                    : styles.styMobileNavlinksClose(bgColor)
+            )}
+        >
+            {navLinks.map((navlink, index) => (
+                <a className="mobileNavLink" key={index} href={navlink.href}>
+                    {navlink.text}
+                </a>
+            ))}
+            <div>{renderButton()}</div>
+        </div>
+    );
+
+    const renderMenuButton = (): JSX.Element => (
+        <div
+            className={cx(
+                showMenu
+                    ? styles.styNavbarCrossMenuButton(menuColor, menuBgColor)
+                    : styles.styNavbarHamburgerMenuButton(
+                          menuColor,
+                          menuBgColor
+                      )
+            )}
+            onClick={toggleMenu}
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    );
 
     return (
         <nav className={cx(styles.styNavbarContainer(positionType))}>
@@ -47,80 +99,10 @@ const Navbar: React.FC<NavbarProps> = ({
                 <a href="/" className={cx(styles.styNavbarTitle(fontColor))}>
                     {title}
                 </a>
-                {isMobile ? (
-                    <div
-                        className={`cx(
-            ${
-                showMenu
-                    ? styles.styNavbarCrossMenuButton(menuColor, menuBgColor)
-                    : styles.styNavbarHamburgerMenuButton(
-                          menuColor,
-                          menuBgColor
-                      )
-            }
-          )`}
-                        onClick={toggleMenu}
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                ) : (
-                    <div className={cx(styles.styNavlinks(fontColor))}>
-                        {navLinks.map((navlink, index) => (
-                            <a key={index} href={navlink.href}>
-                                {navlink.text}
-                            </a>
-                        ))}
-                    </div>
-                )}
-                {isMobile
-                    ? null
-                    : displayButton && (
-                          <a
-                              href={buttonLink.href}
-                              className={cx(
-                                  styles.styNavbarButton(bgColor, fontColor)
-                              )}
-                          >
-                              {buttonLink.text}
-                          </a>
-                      )}
+                {isMobile ? renderMenuButton() : renderNavLinks()}
+                {!isMobile && renderButton()}
             </div>
-            {isMobile ? (
-                <div
-                    className={`cx(
-          ${
-              showMenu
-                  ? styles.styMobileNavlinksOpen(bgColor)
-                  : styles.styMobileNavlinksClose(bgColor)
-          }
-        )`}
-                >
-                    {navLinks.map((navlink, index) => (
-                        <a
-                            className="mobileNavLink"
-                            key={index}
-                            href={navlink.href}
-                        >
-                            {navlink.text}
-                        </a>
-                    ))}
-
-                    {displayButton && (
-                        <div>
-                            <a
-                                href={buttonLink.href}
-                                className={cx(
-                                    styles.styNavbarButton(bgColor, fontColor)
-                                )}
-                            >
-                                {buttonLink.text}
-                            </a>
-                        </div>
-                    )}
-                </div>
-            ) : null}
+            {isMobile && renderMobileNavLinks()}
         </nav>
     );
 };
