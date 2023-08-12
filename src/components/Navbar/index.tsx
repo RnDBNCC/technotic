@@ -7,9 +7,21 @@ import * as styles from './styles';
 
 const Navbar: React.FC<NavbarProps> = ({
     title = 'technotic',
-    links = ['Link1', 'Link2', 'Link3', 'Link4'],
+    positionType = 'static',
     bgColor = '#22539F',
-    fontColor = '#FBFBFB',
+    fontColor = '#FFFFFF',
+    menuColor = '#000000',
+    menuBgColor = '#FFFFFF',
+    navLinks = [
+        { text: 'link1', href: '/' },
+        { text: 'link2', href: '/' },
+        { text: 'link3', href: '/' },
+    ],
+    displayButton = true,
+    buttonLink = {
+        text: 'Click Me',
+        href: '/',
+    },
 }) => {
     const [showMenu, setShowMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -30,28 +42,21 @@ const Navbar: React.FC<NavbarProps> = ({
     };
 
     return (
-        <nav className={cx(styles.styNavbarContainer)}>
-            {' '}
-            <div
-                className={`cx(
-            ${
-                isMobile
-                    ? styles.styNavbar(bgColor, '24px 64px')
-                    : styles.styNavbar(bgColor, '24px 128px')
-            }
-          )`}
-            >
+        <nav className={cx(styles.styNavbarContainer(positionType))}>
+            <div className={cx(styles.styNavbar(bgColor))}>
                 <a href="/" className={cx(styles.styNavbarTitle(fontColor))}>
                     {title}
                 </a>
-
                 {isMobile ? (
                     <div
                         className={`cx(
             ${
                 showMenu
-                    ? styles.styNavbarCrossMenuButton
-                    : styles.styNavbarHamburgerMenuButton
+                    ? styles.styNavbarCrossMenuButton(menuColor, menuBgColor)
+                    : styles.styNavbarHamburgerMenuButton(
+                          menuColor,
+                          menuBgColor
+                      )
             }
           )`}
                         onClick={toggleMenu}
@@ -62,29 +67,58 @@ const Navbar: React.FC<NavbarProps> = ({
                     </div>
                 ) : (
                     <div className={cx(styles.styNavlinks(fontColor))}>
-                        {links.map((link, index) => (
-                            <a href={`/${link}`} key={index}>
-                                {link}
+                        {navLinks.map((navlink, index) => (
+                            <a key={index} href={navlink.href}>
+                                {navlink.text}
                             </a>
                         ))}
                     </div>
                 )}
+                {isMobile
+                    ? null
+                    : displayButton && (
+                          <a
+                              href={buttonLink.href}
+                              className={cx(
+                                  styles.styNavbarButton(bgColor, fontColor)
+                              )}
+                          >
+                              {buttonLink.text}
+                          </a>
+                      )}
             </div>
             {isMobile ? (
                 <div
                     className={`cx(
           ${
               showMenu
-                  ? styles.styMobileNavlinksOpen
-                  : styles.styMobileNavlinksClose
+                  ? styles.styMobileNavlinksOpen(bgColor)
+                  : styles.styMobileNavlinksClose(bgColor)
           }
         )`}
                 >
-                    {links.map((link, index) => (
-                        <a href={`/${link}`} key={index}>
-                            {link}
+                    {navLinks.map((navlink, index) => (
+                        <a
+                            className="mobileNavLink"
+                            key={index}
+                            href={navlink.href}
+                        >
+                            {navlink.text}
                         </a>
                     ))}
+
+                    {displayButton && (
+                        <div>
+                            <a
+                                href={buttonLink.href}
+                                className={cx(
+                                    styles.styNavbarButton(bgColor, fontColor)
+                                )}
+                            >
+                                {buttonLink.text}
+                            </a>
+                        </div>
+                    )}
                 </div>
             ) : null}
         </nav>
