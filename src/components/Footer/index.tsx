@@ -110,6 +110,18 @@ const Footer: React.FC<FooterProps> = ({
         </span>
     );
 
+    const isSocialMediaEmpty = (): boolean => {
+        if (
+            facebook === null &&
+            instagram === null &&
+            twitter === null &&
+            linkedin === null &&
+            youtube === null
+        )
+            return true;
+        else return false;
+    };
+
     return (
         <footer className={cx(styles.styFooterContainer(bgColor, fontColor))}>
             <div className={cx(styles.styFooterTop)}>
@@ -126,7 +138,7 @@ const Footer: React.FC<FooterProps> = ({
                         renderNavLinks(navLinks2, navLinksTitle2)}
                     {displayNavLinks3 &&
                         renderNavLinks(navLinks3, navLinksTitle3)}
-                    {renderSocialMedia()}
+                    {!isSocialMediaEmpty() && renderSocialMedia()}
                 </div>
             </div>
             <p className={cx(styles.styCopyrightText)}>{copyrightText}</p>
