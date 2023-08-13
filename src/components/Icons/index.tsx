@@ -2,7 +2,7 @@ import React from 'react';
 import { IconProps } from './types';
 
 export const FacebookIcon: React.FC<IconProps> = ({
-    color = '#FBFBFB',
+    color = '#FFFFFF',
     size = 16,
 }) => {
     return (
@@ -19,7 +19,7 @@ export const FacebookIcon: React.FC<IconProps> = ({
 };
 
 export const InstagramIcon: React.FC<IconProps> = ({
-    color = '#FBFBFB',
+    color = '#FFFFFF',
     size = 16,
 }) => {
     return (
@@ -36,7 +36,7 @@ export const InstagramIcon: React.FC<IconProps> = ({
 };
 
 export const LinkedInIcon: React.FC<IconProps> = ({
-    color = '#FBFBFB',
+    color = '#FFFFFF',
     size = 16,
 }) => {
     return (
@@ -53,7 +53,7 @@ export const LinkedInIcon: React.FC<IconProps> = ({
 };
 
 export const TwitterIcon: React.FC<IconProps> = ({
-    color = '#FBFBFB',
+    color = '#FFFFFF',
     size = 16,
 }) => {
     return (
@@ -70,7 +70,7 @@ export const TwitterIcon: React.FC<IconProps> = ({
 };
 
 export const YoutubeIcon: React.FC<IconProps> = ({
-    color = '#FBFBFB',
+    color = '#FFFFFF',
     size = 16,
 }) => {
     return (
