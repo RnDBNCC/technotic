@@ -1,17 +1,3 @@
-import { ReactNode } from 'react';
+type positionType = 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky';
 
-interface link {
-    text: string;
-    href: string;
-}
-export interface NavbarProps {
-    title?: ReactNode;
-    navLinks?: link[];
-    bgColor?: string;
-    fontColor?: string;
-    menuColor?: string;
-    menuBgColor?: string;
-    displayButton?: boolean;
-    buttonLink?: link;
-    positionType?: 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky';
-}
+export { positionType };

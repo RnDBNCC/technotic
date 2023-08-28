@@ -14,14 +14,12 @@ a{
 }`;
 
 export const styNavbarContainer = (
-    positionType: 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky'
+    navbarPositionType: string,
+    bgColor: string
 ): string => css`
-    position: ${positionType};
+    position: ${navbarPositionType};
     width: 100%;
-`;
-
-export const styNavbar = (bgColor: string): string => css`
-    z-index: 10;
+       z-index: 10;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -51,7 +49,7 @@ export const styNavbar = (bgColor: string): string => css`
     }
 `;
 
-export const styNavlinks = (fontColor: string): string => css`
+export const styNavLinks = (fontColor: string): string => css`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,12 +58,12 @@ export const styNavlinks = (fontColor: string): string => css`
     font-size: 1rem;
     font-weight: 300;
     font-family: poppins;
-    & a {
+    & a.navLink {
         display: inline-block;
         position: relative;
         color: ${fontColor};
     }
-    & a::after {
+    & a.navLink::after {
         content: '';
         position: absolute;
         width: 100%;
@@ -77,13 +75,13 @@ export const styNavlinks = (fontColor: string): string => css`
         transform-origin: bottom right;
         transition: transform 0.25s ease-out;
     }
-    & a:hover::after {
+    & a.navLink:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
     }
 `;
 
-export const styNavbarHamburgerMenuButton = (
+export const styHamburgerMenuButton = (
     menuColor: string,
     menuBgColor: string
 ): string => css`
@@ -92,7 +90,7 @@ export const styNavbarHamburgerMenuButton = (
     aspect-ratio: 1 / 1;
     border-radius: 1rem;
     background-color: ${menuBgColor};
-    & span {
+    & span.menuIcon {
         position: absolute;
         background-color: ${menuColor};
         width: 20px;
@@ -104,17 +102,17 @@ export const styNavbarHamburgerMenuButton = (
         bottom: 0;
         margin: auto;
     }
-    & span:nth-child(1) {
+    & span.menuIcon:nth-child(1) {
         transform: translateY(-7px);
         transition: transform 0.2s ease;
     }
-    & span:nth-child(3) {
+    & span.menuIcon:nth-child(3) {
         transform: translateY(7px);
         transition: transform 0.2s ease;
     }
 `;
 
-export const styNavbarCrossMenuButton = (
+export const styCrossMenuButton = (
     menuColor: string,
     menuBgColor: string
 ): string => css`
@@ -123,7 +121,7 @@ export const styNavbarCrossMenuButton = (
     aspect-ratio: 1 / 1;
     border-radius: 1rem;
     background-color: ${menuBgColor};
-    & span {
+    & span.menuIcon {
         position: absolute;
         background-color: ${menuColor};
         width: 20px;
@@ -135,21 +133,21 @@ export const styNavbarCrossMenuButton = (
         bottom: 0;
         margin: auto;
     }
-    & span:nth-child(1) {
+    & span.menuIcon:nth-child(1) {
         transform: rotate(45deg);
         transition: transform 0.2s ease;
     }
-    & span:nth-child(2) {
+    & span.menuIcon:nth-child(2) {
         opacity: 0;
         transition: opacity 0.2s ease;
     }
-    & span:nth-child(3) {
+    & span.menuIcon:nth-child(3) {
         transform: rotate(-45deg);
         transition: transform 0.2s ease;
     }
 `;
 
-export const styMobileNavlinksOpen = (bgColor: string): string => css`
+export const styMobileNavLinksOpen = (bgColor: string): string => css`
     font-size: 1rem;
     font-weight: 300;
     font-family: poppins;
@@ -169,7 +167,7 @@ export const styMobileNavlinksOpen = (bgColor: string): string => css`
         padding: 0.5rem 2rem 2rem 2rem;
         text-align: center;
     }
-    & div {
+    & div.mobileNavLinkButton {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -177,7 +175,7 @@ export const styMobileNavlinksOpen = (bgColor: string): string => css`
     }
 `;
 
-export const styMobileNavlinksClose = (bgColor: string): string => css`
+export const styMobileNavLinksClose = (bgColor: string): string => css`
     font-size: 1rem;
     font-weight: 300;
     font-family: poppins;
@@ -197,7 +195,7 @@ export const styMobileNavlinksClose = (bgColor: string): string => css`
         padding: 0.5rem 2rem 2rem 2rem;
         text-align: center;
     }
-    & div {
+    & div.mobileNavLinkButton {
         display: flex;
         justify-content: center;
         align-items: center;
