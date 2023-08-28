@@ -5,6 +5,14 @@ interface SocialMediaLink {
     link: string;
 }
 
+interface SocialMedia {
+    facebook: SocialMediaLink;
+    instagram: SocialMediaLink;
+    twitter: SocialMediaLink;
+    linkedin: SocialMediaLink;
+    youtube: SocialMediaLink;
+}
+
 export interface NavLink {
     text: string;
     href: string;
@@ -24,10 +32,6 @@ export interface FooterProps {
     displayNavLinks3?: boolean;
     navLinks3?: NavLink[];
     navLinksTitle3?: string;
-    instagram: SocialMediaLink;
-    facebook?: SocialMediaLink;
-    twitter?: SocialMediaLink;
-    linkedin?: SocialMediaLink;
-    youtube?: SocialMediaLink;
+    socialMedia?: SocialMedia;
     copyrightText?: string;
 }

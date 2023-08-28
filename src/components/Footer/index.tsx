@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { cx } from '@emotion/css';
 import { FooterProps, NavLink } from './types';
 import * as styles from './styles';
@@ -8,89 +8,111 @@ const Footer: React.FC<FooterProps> = ({
     bgColor = '#111314',
     fontColor = '#FFFFFF',
     title = 'Technotic',
-    description = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, dolore quos asperiores doloribus ea eaque sed impedit totam voluptate ipsa obcaecati consequuntur sit molestias esse neque ullam?',
+    description = 'Design smarter, not harder with Technotics powerful design system.',
     displayNavLinks1 = true,
-    navLinksTitle1 = 'NavLinks 1',
+    navLinksTitle1 = 'Explore',
     navLinks1 = [
-        { text: 'link1', href: '/' },
-        { text: 'link2', href: '/' },
-        { text: 'link3', href: '/' },
+        { text: 'Home', href: '/' },
+        { text: 'About Us', href: '/' },
+        { text: 'Contact Us', href: '/' },
     ],
     displayNavLinks2 = true,
-    navLinksTitle2 = 'NavLinks 2',
+    navLinksTitle2 = 'Resources',
     navLinks2 = [
-        { text: 'link1', href: '/' },
-        { text: 'link2', href: '/' },
-        { text: 'link3', href: '/' },
+        { text: 'Documentation', href: '/' },
+        { text: 'Tutorial', href: '/' },
+        { text: 'Glossary', href: '/' },
     ],
     displayNavLinks3 = true,
-    navLinksTitle3 = 'NavLinks 3',
+    navLinksTitle3 = 'Connect',
     navLinks3 = [
-        { text: 'link1', href: '/' },
-        { text: 'link2', href: '/' },
-        { text: 'link3', href: '/' },
+        { text: 'Newsletter', href: '/' },
+        { text: 'Privacy Policy', href: '/' },
+        { text: 'Terms of Service', href: '/' },
     ],
-    facebook = null,
-    instagram = null,
-    twitter = null,
-    linkedin = null,
-    youtube = null,
+    socialMedia = {
+        facebook: {
+            username: 'Facebook',
+            link: 'https://www.facebook.com',
+        },
+        instagram: {
+            username: 'Instagram',
+            link: 'https://www.instagram.com',
+        },
+        twitter: {
+            username: 'Twitter',
+            link: 'https://twitter.com',
+        },
+        linkedin: {
+            username: 'LinkedIn',
+            link: 'https://www.linkedin.com',
+        },
+        youtube: {
+            username: 'YouTube',
+            link: 'https://www.youtube.com',
+        },
+    },
     copyrightText = 'Copyright © 2023 Technotic. All rights reserved.',
 }) => {
-    const renderSocialMedia = (): JSX.Element => (
+    const renderSocialMedia = (): ReactNode => (
         <span className={cx(styles.stySocialMediaContainer)}>
-            {facebook !== null && (
+            {socialMedia.facebook !== undefined && (
                 <a
-                    href={facebook?.link}
+                    href={socialMedia.facebook.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="socialMediaLink"
                 >
                     <icons.FacebookIcon color={fontColor} size={24} />
-                    {facebook?.username}
+                    {socialMedia.facebook.username}
                 </a>
             )}
 
-            {instagram !== null && (
+            {socialMedia.instagram !== undefined && (
                 <a
-                    href={instagram?.link}
+                    href={socialMedia.instagram.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="socialMediaLink"
                 >
                     <icons.InstagramIcon color={fontColor} size={24} />
-                    {instagram?.username}
+                    {socialMedia.instagram.username}
                 </a>
             )}
 
-            {twitter !== null && (
+            {socialMedia.twitter !== undefined && (
                 <a
-                    href={twitter?.link}
+                    href={socialMedia.twitter.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="socialMediaLink"
                 >
                     <icons.TwitterIcon color={fontColor} size={24} />
-                    {twitter?.username}
+                    {socialMedia.twitter.username}
                 </a>
             )}
 
-            {linkedin !== null && (
+            {socialMedia.linkedin !== undefined && (
                 <a
-                    href={linkedin?.link}
+                    href={socialMedia.linkedin.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="socialMediaLink"
                 >
                     <icons.LinkedInIcon color={fontColor} size={24} />
-                    {linkedin?.username}
+                    {socialMedia.linkedin.username}
                 </a>
             )}
 
-            {youtube !== null && (
+            {socialMedia.youtube !== undefined && (
                 <a
-                    href={youtube?.link}
+                    href={socialMedia.youtube.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="socialMediaLink"
                 >
                     <icons.YoutubeIcon color={fontColor} size={24} />
-                    {youtube?.username}
+                    {socialMedia.youtube.username}
                 </a>
             )}
         </span>
@@ -99,28 +121,16 @@ const Footer: React.FC<FooterProps> = ({
     const renderNavLinks = (
         navLinks: NavLink[],
         navLinksTitle: string
-    ): JSX.Element => (
+    ): ReactNode => (
         <span className={cx(styles.styNavLinkContainer)}>
             <h1 className={cx(styles.styLinkHeading)}>{navLinksTitle}</h1>
             {navLinks.map((navlink, index) => (
-                <a key={index} href={navlink.href}>
+                <a key={index} href={navlink.href} className="navLink">
                     {navlink.text}
                 </a>
             ))}
         </span>
     );
-
-    const isSocialMediaEmpty = (): boolean => {
-        if (
-            facebook === null &&
-            instagram === null &&
-            twitter === null &&
-            linkedin === null &&
-            youtube === null
-        )
-            return true;
-        else return false;
-    };
 
     return (
         <footer className={cx(styles.styFooterContainer(bgColor, fontColor))}>
@@ -138,7 +148,7 @@ const Footer: React.FC<FooterProps> = ({
                         renderNavLinks(navLinks2, navLinksTitle2)}
                     {displayNavLinks3 &&
                         renderNavLinks(navLinks3, navLinksTitle3)}
-                    {!isSocialMediaEmpty() && renderSocialMedia()}
+                    {renderSocialMedia()}
                 </div>
             </div>
             <p className={cx(styles.styCopyrightText)}>{copyrightText}</p>

@@ -117,7 +117,6 @@ export const styLinksContainer = css`
     @media (min-width: 640px) {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
         width: 100%;
         gap: 6rem;
     }
@@ -132,8 +131,8 @@ export const styLinkHeading = css`
 export const styNavLinkContainer = css`
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    & a {
+    gap: 1rem;
+    & a.navLink {
         font-family: poppins;
         font-weight: 500;
         font-size: 0.8rem;
@@ -142,7 +141,7 @@ export const styNavLinkContainer = css`
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
     }
-    & a:hover {
+    & a.navLink:hover {
         opacity: 1;
     }
 `;
@@ -151,7 +150,7 @@ export const stySocialMediaContainer = css`
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    & a {
+    & a.socialMediaLink {
         display: flex;
         align-items: center;
         gap: 0.5rem;
