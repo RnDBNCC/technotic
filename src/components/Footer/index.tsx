@@ -1,8 +1,20 @@
 import React, { ReactNode } from 'react';
 import { cx } from '@emotion/css';
-import { FooterProps, NavLink } from './types';
-import * as styles from './styles';
+import { FooterProps, NavLink } from './footerProps';
 import * as icons from '../Icons';
+
+import {
+    styFooterContainer,
+    styFooterTop,
+    styTitleDescContainer,
+    styFooterTitle,
+    styFooterDesc,
+    styLinksContainer,
+    styLinkHeading,
+    styNavLinkContainer,
+    stySocialMediaContainer,
+    styCopyrightText,
+} from './styles';
 
 const Footer: React.FC<FooterProps> = ({
     bgColor = '#111314',
@@ -54,76 +66,12 @@ const Footer: React.FC<FooterProps> = ({
     },
     copyrightText = 'Copyright © 2023 Technotic. All rights reserved.',
 }) => {
-    const renderSocialMedia = (): ReactNode => (
-        <span className={cx(styles.stySocialMediaContainer)}>
-            {socialMedia.facebook !== undefined && (
-                <a
-                    href={socialMedia.facebook.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="socialMediaLink"
-                >
-                    <icons.FacebookIcon color={fontColor} size={24} />
-                    {socialMedia.facebook.username}
-                </a>
-            )}
-
-            {socialMedia.instagram !== undefined && (
-                <a
-                    href={socialMedia.instagram.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="socialMediaLink"
-                >
-                    <icons.InstagramIcon color={fontColor} size={24} />
-                    {socialMedia.instagram.username}
-                </a>
-            )}
-
-            {socialMedia.twitter !== undefined && (
-                <a
-                    href={socialMedia.twitter.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="socialMediaLink"
-                >
-                    <icons.TwitterIcon color={fontColor} size={24} />
-                    {socialMedia.twitter.username}
-                </a>
-            )}
-
-            {socialMedia.linkedin !== undefined && (
-                <a
-                    href={socialMedia.linkedin.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="socialMediaLink"
-                >
-                    <icons.LinkedInIcon color={fontColor} size={24} />
-                    {socialMedia.linkedin.username}
-                </a>
-            )}
-
-            {socialMedia.youtube !== undefined && (
-                <a
-                    href={socialMedia.youtube.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="socialMediaLink"
-                >
-                    <icons.YoutubeIcon color={fontColor} size={24} />
-                    {socialMedia.youtube.username}
-                </a>
-            )}
-        </span>
-    );
-
     const renderNavLinks = (
         navLinks: NavLink[],
         navLinksTitle: string
     ): ReactNode => (
-        <span className={cx(styles.styNavLinkContainer)}>
-            <h1 className={cx(styles.styLinkHeading)}>{navLinksTitle}</h1>
+        <span className={cx(styNavLinkContainer)}>
+            <h1 className={cx(styLinkHeading)}>{navLinksTitle}</h1>
             {navLinks.map((navlink, index) => (
                 <a key={index} href={navlink.href} className="navLink">
                     {navlink.text}
@@ -133,25 +81,101 @@ const Footer: React.FC<FooterProps> = ({
     );
 
     return (
-        <footer className={cx(styles.styFooterContainer(bgColor, fontColor))}>
-            <div className={cx(styles.styFooterTop)}>
-                <div className={cx(styles.styTitleDescContainer)}>
-                    <a href="/" className={cx(styles.styFooterTitle)}>
+        <footer className={cx(styFooterContainer(bgColor, fontColor))}>
+            <div className={cx(styFooterTop)}>
+                <div className={cx(styTitleDescContainer)}>
+                    <a href="/" className={cx(styFooterTitle)}>
                         {title}
                     </a>
-                    <p className={cx(styles.styFooterDesc)}>{description}</p>
+                    <p className={cx(styFooterDesc)}>{description}</p>
                 </div>
-                <div className={cx(styles.styLinksContainer)}>
+                <div className={cx(styLinksContainer)}>
                     {displayNavLinks1 &&
                         renderNavLinks(navLinks1, navLinksTitle1)}
                     {displayNavLinks2 &&
                         renderNavLinks(navLinks2, navLinksTitle2)}
                     {displayNavLinks3 &&
                         renderNavLinks(navLinks3, navLinksTitle3)}
-                    {renderSocialMedia()}
+
+                    <span className={cx(stySocialMediaContainer)}>
+                        {socialMedia.facebook !== undefined && (
+                            <a
+                                href={socialMedia.facebook.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="socialMediaLink"
+                            >
+                                <icons.FacebookIcon
+                                    color={fontColor}
+                                    size={24}
+                                />
+                                {socialMedia.facebook.username}
+                            </a>
+                        )}
+
+                        {socialMedia.instagram !== undefined && (
+                            <a
+                                href={socialMedia.instagram.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="socialMediaLink"
+                            >
+                                <icons.InstagramIcon
+                                    color={fontColor}
+                                    size={24}
+                                />
+                                {socialMedia.instagram.username}
+                            </a>
+                        )}
+
+                        {socialMedia.twitter !== undefined && (
+                            <a
+                                href={socialMedia.twitter.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="socialMediaLink"
+                            >
+                                <icons.TwitterIcon
+                                    color={fontColor}
+                                    size={24}
+                                />
+                                {socialMedia.twitter.username}
+                            </a>
+                        )}
+
+                        {socialMedia.linkedin !== undefined && (
+                            <a
+                                href={socialMedia.linkedin.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="socialMediaLink"
+                            >
+                                <icons.LinkedInIcon
+                                    color={fontColor}
+                                    size={24}
+                                />
+                                {socialMedia.linkedin.username}
+                            </a>
+                        )}
+
+                        {socialMedia.youtube !== undefined && (
+                            <a
+                                href={socialMedia.youtube.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="socialMediaLink"
+                            >
+                                <icons.YoutubeIcon
+                                    color={fontColor}
+                                    size={24}
+                                />
+                                {socialMedia.youtube.username}
+                            </a>
+                        )}
+                    </span>
                 </div>
             </div>
-            <p className={cx(styles.styCopyrightText)}>{copyrightText}</p>
+            <p className={cx(styCopyrightText)}>{copyrightText}</p>
         </footer>
     );
 };
