@@ -1,16 +1,16 @@
 import { ReactNode } from 'react';
 
-interface SocialMediaLink {
+interface SocialMediaMeta {
     username: string;
-    link: string;
+    url: string;
 }
 
 interface SocialMedia {
-    facebook: SocialMediaLink;
-    instagram: SocialMediaLink;
-    twitter: SocialMediaLink;
-    linkedin: SocialMediaLink;
-    youtube: SocialMediaLink;
+    facebook: SocialMediaMeta;
+    instagram: SocialMediaMeta;
+    twitter: SocialMediaMeta;
+    linkedin: SocialMediaMeta;
+    youtube: SocialMediaMeta;
 }
 
 export interface NavLink {

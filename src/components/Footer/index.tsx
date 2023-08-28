@@ -33,23 +33,23 @@ const Footer: React.FC<FooterProps> = ({
     socialMedia = {
         facebook: {
             username: 'Facebook',
-            link: 'https://www.facebook.com',
+            url: 'https://www.facebook.com',
         },
         instagram: {
             username: 'Instagram',
-            link: 'https://www.instagram.com',
+            url: 'https://www.instagram.com',
         },
         twitter: {
             username: 'Twitter',
-            link: 'https://twitter.com',
+            url: 'https://twitter.com',
         },
         linkedin: {
             username: 'LinkedIn',
-            link: 'https://www.linkedin.com',
+            url: 'https://www.linkedin.com',
         },
         youtube: {
             username: 'YouTube',
-            link: 'https://www.youtube.com',
+            url: 'https://www.youtube.com',
         },
     },
     copyrightText = 'Copyright © 2023 Technotic. All rights reserved.',
@@ -58,7 +58,7 @@ const Footer: React.FC<FooterProps> = ({
         <span className={cx(styles.stySocialMediaContainer)}>
             {socialMedia.facebook !== undefined && (
                 <a
-                    href={socialMedia.facebook.link}
+                    href={socialMedia.facebook.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="socialMediaLink"
@@ -70,7 +70,7 @@ const Footer: React.FC<FooterProps> = ({
 
             {socialMedia.instagram !== undefined && (
                 <a
-                    href={socialMedia.instagram.link}
+                    href={socialMedia.instagram.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="socialMediaLink"
@@ -82,7 +82,7 @@ const Footer: React.FC<FooterProps> = ({
 
             {socialMedia.twitter !== undefined && (
                 <a
-                    href={socialMedia.twitter.link}
+                    href={socialMedia.twitter.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="socialMediaLink"
@@ -94,7 +94,7 @@ const Footer: React.FC<FooterProps> = ({
 
             {socialMedia.linkedin !== undefined && (
                 <a
-                    href={socialMedia.linkedin.link}
+                    href={socialMedia.linkedin.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="socialMediaLink"
@@ -106,7 +106,7 @@ const Footer: React.FC<FooterProps> = ({
 
             {socialMedia.youtube !== undefined && (
                 <a
-                    href={socialMedia.youtube.link}
+                    href={socialMedia.youtube.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="socialMediaLink"
