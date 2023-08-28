@@ -1,3 +1,3 @@
-type positionType = 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky';
+type PositionType = 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky';
 
-export { positionType };
+export { PositionType };

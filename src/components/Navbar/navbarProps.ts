@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { positionType } from './types';
+import { PositionType } from './types';
 
 interface Link {
     text: string;
@@ -15,5 +15,5 @@ export interface NavbarProps {
     menuBgColor?: string;
     displayButton?: boolean;
     buttonLink?: Link;
-    positionType?: positionType;
+    positionType?: PositionType;
 }
