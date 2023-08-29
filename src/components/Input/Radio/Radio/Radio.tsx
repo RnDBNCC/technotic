@@ -33,10 +33,16 @@ const Radio = (props: PropsWithChildren<RadioProps>): JSX.Element => {
     const RadioClassName = getTypeClassName(radioSize, radioType, radioColor);
 
     const handleChange = (): void => {
-        if (onChange !== undefined) onChange(value);
-        else if (onRadioChange !== undefined) onRadioChange(value);
-        else {
-            return console.error('onChange or onRadioChange must be defined');
+        try {
+            if (onChange !== undefined) {
+                onChange(value);
+            } else if (onRadioChange !== undefined) {
+                onRadioChange(value);
+            } else {
+                throw new Error('onChange or onRadioChange must be defined');
+            }
+        } catch (e) {
+            return console.error(e);
         }
     };
 
