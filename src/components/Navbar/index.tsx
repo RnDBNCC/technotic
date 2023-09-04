@@ -61,7 +61,6 @@ const Navbar: React.FC<NavbarProps> = ({
                     )}
                     onClick={toggleMenu}
                 >
-                    {/* Spans for menu icon */}
                     <span className="menuIcon"></span>
                     <span className="menuIcon"></span>
                     <span className="menuIcon"></span>
