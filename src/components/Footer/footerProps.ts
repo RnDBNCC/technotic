@@ -6,11 +6,11 @@ interface SocialMediaMeta {
 }
 
 interface SocialMedia {
-    facebook: SocialMediaMeta;
-    instagram: SocialMediaMeta;
-    twitter: SocialMediaMeta;
-    linkedin: SocialMediaMeta;
-    youtube: SocialMediaMeta;
+    facebook?: SocialMediaMeta;
+    instagram?: SocialMediaMeta;
+    twitter?: SocialMediaMeta;
+    linkedin?: SocialMediaMeta;
+    youtube?: SocialMediaMeta;
 }
 
 export interface NavLink {
