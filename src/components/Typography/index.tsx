@@ -4,7 +4,7 @@ import { cx } from '@emotion/css';
 import { styTypography, styUndefinedTypography } from './style';
 
 const Typography = (props: PropsWithChildren<TypographyProps>): JSX.Element => {
-    const { size, weight, label, color } = props;
+    const { size, weight, color, children } = props;
 
     const typographySize =
         size !== undefined
@@ -20,7 +20,7 @@ const Typography = (props: PropsWithChildren<TypographyProps>): JSX.Element => {
             style={{ color, marginBottom: 0 }}
             className={`${typographySize} ${typographyWeight}`}
         >
-            {label}
+            {children}
         </p>
     );
 };
