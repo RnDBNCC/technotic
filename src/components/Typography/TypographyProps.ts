@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 type TypographySize =
     | 'heading-1'
     | 'heading-2'
@@ -20,6 +22,6 @@ type TypographyWeight = 'regular' | 'medium' | 'semibold' | 'bold';
 export interface TypographyProps {
     size?: TypographySize;
     weight?: TypographyWeight;
-    label?: string;
+    children: ReactNode;
     color?: string;
 }
