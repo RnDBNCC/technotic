@@ -29,13 +29,17 @@ const Button = (props: PropsWithChildren<ButtonProps>): JSX.Element => {
         link,
         element,
         children,
+        onClick,
         ...rest
     } = props;
     const className = disabled
         ? `${cssClassName(btnSize, btnType, btnColor)} disabled`
         : cssClassName(btnSize, btnType, btnColor);
 
-    const handleClick = (e: MouseEvent): void => {
+    const handleClick = (e: MouseEvent<HTMLButtonElement>): void => {
+        if (onClick !== undefined) {
+            onClick(e);
+        }
         if (link !== undefined) {
             if (link.includes('http')) {
                 isRoutes.isValidHttpUrl(link);
