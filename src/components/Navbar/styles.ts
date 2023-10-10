@@ -19,7 +19,7 @@ export const styNavbarContainer = (
 ): string => css`
     position: ${navbarPositionType};
     width: 100%;
-       z-index: 10;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -28,6 +28,7 @@ export const styNavbarContainer = (
     background-color: ${bgColor};
     font-size: 1rem;
     height: 100px;
+    transition: background-color 0.3s ease-in-out;
 
     @media (min-width: 640px) {
         padding: 1.5rem 3rem;
@@ -90,6 +91,7 @@ export const styHamburgerMenuButton = (
     aspect-ratio: 1 / 1;
     border-radius: 1rem;
     background-color: ${menuBgColor};
+    transition: background-color 0.3s ease-in-out;
     & span.menuIcon {
         position: absolute;
         background-color: ${menuColor};
@@ -121,6 +123,7 @@ export const styCrossMenuButton = (
     aspect-ratio: 1 / 1;
     border-radius: 1rem;
     background-color: ${menuBgColor};
+    transition: background-color 0.3s ease-in-out;
     & span.menuIcon {
         position: absolute;
         background-color: ${menuColor};
@@ -160,7 +163,7 @@ export const styMobileNavLinksOpen = (bgColor: string): string => css`
     background-color: ${bgColor};
     width: 100%;
     transform: translateY(100px);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out;
     max-height: 50vh;
     overflow: auto;
     & a.mobileNavLink {
@@ -188,7 +191,7 @@ export const styMobileNavLinksClose = (bgColor: string): string => css`
     background-color: ${bgColor};
     width: 100%;
     transform: translateY(-350px);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out;
     max-height: 50vh;
     overflow: auto;
     & a.mobileNavLink {
