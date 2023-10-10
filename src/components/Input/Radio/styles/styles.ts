@@ -72,7 +72,7 @@ export const TextChildStyle = css({
     display: 'inline-flex',
     alignItems: 'end',
     textAlign: 'end',
-    padding: `0 0.5rem`,
+    padding: '0 0.5rem',
     '&:hover': {
         cursor: 'pointer',
     },

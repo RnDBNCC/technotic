@@ -17,7 +17,8 @@ import {
 const Navbar: React.FC<NavbarProps> = ({
     title = 'technotic',
     positionType = 'static',
-    bgColor = '#22539F',
+    bgColorTop = '#22539F',
+    bgColorScroll = '#22539F',
     fontColor = '#FFFFFF',
     menuColor = '#000000',
     menuBgColor = '#FFFFFF',
@@ -34,11 +35,27 @@ const Navbar: React.FC<NavbarProps> = ({
 }) => {
     const [showMenu, setShowMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+    const [scrolling, setScrolling] = useState(false);
 
     useEffect(() => {
         const handleResize = (): void => setScreenWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = (): void => {
+            if (window.scrollY > 0) {
+                setScrolling(true); // If scrolling down, set scrolling to true
+            } else {
+                setScrolling(false); // If at the top, set scrolling to false
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     const isMobile = screenWidth <= 1024;
@@ -48,7 +65,14 @@ const Navbar: React.FC<NavbarProps> = ({
     };
 
     return (
-        <nav className={cx(styNavbarContainer(positionType, bgColor))}>
+        <nav
+            className={cx(
+                styNavbarContainer(
+                    positionType,
+                    scrolling ? bgColorScroll : bgColorTop
+                )
+            )}
+        >
             <a href="/" className={cx(styNavbarTitle(fontColor))}>
                 {title}
             </a>
@@ -77,7 +101,12 @@ const Navbar: React.FC<NavbarProps> = ({
             {!isMobile && displayButton && (
                 <a
                     href={buttonLink.href}
-                    className={cx(styNavbarButton(bgColor, fontColor))}
+                    className={cx(
+                        styNavbarButton(
+                            scrolling ? bgColorScroll : bgColorTop,
+                            fontColor
+                        )
+                    )}
                 >
                     {buttonLink.text}
                 </a>
@@ -86,8 +115,12 @@ const Navbar: React.FC<NavbarProps> = ({
                 <div
                     className={cx(
                         showMenu
-                            ? styMobileNavLinksOpen(bgColor)
-                            : styMobileNavLinksClose(bgColor)
+                            ? styMobileNavLinksOpen(
+                                  scrolling ? bgColorScroll : bgColorTop
+                              )
+                            : styMobileNavLinksClose(
+                                  scrolling ? bgColorScroll : bgColorTop
+                              )
                     )}
                 >
                     {navLinks.map((navlink, index) => (
@@ -104,7 +137,10 @@ const Navbar: React.FC<NavbarProps> = ({
                             <a
                                 href={buttonLink.href}
                                 className={cx(
-                                    styNavbarButton(bgColor, fontColor)
+                                    styNavbarButton(
+                                        scrolling ? bgColorScroll : bgColorTop,
+                                        fontColor
+                                    )
                                 )}
                             >
                                 {buttonLink.text}
