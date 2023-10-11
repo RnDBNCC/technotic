@@ -9,7 +9,8 @@ interface Link {
 export interface NavbarProps {
     title?: ReactNode;
     navLinks?: Link[];
-    bgColor?: string;
+    bgColorTop?: string;
+    bgColorScroll?: string;
     fontColor?: string;
     menuColor?: string;
     menuBgColor?: string;

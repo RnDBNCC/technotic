@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, MouseEvent } from 'react';
 import { ButtonType, SizeType } from './types';
 
 export interface ButtonProps
@@ -12,4 +12,5 @@ export interface ButtonProps
     btnColor?: string;
     link?: string;
     element?: any;
+    onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
