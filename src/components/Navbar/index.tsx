@@ -20,6 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({
     bgColorTop = '#22539F',
     bgColorScroll = '#22539F',
     fontColor = '#FFFFFF',
+    btnTextColor = '#FFFFFF',
     menuColor = '#000000',
     menuBgColor = '#FFFFFF',
     navLinks = [
@@ -102,12 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({
             {!isMobile && displayButton && (
                 <a
                     href={buttonLink.href}
-                    className={cx(
-                        styNavbarButton(
-                            scrolling ? bgColorScroll : bgColorTop,
-                            fontColor
-                        )
-                    )}
+                    className={cx(styNavbarButton(fontColor, btnTextColor))}
                 >
                     {buttonLink.text}
                 </a>
@@ -134,10 +130,7 @@ const Navbar: React.FC<NavbarProps> = ({
                             <a
                                 href={buttonLink.href}
                                 className={cx(
-                                    styNavbarButton(
-                                        scrolling ? bgColorScroll : bgColorTop,
-                                        fontColor
-                                    )
+                                    styNavbarButton(fontColor, btnTextColor)
                                 )}
                             >
                                 {buttonLink.text}

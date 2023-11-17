@@ -24,6 +24,7 @@ export const styNavbarContainer = (
     gap: 1rem;
     align-items: center;
     padding: 1.5rem 2rem;
+    z-index: 10;
     background-color: ${bgColor};
     font-size: 1rem;
     height: 100px;
@@ -31,6 +32,7 @@ export const styNavbarContainer = (
 
     @media (min-width: 640px) {
         padding: 1.5rem 3rem;
+    }
 
     @media (min-width: 768px) {
         padding: 1.5rem 4rem;
@@ -194,6 +196,15 @@ export const styMobileNavLinksOpen = (bgColor: string): string => css`
         align-items: center;
         padding: 2rem 0 0.5rem 0;
     }
+    @media (min-width: 640px) {
+        padding: 3rem 3rem 0.5rem 3rem;
+    }
+    @media (min-width: 768px) {
+        padding: 4rem 4rem 0.5rem 4rem;
+    }
+    @media (min-width: 1024px) {
+        padding: 6rem 6rem 0.5rem 6rem;
+    }
 `;
 
 export const styMobileNavLinksClose = (bgColor: string): string => css`
@@ -240,6 +251,15 @@ export const styMobileNavLinksClose = (bgColor: string): string => css`
         align-items: center;
         padding: 2rem 0 0.5rem 0;
     }
+    @media (min-width: 640px) {
+        padding: 3rem 3rem 0.5rem 3rem;
+    }
+    @media (min-width: 768px) {
+        padding: 4rem 4rem 0.5rem 4rem;
+    }
+    @media (min-width: 1024px) {
+        padding: 6rem 6rem 0.5rem 6rem;
+    }
 `;
 
 export const styNavbarTitle = (fontColor: string): string => css`
@@ -257,8 +277,8 @@ export const styNavbarTitle = (fontColor: string): string => css`
 `;
 
 export const styNavbarButton = (
-    bgColor: string,
-    fontColor: string
+    fontColor: string,
+    btnTextColor: string
 ): string => css`
     font-weight: 600;
     font-size: 1.125rem;
@@ -272,7 +292,7 @@ export const styNavbarButton = (
     transition: 150ms;
     :hover {
         background-color: ${fontColor};
-        color: ${bgColor};
+        color: ${btnTextColor};
         transition: 150ms;
     }
 `;
