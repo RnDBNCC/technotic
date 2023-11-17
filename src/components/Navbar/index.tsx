@@ -116,12 +116,8 @@ const Navbar: React.FC<NavbarProps> = ({
                 <div
                     className={cx(
                         showMenu
-                            ? styMobileNavLinksOpen(
-                                  scrolling ? bgColorScroll : bgColorTop
-                              )
-                            : styMobileNavLinksClose(
-                                  scrolling ? bgColorScroll : bgColorTop
-                              )
+                            ? styMobileNavLinksOpen(bgColorScroll)
+                            : styMobileNavLinksClose(bgColorScroll)
                     )}
                 >
                     {navLinks.map((navlink, index) => (
