@@ -19,7 +19,6 @@ export const styNavbarContainer = (
 ): string => css`
     position: ${navbarPositionType};
     width: 100%;
-    z-index: 10;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -155,26 +154,45 @@ export const styMobileNavLinksOpen = (bgColor: string): string => css`
     font-weight: 300;
     font-family: poppins;
     position: absolute;
-    z-index: -10;
     top: 0;
-    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    gap: 50px;
     background-color: ${bgColor};
-    width: 100%;
-    transform: translateY(100px);
+    width: 50%;
+    transform: translate(0, 100px);
     transition: transform 0.3s ease, background-color 0.3s ease-in-out;
-    max-height: 50vh;
+    height: 100vh;
     overflow: auto;
+    padding: 2rem 2rem 0.5rem 2rem;
     & a.mobileNavLink {
-        padding: 0.5rem 2rem 2rem 2rem;
+        position: relative;
+        width: fit-content;
         text-align: center;
+    }
+    & a.mobileNavLink::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -8px;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    & a.mobileNavLink:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
     & div.mobileNavLinkButton {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0.5rem 2rem 2rem 2rem;
+        padding: 2rem 0 0.5rem 0;
     }
 `;
 
@@ -183,26 +201,44 @@ export const styMobileNavLinksClose = (bgColor: string): string => css`
     font-weight: 300;
     font-family: poppins;
     position: absolute;
-    z-index: -10;
     top: 0;
-    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    gap: 50px;
     background-color: ${bgColor};
-    width: 100%;
-    transform: translateY(-350px);
+    width: 50%;
+    transform: translate(100%, 100px);
     transition: transform 0.3s ease, background-color 0.3s ease-in-out;
-    max-height: 50vh;
+    height: 100vh;
     overflow: auto;
+    padding: 2rem 2rem 0.5rem 2rem;
     & a.mobileNavLink {
-        padding: 0.5rem 2rem 2rem 2rem;
+        position: relative;
         text-align: center;
+    }
+    & a.mobileNavLink::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -8px;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    & a.mobileNavLink:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
     & div.mobileNavLinkButton {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0.5rem 2rem 2rem 2rem;
+        padding: 2rem 0 0.5rem 0;
     }
 `;
 
@@ -215,7 +251,7 @@ export const styNavbarTitle = (fontColor: string): string => css`
     justify-content: flex-start;
     align-items: center;
     & img {
-        height: 36px;
+        height: 30px;
         object-fit: contain;
     }
 `;

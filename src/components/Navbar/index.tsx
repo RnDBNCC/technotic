@@ -34,11 +34,12 @@ const Navbar: React.FC<NavbarProps> = ({
     },
 }) => {
     const [showMenu, setShowMenu] = useState(false);
-    const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+    const [screenWidth, setScreenWidth] = useState<number>(0);
     const [scrolling, setScrolling] = useState(false);
 
     useEffect(() => {
         const handleResize = (): void => setScreenWidth(window.innerWidth);
+        setScreenWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -46,9 +47,9 @@ const Navbar: React.FC<NavbarProps> = ({
     useEffect(() => {
         const handleScroll = (): void => {
             if (window.scrollY > 0) {
-                setScrolling(true); // If scrolling down, set scrolling to true
+                setScrolling(true);
             } else {
-                setScrolling(false); // If at the top, set scrolling to false
+                setScrolling(false);
             }
         };
 
