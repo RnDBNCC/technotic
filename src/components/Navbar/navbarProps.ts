@@ -12,6 +12,7 @@ export interface NavbarProps {
     bgColorTop?: string;
     bgColorScroll?: string;
     fontColor?: string;
+    btnTextColor?: string;
     menuColor?: string;
     menuBgColor?: string;
     displayButton?: boolean;
