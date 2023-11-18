@@ -295,4 +295,8 @@ export const styNavbarButton = (
         color: ${btnTextColor};
         transition: 150ms;
     }
+    @media (max-width: 640px) {
+        padding: 0.75rem 0.5rem;
+        border-radius: 0.75rem;
+    }
 `;
